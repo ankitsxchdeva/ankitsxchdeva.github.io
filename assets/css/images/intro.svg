@@ -4,7 +4,7 @@
 		line
 		{
 			stroke: rgba(182,182,157,0.05);
-			stroke-width: 4px;
+			stroke-width: 8px;
 		}
     ]]></style>
 
