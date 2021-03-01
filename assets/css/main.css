@@ -24,7 +24,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;}
 
 body {
-	line-height: 0;
+	line-height: 1;
 }
 
 ol, ul {
@@ -89,7 +89,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #29220b;
+		background: #1b1f22;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -138,7 +138,7 @@ input, select, textarea {
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: 300;
 		font-size: 1rem;
-		line-height: 0;
+		line-height: 1.65;
 	}
 
 	a {
@@ -205,7 +205,7 @@ input, select, textarea {
 	}
 
 	h3 {
-		font-size: 0.75rem;
+		font-size: 1rem;
 	}
 
 	h4 {
@@ -957,11 +957,11 @@ input, select, textarea {
 		}
 
 		table thead {
-			border-bottom: solid 1px #ffffff;
+			border-bottom: solid 2px #ffffff;
 		}
 
 		table tfoot {
-			border-top: solid 1px #ffffff;
+			border-top: solid 2px #ffffff;
 		}
 
 		table.alt {
@@ -1105,6 +1105,7 @@ input, select, textarea {
 		-webkit-transform: scale(1.0);
 		-ms-transform: scale(1.0);
 		transform: scale(1.0);
+		-webkit-backface-visibility: hidden;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -1149,9 +1150,6 @@ input, select, textarea {
 			transform: scale(1.125);
 			-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
-			-webkit-filter: brightness(80%)
-							blur(9px);
-
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 			background-image: url("../../images/bg.jpg");
@@ -1159,6 +1157,8 @@ input, select, textarea {
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
+			-webkit-filter: brightness(80%)
+							blur();
 		}
 
 		body.is-article-visible #bg:after {
@@ -1273,7 +1273,7 @@ input, select, textarea {
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
-				width: 0px;
+				width: 1px;
 				height: calc(3.5rem + 1px);
 				background: #ffffff;
 			}
