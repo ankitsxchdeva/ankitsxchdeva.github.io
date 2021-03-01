@@ -1158,7 +1158,7 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			z-index: 1;
 			-webkit-filter: brightness(80%)
-							blur();
+							blur(10px);
 		}
 
 		body.is-article-visible #bg:after {
@@ -1273,7 +1273,7 @@ input, select, textarea {
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
-				width: 1px;
+				width: 0px;
 				height: calc(3.5rem + 1px);
 				background: #ffffff;
 			}
