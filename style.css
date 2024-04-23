@@ -1,0 +1,66 @@
+/* style.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  text-align: center;
+  color: #333;
+}
+
+header {
+  background: #f4f4f4;
+  padding: 35px;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+.button {
+  display: block; /* Changed from inline-block to block */
+  width: 60%; /* Adjust width as needed, perhaps based on design preference */
+  margin: 10px auto; /* Centers the button horizontally and adds spacing */
+  padding: 10px 0; /* Padding changed to be more suitable for block elements */
+  background: #044542;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+
+.button:hover {
+  background: #0056b3;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+footer a {
+  margin: 0 10px;
+}
+
+footer img {
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s;
+}
+
+footer img:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .button {
+      padding: 15px 30px;
+      margin: 10px 5px;
+  }
+}
