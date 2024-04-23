@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankit Sachdeva's Links</title>
+    <title>ankit sachdeva</title>
+    <link rel="icon" type="image/gif" href="crunch.gif">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,9 +17,18 @@
         <a href="https://ankitsachdeva.com/keyboards/" target="_blank" class="button">keyboards</a>
     </main>
     <footer>
+        <a href="mailto:me@ankitsachdeva.com" target="_blank"><img src="email-icon.png" alt="Email"></a>
         <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
         <a href="https://github.com/ankitsxchdeva" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
-        <a href="mailto:me@ankitsachdeva.com" target="_blank"><img src="email-icon.png" alt="Email"></a>
+        <p id="lastUpdated">Last Updated: </p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var lastMod = new Date(document.lastModified);
+            var dateString = lastMod.toLocaleDateString();
+            document.getElementById('lastUpdated').textContent += dateString;
+        });
+    </script>
+    
 </body>
 </html>
