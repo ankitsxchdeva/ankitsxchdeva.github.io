@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<!--
+  hi :) source is at github.com/ankitsxchdeva/ankitsxchdeva.github.io
+-->
 <html lang="en">
 
 <head>
-
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJS062F0ET"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,44 +16,160 @@
   <meta charset="utf-8">
   <title>Ankit Sachdeva</title>
   <meta name="author" content="Ankit Sachdeva">
+  <meta name="description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231772d0'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Lato,Verdana,sans-serif' font-size='32' font-weight='700' fill='white'%3Eas%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="images/headshot2.webp" type="image/webp" fetchpriority="high">
+
+  <style>
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --link: #1772d0;
+      --link-hover: #f09228;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #11141a;
+        --fg: #e8e8e8;
+        --link: #6ab0f3;
+        --link-hover: #f5a962;
+      }
+    }
+
+    html, body { background: var(--bg); color: var(--fg); }
+
+    body, td, th, tr, p, a {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    p { margin: 0 0 1em 0; }
+
+    name {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 32px;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:focus, a:hover {
+      color: var(--link-hover);
+      text-decoration: none;
+      padding-bottom: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='4'%3E%3Cpath d='M0 2 A3 2 0 0 1 6 2 A3 2 0 0 0 12 2' stroke='%23f09228' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+      background-size: 12px 4px;
+      background-repeat: repeat-x;
+      background-position: 0 100%;
+      animation: squiggle 0.3s linear infinite;
+    }
+    @keyframes squiggle {
+      from { background-position: 0 100%; }
+      to   { background-position: 12px 100%; }
+    }
+
+    img.circle { border-radius: 50%; cursor: pointer; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: fadeIn 0.3s ease; }
+
+    table.section {
+      width: 100%;
+      border: 0;
+      border-spacing: 0;
+      border-collapse: separate;
+      margin: 0 auto;
+    }
+
+    ::selection {
+      background: var(--link);
+      color: #fff;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--link-hover);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
+      a:focus, a:hover { animation: none; }
+    }
+  </style>
 </head>
 
 <body>
-  <table
-    style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+  <main>
+  <table style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
     <tbody>
       <tr style="padding:0;">
         <td style="padding:0;">
-
 
           <table class="section">
             <tbody>
               <tr style="padding:0;">
                 <td style="padding:1.5%;width:63%;vertical-align:middle;">
                   <p style="text-align:center;">
-                    <name>Ankit Sachdeva</name> <!-- Non-standard element, but left as is if you intend to style it -->
+                    <name>Ankit Sachdeva</name>
                   </p>
                   <p>
-                    Currently splitting my time between a master’s at Georgia Tech (CS + AI) and building MLS software at <a href="https://www.dynaconnections.com/" target="_blank">dynaConnections</a> — tools that help agents list, market, and sell homes.
+                    Currently splitting my time between a master's in AI at Georgia Tech and shipping software at <a href="https://www.dynaconnections.com/" target="_blank" rel="noopener">dynaConnections</a>, where we build MLS tools, the databases and portals real estate agents use to list and sell homes.
                   </p>
                   <p>
-                    Previously, I worked on settlement systems at <a href="https://www.paypal.com/us/home" target="_blank">PayPal</a> and helped <a href="https://ridefox.com/" target="_blank">Fox Factory</a> bring embedded electronics into their racing suspension lineup.
+                    Before that I prototyped blockchain settlement at <a href="https://www.paypal.com/us/home" target="_blank" rel="noopener">PayPal</a>. Earlier, I did embedded work at <a href="https://ridefox.com/" target="_blank" rel="noopener">Fox Factory</a>, designing PCBs and writing C firmware for Live Valve Neo, the wireless bike suspension reimagining what mountain biking looks like.
                   </p>
                   <p>
-                    In my free time I’m usually failing to <a href="https://ankitsachdeva.com/sbd/" target="_blank">lift weights</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank">tft</a>.
+                    Lately I've been pretty deep in AI-assisted development. Write a spec, let the agents take a rough pass, then review what comes back. My <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">home server</a> is the playground for this, where any silly idea for a microservice goes from concept to deployed in a couple prompts. At work it's a Playwright framework that halved our regression runtime. The newest piece is <a href="https://github.com/DebugBase/glance" target="_blank" rel="noopener">Glance</a>, which lets the agent drive a real browser and catch its own mistakes.
+                  </p>
+                  <p>
+                    In my free time I'm usually failing to <a href="https://ankitsachdeva.com/sbd/" target="_blank" rel="noopener">lift weights</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank" rel="noopener">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank" rel="noopener">tft</a>.
                   </p>
                   <p style="text-align:center;">
-                    <a href="mailto:ankitsachdeva@gatech.edu" target="_blank">email</a> &nbsp;//&nbsp;
-                    <a href="https://ankitsachdeva.com/resume" target="_blank">resume</a> &nbsp;//&nbsp;
-                    <a href="https://www.github.com/ankitsxchdeva" target="_blank">github</a> &nbsp;//&nbsp;
-                    <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank">linkedin</a> &nbsp;&nbsp;
+                    <a href="mailto:ankitsachdeva@gatech.edu">email</a> &nbsp;//&nbsp;
+                    <a href="https://ankitsachdeva.com/resume" target="_blank" rel="noopener">resume</a> &nbsp;//&nbsp;
+                    <a href="https://www.github.com/ankitsxchdeva" target="_blank" rel="noopener">github</a> &nbsp;//&nbsp;
+                    <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener">linkedin</a> &nbsp;&nbsp;
                   </p>
                 </td>
                 <td style="padding:2.5%;width:40%;max-width:40%;">
-                  <img style="width: 100%; max-width: 100%;" alt="profile photo" src="images/headshot2.jpeg"
-                    class="hoverZoomLink circle" title="">
+                  <picture>
+                    <source type="image/webp" srcset="images/headshot2.webp 1x, images/headshot2@2x.webp 2x">
+                    <img id="headshot"
+                         src="images/headshot2-640.jpg"
+                         srcset="images/headshot2-640.jpg 1x, images/headshot2@2x.jpg 2x"
+                         alt="profile photo of Ankit Sachdeva"
+                         width="640" height="640"
+                         class="circle"
+                         fetchpriority="high" decoding="async"
+                         style="width:100%;max-width:100%;height:auto;"
+                         title="click me">
+                  </picture>
                 </td>
               </tr>
             </tbody>
@@ -64,7 +181,7 @@
                 <td style="padding:0;">
                   <br>
                   <p style="text-align:right;font-size:small;">
-                    <a href="https://github.com/jonbarron/jonbarron_website">template</a>
+                    <a href="https://github.com/jonbarron/jonbarron_website" target="_blank" rel="noopener">template</a>
                     <br>
                     april 2026
                   </p>
@@ -77,6 +194,57 @@
       </tr>
     </tbody>
   </table>
+  </main>
+
+  <script>
+    console.log(
+      '%c hi :) %csource → github.com/ankitsxchdeva/ankitsxchdeva.github.io',
+      'font-size:14px; color:#1772d0; font-weight:700',
+      'font-size:12px; color:#888'
+    );
+
+    (function () {
+      var img = document.getElementById('headshot');
+      if (!img) return;
+      var shots = [
+        { webp: 'images/headshot2.webp',   webp2x: 'images/headshot2@2x.webp',   jpg: 'images/headshot2-640.jpg', jpg2x: 'images/headshot2@2x.jpg' },
+        { jpg: 'images/headshot.jpg',          jpg2x: 'images/headshot.jpg' },
+        { jpg: 'images/AnkitSachdeva-Circle.jpg', jpg2x: 'images/AnkitSachdeva-Circle.jpg' }
+      ];
+      var i = 0;
+      img.addEventListener('click', function () {
+        i = (i + 1) % shots.length;
+        var s = shots[i];
+        var source = img.parentNode.querySelector('source');
+        if (s.webp) {
+          source.setAttribute('srcset', s.webp + ' 1x, ' + s.webp2x + ' 2x');
+        } else {
+          source.setAttribute('srcset', '');
+        }
+        img.setAttribute('srcset', s.jpg + ' 1x, ' + s.jpg2x + ' 2x');
+        img.src = s.jpg;
+      });
+    })();
+
+    (function () {
+      var original = document.title;
+      var away = '← come back';
+      document.addEventListener('visibilitychange', function () {
+        document.title = document.hidden ? away : original;
+      });
+    })();
+
+    (function () {
+      var link = document.querySelector('a[href*="ankitsachdeva.com/resume"]');
+      if (!link) return;
+      link.addEventListener('mouseenter', function () {
+        var l = document.createElement('link');
+        l.rel = 'prefetch';
+        l.href = 'https://ankitsachdeva.com/resume/Ankit_Sachdeva_Resume.pdf';
+        document.head.appendChild(l);
+      }, { once: true });
+    })();
+  </script>
 </body>
 
 </html>
