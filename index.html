@@ -45,6 +45,8 @@
       --fg: #1a1a1a;
       --link: #1772d0;
       --link-hover: #f09228;
+      --muted: #888;
+      --border: #e0e0e0;
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -52,6 +54,8 @@
         --fg: #e8e8e8;
         --link: #6ab0f3;
         --link-hover: #f5a962;
+        --muted: #666;
+        --border: #2a2d35;
       }
     }
 
@@ -119,6 +123,149 @@
       body { animation: none; }
       a:focus, a:hover { animation: none; }
     }
+
+    /* Tab nav */
+    .tab-nav {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1.5em;
+      opacity: 0.45;
+    }
+    .tab-nav a, .tab-nav span {
+      position: relative;
+      padding: 0.5em 0;
+      margin-right: 1.75em;
+      font-size: 14px;
+      color: var(--muted);
+      background: none;
+      animation: none;
+      transition: color 0.2s ease;
+    }
+    .tab-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--fg);
+      transition: width 0.25s ease;
+    }
+    .tab-nav a:hover {
+      color: var(--fg);
+      background-image: none;
+      padding-bottom: 0.5em;
+    }
+    .tab-nav a:hover::after,
+    .tab-nav a.active::after {
+      width: 100%;
+    }
+    .tab-nav a.active {
+      color: var(--fg);
+    }
+    .tab-nav span {
+      cursor: default;
+      opacity: 0.4;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tab-nav a::after { transition: none; }
+      .tab-nav a { transition: none; }
+    }
+
+    /* Tab panels */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .tab-panel.active {
+      animation: panelIn 0.2s ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tab-panel.active { animation: none; }
+    }
+
+    /* Cool tab */
+    .cool-list {
+      max-width: 620px;
+      padding: 0 1.5%;
+    }
+    .cool-entry {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 1.5em;
+      padding: 1em 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .cool-entry:first-child { border-top: 1px solid var(--border); }
+    .cool-date {
+      font-size: 12px;
+      color: var(--muted);
+      padding-top: 2px;
+      white-space: nowrap;
+    }
+    .cool-title {
+      font-weight: 700;
+      font-size: 15px;
+      margin: 0 0 0.25em;
+    }
+    .cool-title a {
+      color: var(--fg);
+    }
+    .cool-title a:hover {
+      color: var(--link-hover);
+      background-image: none;
+    }
+    .cool-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .cool-empty {
+      color: var(--muted);
+      font-size: 14px;
+      padding: 1.5% 1.5%;
+    }
+
+    /* Music tab */
+    .music-wrap {
+      max-width: 620px;
+      padding: 0 1.5%;
+    }
+    .embed-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6em;
+      padding-bottom: 0.6em;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .embed-playlist-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .embed-track-count {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .track-list { list-style: none; margin: 0; padding: 0; }
+    .track-item {
+      display: grid;
+      grid-template-columns: 20px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .track-num { font-size: 12px; color: var(--muted); text-align: right; font-family: monospace; }
+    .track-info { min-width: 0; display: flex; gap: 0.4em; align-items: baseline; }
+    .track-name { font-size: 14px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+    .track-duration { font-size: 12px; color: var(--muted); font-family: monospace; white-space: nowrap; }
   </style>
 </head>
 
@@ -129,60 +276,97 @@
       <tr style="padding:0;">
         <td style="padding:0;">
 
-          <table class="section">
-            <tbody>
-              <tr style="padding:0;">
-                <td style="padding:1.5%;width:63%;vertical-align:middle;">
-                  <p style="text-align:center;">
-                    <name>Ankit Sachdeva</name>
-                  </p>
-                  <p>
-                    Currently splitting my time between a master's in AI at Georgia Tech and shipping software at <a href="https://www.dynaconnections.com/" target="_blank" rel="noopener">dynaConnections</a>, where we build MLS tools, the databases and portals real estate agents use to list and sell homes.
-                  </p>
-                  <p>
-                    Before that I prototyped blockchain settlement at <a href="https://www.paypal.com/us/home" target="_blank" rel="noopener">PayPal</a>. Earlier, I did embedded work at <a href="https://ridefox.com/" target="_blank" rel="noopener">Fox Factory</a>, designing PCBs and writing C firmware for Live Valve Neo, the wireless bike suspension reimagining what mountain biking looks like.
-                  </p>
-                  <p>
-                    Lately I've been pretty deep in AI-assisted development. Write a spec, let the agents take a rough pass, then review what comes back. My <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">home server</a> is the playground for this, where any silly idea for a microservice goes from concept to deployed in a couple prompts. At work it's a Playwright framework that halved our regression runtime. The newest piece is <a href="https://github.com/DebugBase/glance" target="_blank" rel="noopener">Glance</a>, which lets the agent drive a real browser and catch its own mistakes.
-                  </p>
-                  <p>
-                    In my free time I'm usually failing to <a href="https://ankitsachdeva.com/sbd/" target="_blank" rel="noopener">lift weights</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank" rel="noopener">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank" rel="noopener">tft</a>.
-                  </p>
-                  <p style="text-align:center;">
-                    <a href="mailto:ankitsachdeva@gatech.edu">email</a> &nbsp;//&nbsp;
-                    <a href="https://ankitsachdeva.com/resume" target="_blank" rel="noopener">resume</a> &nbsp;//&nbsp;
-                    <a href="https://www.github.com/ankitsxchdeva" target="_blank" rel="noopener">github</a> &nbsp;//&nbsp;
-                    <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener">linkedin</a> &nbsp;&nbsp;
-                  </p>
-                </td>
-                <td style="padding:2.5%;width:40%;max-width:40%;">
-                  <picture>
-                    <source type="image/webp" srcset="images/headshot2.webp 1x, images/headshot2@2x.webp 2x">
-                    <img id="headshot"
-                         src="images/headshot2-640.jpg"
-                         srcset="images/headshot2-640.jpg 1x, images/headshot2@2x.jpg 2x"
-                         alt="profile photo of Ankit Sachdeva"
-                         width="640" height="640"
-                         class="circle"
-                         fetchpriority="high" decoding="async"
-                         style="width:100%;max-width:100%;height:auto;"
-                         title="click me">
-                  </picture>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- Tab navigation -->
+          <nav class="tab-nav" style="padding:1.5% 1.5% 0;">
+            <a href="#home" class="tab-link" data-tab="home">hi</a>
+            <a href="#music" class="tab-link" data-tab="music">music</a>
+            <span title="coming soon">blog</span>
+            <span title="coming soon">cool</span>
+          </nav>
+
+          <!-- Home tab -->
+          <div id="tab-home" class="tab-panel">
+            <table class="section">
+              <tbody>
+                <tr style="padding:0;">
+                  <td style="padding:1.5%;width:63%;vertical-align:middle;">
+                    <p style="text-align:center;">
+                      <name>Ankit Sachdeva</name>
+                    </p>
+                    <p>
+                      Currently splitting my time between a master's in AI at Georgia Tech and shipping software at <a href="https://www.dynaconnections.com/" target="_blank" rel="noopener">dynaConnections</a>, where we build MLS tools, the databases and portals real estate agents use to list and sell homes.
+                    </p>
+                    <p>
+                      Before that I prototyped blockchain settlement at <a href="https://www.paypal.com/us/home" target="_blank" rel="noopener">PayPal</a>. Earlier, I did embedded work at <a href="https://ridefox.com/" target="_blank" rel="noopener">Fox Factory</a>, designing PCBs and writing C firmware for Live Valve Neo, the wireless bike suspension reimagining what mountain biking looks like.
+                    </p>
+                    <p>
+                      Lately I've been pretty deep in AI-assisted development. Write a spec, let the agents take a rough pass, then review what comes back. My <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">home server</a> is the playground for this, where any silly idea for a microservice goes from concept to deployed in a couple prompts. At work it's a Playwright framework that halved our regression runtime. The newest piece is <a href="https://github.com/DebugBase/glance" target="_blank" rel="noopener">Glance</a>, which lets the agent drive a real browser and catch its own mistakes.
+                    </p>
+                    <p>
+                      In my free time I'm usually failing to <a href="https://ankitsachdeva.com/sbd/" target="_blank" rel="noopener">lift weights</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank" rel="noopener">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank" rel="noopener">tft</a>.
+                    </p>
+                    <p style="text-align:center;">
+                      <a href="mailto:ankitsachdeva@gatech.edu">email</a> &nbsp;//&nbsp;
+                      <a href="https://ankitsachdeva.com/resume" target="_blank" rel="noopener">resume</a> &nbsp;//&nbsp;
+                      <a href="https://www.github.com/ankitsxchdeva" target="_blank" rel="noopener">github</a> &nbsp;//&nbsp;
+                      <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener">linkedin</a> &nbsp;&nbsp;
+                    </p>
+                  </td>
+                  <td style="padding:2.5%;width:40%;max-width:40%;">
+                    <picture>
+                      <source type="image/webp" srcset="images/headshot2.webp 1x, images/headshot2@2x.webp 2x">
+                      <img id="headshot"
+                           src="images/headshot2-640.jpg"
+                           srcset="images/headshot2-640.jpg 1x, images/headshot2@2x.jpg 2x"
+                           alt="profile photo of Ankit Sachdeva"
+                           width="640" height="640"
+                           class="circle"
+                           fetchpriority="high" decoding="async"
+                           style="width:100%;max-width:100%;height:auto;"
+                           title="click me">
+                    </picture>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Cool tab -->
+          <div id="tab-cool" class="tab-panel">
+            <div class="cool-list" id="cool-list">
+              <p class="cool-empty">loading...</p>
+            </div>
+          </div>
+
+          <!-- Current music tab -->
+          <div id="tab-music" class="tab-panel">
+            <div class="music-wrap">
+              <div class="embed-header">
+                <span class="embed-playlist-name">april 26</span>
+                <span class="embed-track-count">13 tracks</span>
+              </div>
+                <ul class="track-list">
+                  <li class="track-item"><span class="track-num">1</span><div class="track-info"><div class="track-name">The More I Hope</div><div class="track-artist">Sam Barber</div></div><span class="track-duration">4:07</span></li>
+                  <li class="track-item"><span class="track-num">2</span><div class="track-info"><div class="track-name">Hanging on Hope</div><div class="track-artist">Buffalo Traffic Jam</div></div><span class="track-duration">3:44</span></li>
+                  <li class="track-item"><span class="track-num">3</span><div class="track-info"><div class="track-name">Say Why</div><div class="track-artist">Zach Bryan</div></div><span class="track-duration">2:24</span></li>
+                  <li class="track-item"><span class="track-num">4</span><div class="track-info"><div class="track-name">Rethink Some Things</div><div class="track-artist">Luke Combs</div></div><span class="track-duration">2:45</span></li>
+                  <li class="track-item"><span class="track-num">5</span><div class="track-info"><div class="track-name">Miss You Here</div><div class="track-artist">Luke Combs</div></div><span class="track-duration">3:04</span></li>
+                  <li class="track-item"><span class="track-num">6</span><div class="track-info"><div class="track-name">Fool's Gold</div><div class="track-artist">Buffalo Traffic Jam</div></div><span class="track-duration">3:18</span></li>
+                  <li class="track-item"><span class="track-num">7</span><div class="track-info"><div class="track-name">Better If Worse</div><div class="track-artist">HAFFWAY</div></div><span class="track-duration">4:02</span></li>
+                  <li class="track-item"><span class="track-num">8</span><div class="track-info"><div class="track-name">Emily</div><div class="track-artist">Andrew Martinez</div></div><span class="track-duration">3:50</span></li>
+                  <li class="track-item"><span class="track-num">9</span><div class="track-info"><div class="track-name">I Need To Fall Apart - Demo</div><div class="track-artist">Owen MacDonald</div></div><span class="track-duration">4:00</span></li>
+                  <li class="track-item"><span class="track-num">10</span><div class="track-info"><div class="track-name">Coal</div><div class="track-artist">Dylan Gossett</div></div><span class="track-duration">3:14</span></li>
+                  <li class="track-item"><span class="track-num">11</span><div class="track-info"><div class="track-name">Growin' Up Raising You</div><div class="track-artist">Gabby Barrett</div></div><span class="track-duration">3:17</span></li>
+                  <li class="track-item"><span class="track-num">12</span><div class="track-info"><div class="track-name">Condemned</div><div class="track-artist">Zach Bryan</div></div><span class="track-duration">2:55</span></li>
+                  <li class="track-item"><span class="track-num">13</span><div class="track-info"><div class="track-name">Heading South</div><div class="track-artist">Zach Bryan</div></div><span class="track-duration">2:52</span></li>
+              </ul>
+            </div>
+          </div>
 
           <table class="section">
             <tbody>
               <tr>
                 <td style="padding:0;">
-                  <br>
-                  <p style="text-align:right;font-size:small;">
-                    <a href="https://github.com/jonbarron/jonbarron_website" target="_blank" rel="noopener">template</a>
-                    <br>
-                    april 2026
-                  </p>
                 </td>
               </tr>
             </tbody>
@@ -201,6 +385,41 @@
       'font-size:12px; color:#888'
     );
 
+    // Tab system
+    (function () {
+      var links = document.querySelectorAll('.tab-link');
+      var panels = document.querySelectorAll('.tab-panel');
+
+      function activate(tab) {
+        links.forEach(function (l) {
+          l.classList.toggle('active', l.dataset.tab === tab);
+        });
+        panels.forEach(function (p) {
+          p.classList.toggle('active', p.id === 'tab-' + tab);
+        });
+        if (tab === 'cool' && window.__coolLoad) window.__coolLoad();
+      }
+
+      links.forEach(function (l) {
+        l.addEventListener('click', function (e) {
+          e.preventDefault();
+          var tab = l.dataset.tab;
+          history.pushState({ tab: tab }, '', '#' + tab);
+          activate(tab);
+        });
+      });
+
+      window.addEventListener('popstate', function (e) {
+        activate((e.state && e.state.tab) || 'home');
+      });
+
+      // Load from hash on init
+      var hash = location.hash.replace('#', '');
+      var valid = Array.from(links).map(function (l) { return l.dataset.tab; });
+      activate(valid.indexOf(hash) !== -1 ? hash : 'home');
+    })();
+
+    // Headshot click cycle
     (function () {
       var img = document.getElementById('headshot');
       if (!img) return;
@@ -224,6 +443,44 @@
       });
     })();
 
+    // Cool tab
+    (function () {
+      var loaded = false;
+      function loadCool() {
+        if (loaded) return;
+        loaded = true;
+        var list = document.getElementById('cool-list');
+        fetch('cool.json')
+          .then(function (r) { return r.json(); })
+          .then(function (entries) {
+            if (!entries.length) {
+              list.innerHTML = '<p class="cool-empty">nothing here yet.</p>';
+              return;
+            }
+            list.innerHTML = entries.map(function (e) {
+              var dateStr = e.date
+                ? new Date(e.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+                : '';
+              return '<div class="cool-entry">'
+                + '<div class="cool-date">' + dateStr + '</div>'
+                + '<div>'
+                + '<p class="cool-title"><a href="' + e.url + '" target="_blank" rel="noopener">' + e.title + '</a></p>'
+                + (e.description ? '<p class="cool-desc">' + e.description + '</p>' : '')
+                + '</div>'
+                + '</div>';
+            }).join('');
+          })
+          .catch(function () {
+            list.innerHTML = '<p class="cool-empty">couldn\'t load entries.</p>';
+          });
+      }
+
+      // Load when tab is activated
+      var orig = window.__tabActivate;
+      window.__coolLoad = loadCool;
+    })();
+
+    // Resume prefetch
     (function () {
       var link = document.querySelector('a[href*="ankitsachdeva.com/resume"]');
       if (!link) return;
