@@ -1,9 +1,16 @@
 [
   {
-    "date": "2026-04-18",
-    "url": "https://paulgraham.com/cities.html",
-    "title": "Cities and Ambition",
-    "description": "Different cities send different messages. New York says you should make more money. Cambridge says you should be smarter.",
+    "date": "2026-04-28",
+    "url": "https://mitchellh.com/writing/my-ai-adoption-journey",
+    "title": "My AI Adoption Journey",
+    "description": "Mitchell Hashimoto's six-step journey from dismissing AI to running agents continuously in the background.",
+    "image": ""
+  },
+  {
+    "date": "2026-04-28",
+    "url": "https://levelup.gitconnected.com/your-ai-agent-doesnt-care-about-your-readme-6cd1f0d86ac8",
+    "title": "Your AI Agent Doesn't Care About Your README",
+    "description": "Reya Vir: Auto-generate a hierarchy of AGENTS.md files so your AI agent gets dense, folder-specific context instead of one giant README.",
     "image": ""
   }
 ]
