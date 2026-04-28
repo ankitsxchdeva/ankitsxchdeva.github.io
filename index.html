@@ -19,280 +19,42 @@
   <meta name="description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ankitsachdeva.com">
+  <meta property="og:title" content="Ankit Sachdeva">
+  <meta property="og:description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
+  <meta property="og:image" content="https://ankitsachdeva.com/images/headshot2.webp">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ankit Sachdeva">
+  <meta name="twitter:description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
+  <meta name="twitter:image" content="https://ankitsachdeva.com/images/headshot2.webp">
+
+  <link rel="canonical" href="https://ankitsachdeva.com">
+  <meta name="theme-color" content="#f5f4fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1e1c22" media="(prefers-color-scheme: dark)">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/headshot2.webp" type="image/webp" fetchpriority="high">
-
-  <style>
-    @font-face {
-      font-family: 'Lato';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    @font-face {
-      font-family: 'Lato';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    :root {
-      --bg: #ffffff;
-      --fg: #1a1a1a;
-      --link: #1772d0;
-      --link-hover: #f09228;
-      --muted: #888;
-      --border: #e0e0e0;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #11141a;
-        --fg: #e8e8e8;
-        --link: #6ab0f3;
-        --link-hover: #f5a962;
-        --muted: #666;
-        --border: #2a2d35;
-      }
-    }
-
-    html, body { background: var(--bg); color: var(--fg); }
-
-    body, td, th, tr, p, a {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    p { margin: 0 0 1em 0; }
-
-    name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 32px;
-      letter-spacing: -0.5px;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-    a:focus, a:hover {
-      color: var(--link-hover);
-      text-decoration: none;
-      padding-bottom: 2px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='4'%3E%3Cpath d='M0 2 A3 2 0 0 1 6 2 A3 2 0 0 0 12 2' stroke='%23f09228' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
-      background-size: 12px 4px;
-      background-repeat: repeat-x;
-      background-position: 0 100%;
-      animation: squiggle 0.3s linear infinite;
-    }
-    @keyframes squiggle {
-      from { background-position: 0 100%; }
-      to   { background-position: 12px 100%; }
-    }
-
-    img.circle { border-radius: 50%; cursor: pointer; }
-
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    body { animation: fadeIn 0.3s ease; }
-
-    table.section {
-      width: 100%;
-      border: 0;
-      border-spacing: 0;
-      border-collapse: separate;
-      margin: 0 auto;
-    }
-
-    ::selection {
-      background: var(--link);
-      color: #fff;
-    }
-
-    a:focus-visible {
-      outline: 2px solid var(--link-hover);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      body { animation: none; }
-      a:focus, a:hover { animation: none; }
-    }
-
-    /* Tab nav */
-    .tab-nav {
-      display: flex;
-      gap: 0;
-      margin-bottom: 1.5em;
-      opacity: 0.45;
-    }
-    .tab-nav a, .tab-nav span {
-      position: relative;
-      padding: 0.5em 0;
-      margin-right: 1.75em;
-      font-size: 14px;
-      color: var(--muted);
-      background: none;
-      animation: none;
-      transition: color 0.2s ease;
-    }
-    .tab-nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--fg);
-      transition: width 0.25s ease;
-    }
-    .tab-nav a:hover {
-      color: var(--fg);
-      background-image: none;
-      padding-bottom: 0.5em;
-    }
-    .tab-nav a:hover::after,
-    .tab-nav a.active::after {
-      width: 100%;
-    }
-    .tab-nav a.active {
-      color: var(--fg);
-    }
-    .tab-nav span {
-      cursor: default;
-      opacity: 0.4;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .tab-nav a::after { transition: none; }
-      .tab-nav a { transition: none; }
-    }
-
-    /* Tab panels */
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
-    @keyframes panelIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .tab-panel.active {
-      animation: panelIn 0.2s ease;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .tab-panel.active { animation: none; }
-    }
-
-    /* Cool tab */
-    .cool-list {
-      max-width: 620px;
-      padding: 0 1.5%;
-    }
-    .cool-entry {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 0 1.5em;
-      padding: 1em 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .cool-entry:first-child { border-top: 1px solid var(--border); }
-    .cool-date {
-      font-size: 12px;
-      color: var(--muted);
-      padding-top: 2px;
-      white-space: nowrap;
-    }
-    .cool-title {
-      font-weight: 700;
-      font-size: 15px;
-      margin: 0 0 0.25em;
-    }
-    .cool-title a {
-      color: var(--fg);
-    }
-    .cool-title a:hover {
-      color: var(--link-hover);
-      background-image: none;
-    }
-    .cool-desc {
-      font-size: 14px;
-      color: var(--muted);
-      margin: 0;
-      line-height: 1.5;
-    }
-    .cool-empty {
-      color: var(--muted);
-      font-size: 14px;
-      padding: 1.5% 1.5%;
-    }
-
-    /* Music tab */
-    .music-wrap {
-      max-width: 620px;
-      padding: 0 1.5%;
-    }
-    .embed-header {
-      display: flex;
-      align-items: baseline;
-      gap: 0.6em;
-      padding-bottom: 0.6em;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 0;
-    }
-    .embed-playlist-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--fg);
-    }
-    .embed-track-count {
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .track-list { list-style: none; margin: 0; padding: 0; }
-    .track-item {
-      display: grid;
-      grid-template-columns: 20px 1fr auto;
-      align-items: center;
-      gap: 10px;
-      padding: 5px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .track-num { font-size: 12px; color: var(--muted); text-align: right; font-family: monospace; }
-    .track-info { min-width: 0; display: flex; gap: 0.4em; align-items: baseline; }
-    .track-name { font-size: 14px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
-    .track-duration { font-size: 12px; color: var(--muted); font-family: monospace; white-space: nowrap; }
-  </style>
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
   <main>
-  <table style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-    <tbody>
-      <tr style="padding:0;">
-        <td style="padding:0;">
+  <div class="main-wrapper">
 
           <!-- Tab navigation -->
-          <nav class="tab-nav" style="padding:1.5% 1.5% 0;">
-            <a href="#home" class="tab-link" data-tab="home">hi</a>
-            <a href="#music" class="tab-link" data-tab="music">music</a>
-            <span title="coming soon">blog</span>
-            <a href="#cool" class="tab-link" data-tab="cool">cool</a>
+          <nav class="tab-nav">
+            <a href="#home" class="tab-link" data-tab="home">hi <kbd class="tab-key">1</kbd></a>
+            <a href="#music" class="tab-link" data-tab="music">music <kbd class="tab-key">2</kbd></a>
+            <span title="coming soon">blog <kbd class="tab-key">3</kbd></span>
+            <a href="#cool" class="tab-link" data-tab="cool">cool <kbd class="tab-key">4</kbd></a>
           </nav>
 
           <!-- Home tab -->
           <div id="tab-home" class="tab-panel">
-            <table class="section">
-              <tbody>
-                <tr style="padding:0;">
-                  <td style="padding:1.5%;width:63%;vertical-align:middle;">
-                    <p style="text-align:center;">
-                      <name>Ankit Sachdeva</name>
-                    </p>
+            <div class="bio-layout">
+              <div class="bio-cell">
+                    <h1 class="name centered">Ankit Sachdeva</h1>
                     <p>
                       Currently splitting my time between a master's in AI at Georgia Tech and shipping software at <a href="https://www.dynaconnections.com/" target="_blank" rel="noopener">dynaConnections</a>, where we build MLS tools, the databases and portals real estate agents use to list and sell homes.
                     </p>
@@ -305,14 +67,14 @@
                     <p>
                       In my free time I'm usually failing to <a href="https://ankitsachdeva.com/sbd/" target="_blank" rel="noopener">lift weights</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank" rel="noopener">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank" rel="noopener">tft</a>.
                     </p>
-                    <p style="text-align:center;">
+                    <p class="centered">
                       <a href="mailto:ankitsachdeva@gatech.edu">email</a> &nbsp;//&nbsp;
                       <a href="https://ankitsachdeva.com/resume" target="_blank" rel="noopener">resume</a> &nbsp;//&nbsp;
-                      <a href="https://www.github.com/ankitsxchdeva" target="_blank" rel="noopener">github</a> &nbsp;//&nbsp;
-                      <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener">linkedin</a> &nbsp;&nbsp;
+                      <a href="https://www.github.com/ankitsxchdeva" target="_blank" rel="noopener me">github</a> &nbsp;//&nbsp;
+                      <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener me">linkedin</a> &nbsp;&nbsp;
                     </p>
-                  </td>
-                  <td style="padding:2.5%;width:40%;max-width:40%;">
+              </div>
+              <div class="photo-cell">
                     <picture>
                       <source type="image/webp" srcset="images/headshot2.webp 1x, images/headshot2@2x.webp 2x">
                       <img id="headshot"
@@ -320,15 +82,12 @@
                            srcset="images/headshot2-640.jpg 1x, images/headshot2@2x.jpg 2x"
                            alt="profile photo of Ankit Sachdeva"
                            width="640" height="640"
-                           class="circle"
+                           class="circle headshot-img"
                            fetchpriority="high" decoding="async"
-                           style="width:100%;max-width:100%;height:auto;"
                            title="click me">
                     </picture>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </div>
 
           <!-- Cool tab -->
@@ -338,7 +97,7 @@
             </div>
           </div>
 
-          <!-- Current music tab -->
+          <!-- Music tab -->
           <div id="tab-music" class="tab-panel">
             <div class="music-wrap">
               <div class="embed-header">
@@ -366,7 +125,7 @@
                 <li class="track-item"><span class="track-num">18</span><div class="track-info"><div class="track-name">Habits (Stay High)</div><div class="track-artist">Tove Lo</div></div><span class="track-duration">3:29</span></li>
                 <li class="track-item"><span class="track-num">19</span><div class="track-info"><div class="track-name">Indigo (feat. Avery Anna)</div><div class="track-artist">Sam Barber, Avery Anna</div></div><span class="track-duration">4:47</span></li>
               </ul>
-              <div class="embed-header" style="margin-top:1.5em;">
+              <div class="embed-header">
                 <span class="embed-playlist-name"><a href="https://open.spotify.com/playlist/5t2pJOYBTKMCmagDLeB06v?si=0b9b5896bebb4652" target="_blank" rel="noopener">april 26</a></span>
                 <span class="embed-track-count">13 tracks</span>
               </div>
@@ -388,26 +147,14 @@
             </div>
           </div>
 
-          <table class="section">
-            <tbody>
-              <tr>
-                <td style="padding:0;">
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  </div>
   </main>
 
   <script>
     console.log(
       '%c hi :) %csource → github.com/ankitsxchdeva/ankitsxchdeva.github.io',
-      'font-size:14px; color:#1772d0; font-weight:700',
-      'font-size:12px; color:#888'
+      'font-size:14px; color:#355691; font-weight:700',
+      'font-size:12px; color:#7e7c94'
     );
 
     // Tab system
@@ -438,6 +185,8 @@
         activate((e.state && e.state.tab) || 'home');
       });
 
+      window.__tabActivate = activate;
+
       // Load from hash on init
       var hash = location.hash.replace('#', '');
       var valid = Array.from(links).map(function (l) { return l.dataset.tab; });
@@ -450,7 +199,7 @@
       if (!img) return;
       var shots = [
         { webp: 'images/headshot2.webp',   webp2x: 'images/headshot2@2x.webp',   jpg: 'images/headshot2-640.jpg', jpg2x: 'images/headshot2@2x.jpg' },
-        { jpg: 'images/headshot.jpg',          jpg2x: 'images/headshot.jpg' },
+        { jpg: 'images/headshot.jpg',       jpg2x: 'images/headshot.jpg' },
         { jpg: 'images/AnkitSachdeva-Circle.jpg', jpg2x: 'images/AnkitSachdeva-Circle.jpg' }
       ];
       var i = 0;
@@ -458,11 +207,7 @@
         i = (i + 1) % shots.length;
         var s = shots[i];
         var source = img.parentNode.querySelector('source');
-        if (s.webp) {
-          source.setAttribute('srcset', s.webp + ' 1x, ' + s.webp2x + ' 2x');
-        } else {
-          source.setAttribute('srcset', '');
-        }
+        source.setAttribute('srcset', s.webp ? s.webp + ' 1x, ' + s.webp2x + ' 2x' : '');
         img.setAttribute('srcset', s.jpg + ' 1x, ' + s.jpg2x + ' 2x');
         img.src = s.jpg;
       });
@@ -471,6 +216,30 @@
     // Cool tab
     (function () {
       var loaded = false;
+
+      function esc(str) {
+        var d = document.createElement('div');
+        d.textContent = str || '';
+        return d.innerHTML;
+      }
+
+      function buildEntry(e) {
+        var dateStr = e.date
+          ? new Date(e.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+          : '';
+        var domain = '';
+        try { domain = new URL(e.url).hostname.replace(/^www\./, ''); } catch (x) {}
+        var entry = document.createElement('div');
+        entry.className = 'cool-entry';
+        entry.innerHTML = '<div class="cool-date">' + esc(dateStr) + '</div>'
+          + '<div>'
+          + '<p class="cool-title"><a href="' + esc(e.url) + '" target="_blank" rel="noopener">' + esc(e.title) + '</a>'
+          + (domain ? '<span class="cool-domain">' + esc(domain) + '</span>' : '') + '</p>'
+          + (e.description ? '<p class="cool-desc">' + esc(e.description) + '</p>' : '')
+          + '</div>';
+        return entry;
+      }
+
       function loadCool() {
         if (loaded) return;
         loaded = true;
@@ -482,27 +251,29 @@
               list.innerHTML = '<p class="cool-empty">nothing here yet.</p>';
               return;
             }
-            list.innerHTML = entries.map(function (e) {
-              var dateStr = e.date
-                ? new Date(e.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-                : '';
-              return '<div class="cool-entry">'
-                + '<div class="cool-date">' + dateStr + '</div>'
-                + '<div>'
-                + '<p class="cool-title"><a href="' + e.url + '" target="_blank" rel="noopener">' + e.title + '</a></p>'
-                + (e.description ? '<p class="cool-desc">' + e.description + '</p>' : '')
-                + '</div>'
-                + '</div>';
-            }).join('');
+            list.innerHTML = '';
+            entries.forEach(function (e) { list.appendChild(buildEntry(e)); });
           })
           .catch(function () {
             list.innerHTML = '<p class="cool-empty">couldn\'t load entries.</p>';
           });
       }
 
-      // Load when tab is activated
-      var orig = window.__tabActivate;
       window.__coolLoad = loadCool;
+    })();
+
+    // Keyboard tab shortcuts (1 / 2 / 4)
+    (function () {
+      var map = { '1': 'home', '2': 'music', '4': 'cool' };
+      document.addEventListener('keydown', function (e) {
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        var tab = map[e.key];
+        if (tab && window.__tabActivate) {
+          history.pushState({ tab: tab }, '', '#' + tab);
+          window.__tabActivate(tab);
+        }
+      });
     })();
 
     // Resume prefetch
