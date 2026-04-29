@@ -337,7 +337,7 @@ body { animation: fadeIn 0.3s ease; }
   border-bottom: 1px solid var(--border);
   margin-bottom: 0;
 }
-.embed-header + .embed-header { margin-top: 1.5em; }
+.track-list + .embed-header { margin-top: 3.5em; }
 .embed-playlist-name {
   font-size: 13px;
   font-weight: 700;
