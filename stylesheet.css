@@ -114,7 +114,7 @@ p { margin: 0 0 1em 0; }
   margin: 0 0 1em;
 }
 
-img.circle { border-radius: 50%; cursor: pointer; }
+img.circle { border-radius: 50%; }
 
 ::selection {
   background: var(--link);

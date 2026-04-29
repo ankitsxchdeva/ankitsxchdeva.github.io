@@ -83,8 +83,7 @@
                            alt="profile photo of Ankit Sachdeva"
                            width="640" height="640"
                            class="circle headshot-img"
-                           fetchpriority="high" decoding="async"
-                           title="click me">
+                           fetchpriority="high" decoding="async">
                     </picture>
               </div>
             </div>
@@ -191,26 +190,6 @@
       var hash = location.hash.replace('#', '');
       var valid = Array.from(links).map(function (l) { return l.dataset.tab; });
       activate(valid.indexOf(hash) !== -1 ? hash : 'home');
-    })();
-
-    // Headshot click cycle
-    (function () {
-      var img = document.getElementById('headshot');
-      if (!img) return;
-      var shots = [
-        { webp: 'images/headshot2.webp',   webp2x: 'images/headshot2@2x.webp',   jpg: 'images/headshot2-640.jpg', jpg2x: 'images/headshot2@2x.jpg' },
-        { jpg: 'images/headshot.jpg',       jpg2x: 'images/headshot.jpg' },
-        { jpg: 'images/AnkitSachdeva-Circle.jpg', jpg2x: 'images/AnkitSachdeva-Circle.jpg' }
-      ];
-      var i = 0;
-      img.addEventListener('click', function () {
-        i = (i + 1) % shots.length;
-        var s = shots[i];
-        var source = img.parentNode.querySelector('source');
-        source.setAttribute('srcset', s.webp ? s.webp + ' 1x, ' + s.webp2x + ' 2x' : '');
-        img.setAttribute('srcset', s.jpg + ' 1x, ' + s.jpg2x + ' 2x');
-        img.src = s.jpg;
-      });
     })();
 
     // Cool tab
