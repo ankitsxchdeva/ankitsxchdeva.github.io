@@ -287,8 +287,16 @@ body { animation: fadeIn 0.3s ease; }
   gap: 0 1.5em;
   padding: 1em 0;
   border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .cool-entry:first-child { border-top: 1px solid var(--border); }
+.cool-entry.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cool-entry { opacity: 1; transform: none; transition: none; }
+}
 .cool-date {
   font-size: 12px;
   color: var(--muted);
@@ -353,11 +361,39 @@ body { animation: fadeIn 0.3s ease; }
   grid-template-columns: 20px 1fr auto;
   align-items: center;
   gap: 10px;
-  padding: 5px 0;
+  padding: 5px 8px;
+  margin: 0 -8px;
   border-bottom: 1px solid var(--border);
+  border-radius: 4px;
+  transition: background 0.15s ease;
 }
+.track-item:hover { background: var(--border); }
 .track-num { font-size: 12px; color: var(--muted); text-align: right; font-family: monospace; }
 .track-info { min-width: 0; display: flex; gap: 0.4em; align-items: baseline; }
 .track-name { font-size: 14px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
 .track-duration { font-size: 12px; color: var(--muted); font-family: monospace; white-space: nowrap; }
+
+/* ─── Cursor dot ─────────────────────────────────────────────────────────── */
+.custom-cursor * { cursor: none !important; }
+
+#cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--fg);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+#cursor-dot.expanded {
+  transform: translate(-50%, -50%) scale(3);
+  opacity: 0.15;
+  background: var(--link);
+}
+#cursor-dot.hidden { opacity: 0; }
