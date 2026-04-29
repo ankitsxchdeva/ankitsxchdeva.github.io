@@ -247,6 +247,7 @@
         fetch('cool.json')
           .then(function (r) { return r.json(); })
           .then(function (entries) {
+            entries.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
             if (!entries.length) {
               list.innerHTML = '<p class="cool-empty">nothing here yet.</p>';
               return;
