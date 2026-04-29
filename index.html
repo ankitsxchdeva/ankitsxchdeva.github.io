@@ -39,7 +39,6 @@
 </head>
 
 <body>
-  <div id="cursor-dot" aria-hidden="true"></div>
   <main>
   <div class="main-wrapper">
 
@@ -307,25 +306,6 @@
           window.location.href = 'mailto:' + email;
         });
       });
-    })();
-
-    // Cursor dot
-    (function () {
-      var dot = document.getElementById('cursor-dot');
-      if (!dot || window.matchMedia('(pointer: coarse)').matches) {
-        if (dot) dot.remove();
-        return;
-      }
-      document.body.classList.add('custom-cursor');
-      document.addEventListener('mousemove', function (e) {
-        dot.style.left = e.clientX + 'px';
-        dot.style.top = e.clientY + 'px';
-      });
-      document.addEventListener('mouseover', function (e) {
-        dot.classList.toggle('expanded', !!e.target.closest('a, button'));
-      });
-      document.addEventListener('mouseleave', function () { dot.classList.add('hidden'); });
-      document.addEventListener('mouseenter', function () { dot.classList.remove('hidden'); });
     })();
 
     // Resume prefetch

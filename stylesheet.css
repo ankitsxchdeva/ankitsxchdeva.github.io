@@ -374,26 +374,3 @@ body { animation: fadeIn 0.3s ease; }
 .track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
 .track-duration { font-size: 12px; color: var(--muted); font-family: monospace; white-space: nowrap; }
 
-/* ─── Cursor dot ─────────────────────────────────────────────────────────── */
-.custom-cursor * { cursor: none !important; }
-
-#cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  background: var(--fg);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.4;
-  transform: translate(-50%, -50%);
-  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
-}
-#cursor-dot.expanded {
-  transform: translate(-50%, -50%) scale(3);
-  opacity: 0.15;
-  background: var(--link);
-}
-#cursor-dot.hidden { opacity: 0; }
