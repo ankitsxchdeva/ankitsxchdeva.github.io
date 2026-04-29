@@ -12,5 +12,19 @@
     "title": "Your AI Agent Doesn't Care About Your README",
     "description": "Reya Vir: Auto-generate a hierarchy of AGENTS.md files so your AI agent gets dense, folder-specific context instead of one giant README.",
     "image": ""
+  },
+  {
+    "date": "2026-04-29",
+    "url": "https://blog.fsck.com/2025/09/29/using-graphviz-for-claudemd/",
+    "title": "Using GraphViz for CLAUDE.md",
+    "description": "Trigger-based GraphViz flowcharts help Claude follow instructions more reliably than markdown rules.",
+    "image": ""
+  },
+  {
+    "date": "2026-04-29",
+    "url": "https://github.com/garrytan/gstack",
+    "title": "gstack",
+    "description": "Garry Tan's Claude Code setup: 23 opinionated skills covering CEO, designer, eng manager, release manager, and QA roles.",
+    "image": ""
   }
 ]
