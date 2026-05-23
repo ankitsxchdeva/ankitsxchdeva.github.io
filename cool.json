@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-05-22",
+    "url": "https://www.langchain.com/blog/the-anatomy-of-an-agent-harness",
+    "title": "The Anatomy of an Agent Harness",
+    "description": "LangChain: a breakdown of the harness layer that wraps an LLM into a working agent — the loop, tools, memory, and control flow that turn raw model calls into reliable autonomous behavior.",
+    "image": ""
+  },
+  {
     "date": "2026-05-17",
     "url": "https://paulgraham.com/genius.html",
     "title": "The Bus Ticket Theory of Genius",
