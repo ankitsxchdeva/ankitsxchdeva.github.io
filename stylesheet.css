@@ -90,9 +90,6 @@
     --muted: #8e8aab;
     --border: #413F54;
   }
-  a:focus, a:hover {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='4'%3E%3Cpath d='M0 2 A3 2 0 0 1 6 2 A3 2 0 0 0 12 2' stroke='%239db8dc' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
-  }
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */
@@ -127,11 +124,11 @@ a {
   text-decoration: none;
   transition: color 0.15s ease;
 }
-a:focus, a:hover {
+a:hover {
   color: var(--link-hover);
   text-decoration: none;
   padding-bottom: 2px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='4'%3E%3Cpath d='M0 2 A3 2 0 0 1 6 2 A3 2 0 0 0 12 2' stroke='%235F5AA2' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='4'%3E%3Cpath d='M0 2 A3 2 0 0 1 6 2 A3 2 0 0 0 12 2' stroke='currentColor' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
   background-size: 12px 4px;
   background-repeat: repeat-x;
   background-position: 0 100%;
@@ -153,7 +150,7 @@ body { animation: fadeIn 0.3s ease; }
 
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; }
-  a:focus, a:hover { animation: none; }
+  a:hover { animation: none; }
 }
 
 /* ─── Layout ─────────────────────────────────────────────────────────────── */
@@ -310,10 +307,7 @@ body { animation: fadeIn 0.3s ease; }
   overflow-wrap: anywhere;
 }
 .cool-title a { color: var(--fg); }
-.cool-title a:hover {
-  color: var(--link-hover);
-  background-image: none;
-}
+.cool-title a:hover { color: var(--link-hover); }
 .cool-desc {
   font-size: 14px;
   color: var(--muted);
