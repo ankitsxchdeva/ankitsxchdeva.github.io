@@ -118,7 +118,7 @@ img.circle { border-radius: 50%; }
 
 ::selection {
   background: var(--link);
-  color: #fff;
+  color: #f5f4fa;
 }
 
 /* ─── Links ──────────────────────────────────────────────────────────────── */
