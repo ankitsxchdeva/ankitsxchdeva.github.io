@@ -162,7 +162,7 @@ body { animation: fadeIn 0.3s ease; }
 
 .bio-layout {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .bio-cell {
@@ -175,6 +175,14 @@ body { animation: fadeIn 0.3s ease; }
   flex-shrink: 0;
   width: 37%;
   padding: 2.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-cell picture {
+  display: block;
+  width: 100%;
 }
 
 .centered { text-align: center; }
@@ -200,11 +208,13 @@ a:focus .link-hint {
 @media (max-width: 600px) {
   .bio-layout {
     flex-direction: column;
+    align-items: stretch;
   }
   .photo-cell {
     width: 160px;
     padding: 0 1.5% 1.5%;
     margin: 0 auto;
+    display: block;
   }
 }
 
