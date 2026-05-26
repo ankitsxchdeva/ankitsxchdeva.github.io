@@ -24,7 +24,7 @@
   <meta property="og:title" content="Ankit Sachdeva">
   <meta property="og:description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
   <meta property="og:image" content="https://ankitsachdeva.com/images/headshot2.webp">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ankit Sachdeva">
   <meta name="twitter:description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
   <meta name="twitter:image" content="https://ankitsachdeva.com/images/headshot2.webp">
@@ -68,8 +68,8 @@
                       In my free time I'm usually failing to <a href="https://ankitsachdeva.com/sbd/" target="_blank" rel="noopener">lift weights</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank" rel="noopener">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank" rel="noopener">tft</a>.
                     </p>
                     <p class="centered">
-                      <a href="mailto:ankitsachdeva@gatech.edu">email</a> &nbsp;//&nbsp;
-                      <a href="https://ankitsachdeva.com/resume" target="_blank" rel="noopener">resume</a> &nbsp;//&nbsp;
+                      <a href="mailto:ankitsachdeva@gatech.edu">email <span class="link-hint">copy</span></a> &nbsp;//&nbsp;
+                      <a href="https://ankitsachdeva.com/resume" target="_blank" rel="noopener">resume</a> <span class="link-hint">pdf</span> &nbsp;//&nbsp;
                       <a href="https://www.github.com/ankitsxchdeva" target="_blank" rel="noopener me">github</a> &nbsp;//&nbsp;
                       <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener me">linkedin</a>
                     </p>
@@ -80,7 +80,7 @@
                       <img id="headshot"
                            src="images/headshot2-640.jpg"
                            srcset="images/headshot2-640.jpg 1x, images/headshot2@2x.jpg 2x"
-                           alt="profile photo of Ankit Sachdeva"
+                           alt="Ankit Sachdeva, glasses and a dark polo, an ATL skyline blurred behind him"
                            width="640" height="640"
                            class="circle headshot-img"
                            fetchpriority="high" decoding="async">
@@ -283,12 +283,12 @@
       var link = document.querySelector('a[href^="mailto:"]');
       if (!link) return;
       var email = link.href.replace('mailto:', '');
-      var orig = link.textContent;
+      var orig = link.innerHTML;
       link.addEventListener('click', function (e) {
         e.preventDefault();
         navigator.clipboard.writeText(email).then(function () {
           link.textContent = 'copied!';
-          setTimeout(function () { link.textContent = orig; }, 1800);
+          setTimeout(function () { link.innerHTML = orig; }, 1800);
         }).catch(function () {
           window.location.href = 'mailto:' + email;
         });

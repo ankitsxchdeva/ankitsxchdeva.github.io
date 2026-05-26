@@ -179,6 +179,18 @@ body { animation: fadeIn 0.3s ease; }
 
 .centered { text-align: center; }
 
+/* Muted-meta-tier hint after a link (e.g. "email copy", "resume pdf") */
+.link-hint {
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.7;
+  margin-left: 0.15em;
+}
+a:hover .link-hint,
+a:focus .link-hint {
+  color: inherit;
+}
+
 .headshot-img {
   width: 100%;
   max-width: 100%;
