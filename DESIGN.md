@@ -77,10 +77,7 @@ components:
     typography: "{typography.meta}"
   track-item:
     backgroundColor: "transparent"
-    rounded: "{rounded.sm}"
     padding: "5px 8px"
-  track-item-hover:
-    backgroundColor: "{colors.mist-border}"
   tab-link:
     textColor: "{colors.stone-lilac}"
     typography: "{typography.label}"
@@ -201,10 +198,10 @@ Depth strategy:
 - **Entrance motion:** entries fade in and translate up 14px → 0 as they intersect the viewport. Stagger delay is `i * 0.07s`, capped at `0.6s` so the last entry in a long list never feels laggy. Reduced motion turns the stagger off entirely.
 
 ### Track List Item
-- **Character:** tracklist-shaped, machine-precise, with a soft hover.
+- **Character:** tracklist-shaped, machine-precise, static. The row is text, not a button.
 - **Layout:** CSS grid, `20px 1fr auto` columns. Mono track number (right-aligned), title + artist inline-baseline, mono duration. Border-bottom in Mist Border between rows.
-- **Hover:** background fills with Mist Border, corners round to 4px. Transition is `background 0.15s ease`. The row reads as "pressable" without lifting.
-- **Density:** padding `5px 8px` with a `-8px` negative horizontal margin so the hover background bleeds into the left/right alignment of the surrounding list.
+- **Hover:** none. Track rows are not interactive; suggesting clickability where there is none was the failure mode we removed. Honest UI: static text, no hover affordance.
+- **Density:** padding `5px 8px` with a `-8px` negative horizontal margin to align the row's content with the surrounding list optical edges.
 
 ### Cool Domain Badge
 - **Character:** "where this link goes," whispered.
