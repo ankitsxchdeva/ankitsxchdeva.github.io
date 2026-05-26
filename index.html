@@ -40,6 +40,15 @@
 
 <body>
   <a href="#main" class="skip-link">skip to content</a>
+  <aside id="kbd-legend" class="kbd-legend" role="dialog" aria-label="keyboard shortcuts" aria-hidden="true">
+    <kbd class="kbd-legend-key">1</kbd> hi
+    <span class="kbd-legend-sep">·</span>
+    <kbd class="kbd-legend-key">2</kbd> music
+    <span class="kbd-legend-sep">·</span>
+    <kbd class="kbd-legend-key">4</kbd> cool
+    <span class="kbd-legend-sep">·</span>
+    <kbd class="kbd-legend-key">?</kbd> help
+  </aside>
   <main id="main">
   <div class="main-wrapper">
 
@@ -276,14 +285,42 @@
       window.__coolLoad = loadCool;
     })();
 
-    // Keyboard tab shortcuts (1 / 2 / 4)
+    // Keyboard tab shortcuts (1 / 2 / 4) + legend toggle (?)
     (function () {
       var map = { '1': 'home', '2': 'music', '4': 'cool' };
+      var legend = document.getElementById('kbd-legend');
+
+      function showLegend() {
+        if (!legend) return;
+        legend.classList.add('visible');
+        legend.setAttribute('aria-hidden', 'false');
+      }
+      function hideLegend() {
+        if (!legend) return;
+        legend.classList.remove('visible');
+        legend.setAttribute('aria-hidden', 'true');
+      }
+      function legendVisible() {
+        return legend && legend.classList.contains('visible');
+      }
+
       document.addEventListener('keydown', function (e) {
         if (e.metaKey || e.ctrlKey || e.altKey) return;
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        var t = e.target;
+        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+
+        if (e.key === '?') {
+          e.preventDefault();
+          if (legendVisible()) hideLegend(); else showLegend();
+          return;
+        }
+        if (e.key === 'Escape') {
+          if (legendVisible()) { hideLegend(); e.preventDefault(); }
+          return;
+        }
         var tab = map[e.key];
         if (tab && window.__tabActivate) {
+          if (legendVisible()) hideLegend();
           history.pushState({ tab: tab }, '', '#' + tab);
           window.__tabActivate(tab);
         }

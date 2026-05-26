@@ -274,6 +274,52 @@ a:focus .link-hint {
   .tab-key { transition: none; }
 }
 
+/* ─── Keyboard shortcut legend (? to toggle) ─────────────────────────────── */
+.kbd-legend {
+  display: none;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  padding: 0.45em 0.7em;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--muted);
+  z-index: 50;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.kbd-legend.visible {
+  display: block;
+  animation: legendIn 0.2s ease both;
+}
+@keyframes legendIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.kbd-legend-key {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0 4px;
+  margin-right: 0.15em;
+}
+.kbd-legend-sep {
+  margin: 0 0.5em;
+  opacity: 0.5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .kbd-legend.visible { animation: none; }
+}
+@media (max-width: 600px) {
+  .kbd-legend { display: none !important; }
+}
+
 /* ─── Tab panels ─────────────────────────────────────────────────────────── */
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
