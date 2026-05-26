@@ -307,6 +307,7 @@ body { animation: fadeIn 0.3s ease; }
   font-weight: 700;
   font-size: 15px;
   margin: 0 0 0.25em;
+  overflow-wrap: anywhere;
 }
 .cool-title a { color: var(--fg); }
 .cool-title a:hover {
@@ -318,6 +319,7 @@ body { animation: fadeIn 0.3s ease; }
   color: var(--muted);
   margin: 0;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 .cool-empty {
   color: var(--muted);
@@ -371,6 +373,6 @@ body { animation: fadeIn 0.3s ease; }
 .track-num { font-size: 12px; color: var(--muted); text-align: right; font-family: monospace; }
 .track-info { min-width: 0; display: flex; gap: 0.4em; align-items: baseline; }
 .track-name { font-size: 14px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+.track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .track-duration { font-size: 12px; color: var(--muted); font-family: monospace; white-space: nowrap; }
 

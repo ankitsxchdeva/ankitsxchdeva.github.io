@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "title": "Design System: Ankit Sachdeva",
+  "extensions": {
+    "colorMeta": {
+      "signal-indigo": {
+        "role": "primary",
+        "displayName": "Signal Indigo",
+        "canonical": "oklch(40% 0.115 268)",
+        "tonalRamp": [
+          "oklch(20% 0.06 268)",
+          "oklch(28% 0.08 268)",
+          "oklch(36% 0.10 268)",
+          "oklch(44% 0.12 268)",
+          "oklch(56% 0.13 268)",
+          "oklch(68% 0.11 268)",
+          "oklch(82% 0.07 268)",
+          "oklch(94% 0.03 268)"
+        ]
+      },
+      "wisteria-hover": {
+        "role": "primary",
+        "displayName": "Wisteria Hover",
+        "canonical": "oklch(48% 0.115 290)",
+        "tonalRamp": [
+          "oklch(20% 0.06 290)",
+          "oklch(30% 0.08 290)",
+          "oklch(40% 0.10 290)",
+          "oklch(50% 0.12 290)",
+          "oklch(62% 0.12 290)",
+          "oklch(74% 0.09 290)",
+          "oklch(86% 0.06 290)",
+          "oklch(95% 0.02 290)"
+        ]
+      },
+      "wisteria-signal": {
+        "role": "primary",
+        "displayName": "Wisteria Signal (dark theme)",
+        "canonical": "oklch(64% 0.10 290)",
+        "tonalRamp": [
+          "oklch(22% 0.06 290)",
+          "oklch(32% 0.08 290)",
+          "oklch(42% 0.10 290)",
+          "oklch(54% 0.11 290)",
+          "oklch(64% 0.10 290)",
+          "oklch(76% 0.08 290)",
+          "oklch(86% 0.05 290)",
+          "oklch(95% 0.02 290)"
+        ]
+      },
+      "sky-indigo": {
+        "role": "primary",
+        "displayName": "Sky Indigo (dark hover)",
+        "canonical": "oklch(76% 0.07 250)",
+        "tonalRamp": [
+          "oklch(24% 0.05 250)",
+          "oklch(36% 0.06 250)",
+          "oklch(48% 0.07 250)",
+          "oklch(60% 0.07 250)",
+          "oklch(72% 0.07 250)",
+          "oklch(82% 0.06 250)",
+          "oklch(90% 0.04 250)",
+          "oklch(96% 0.02 250)"
+        ]
+      },
+      "ink-plum": {
+        "role": "neutral",
+        "displayName": "Plum Ink",
+        "canonical": "oklch(22% 0.012 320)",
+        "tonalRamp": [
+          "oklch(14% 0.012 320)",
+          "oklch(22% 0.012 320)",
+          "oklch(34% 0.012 320)",
+          "oklch(46% 0.012 320)",
+          "oklch(58% 0.012 320)",
+          "oklch(70% 0.012 320)",
+          "oklch(82% 0.012 320)",
+          "oklch(94% 0.012 320)"
+        ]
+      },
+      "lavender-paper": {
+        "role": "neutral",
+        "displayName": "Lavender Paper",
+        "canonical": "oklch(96% 0.007 285)",
+        "tonalRamp": [
+          "oklch(20% 0.007 285)",
+          "oklch(32% 0.007 285)",
+          "oklch(46% 0.007 285)",
+          "oklch(60% 0.007 285)",
+          "oklch(72% 0.007 285)",
+          "oklch(84% 0.007 285)",
+          "oklch(92% 0.007 285)",
+          "oklch(96% 0.007 285)"
+        ]
+      },
+      "stone-lilac": {
+        "role": "neutral",
+        "displayName": "Stone Lilac",
+        "canonical": "oklch(56% 0.024 285)",
+        "tonalRamp": [
+          "oklch(22% 0.024 285)",
+          "oklch(34% 0.024 285)",
+          "oklch(46% 0.024 285)",
+          "oklch(56% 0.024 285)",
+          "oklch(68% 0.024 285)",
+          "oklch(78% 0.024 285)",
+          "oklch(88% 0.020 285)",
+          "oklch(95% 0.015 285)"
+        ]
+      },
+      "mist-border": {
+        "role": "neutral",
+        "displayName": "Mist Border",
+        "canonical": "oklch(88% 0.018 285)",
+        "tonalRamp": [
+          "oklch(24% 0.018 285)",
+          "oklch(36% 0.018 285)",
+          "oklch(48% 0.018 285)",
+          "oklch(60% 0.018 285)",
+          "oklch(72% 0.018 285)",
+          "oklch(82% 0.018 285)",
+          "oklch(88% 0.018 285)",
+          "oklch(96% 0.010 285)"
+        ]
+      },
+      "night-plum": {
+        "role": "neutral",
+        "displayName": "Night Plum",
+        "canonical": "oklch(18% 0.013 320)",
+        "tonalRamp": [
+          "oklch(12% 0.013 320)",
+          "oklch(18% 0.013 320)",
+          "oklch(28% 0.013 320)",
+          "oklch(40% 0.013 320)",
+          "oklch(52% 0.013 320)",
+          "oklch(66% 0.013 320)",
+          "oklch(80% 0.013 320)",
+          "oklch(92% 0.013 320)"
+        ]
+      },
+      "pale-lavender": {
+        "role": "neutral",
+        "displayName": "Pale Lavender Mist",
+        "canonical": "oklch(92% 0.018 285)",
+        "tonalRamp": [
+          "oklch(22% 0.018 285)",
+          "oklch(34% 0.018 285)",
+          "oklch(46% 0.018 285)",
+          "oklch(60% 0.018 285)",
+          "oklch(72% 0.018 285)",
+          "oklch(82% 0.018 285)",
+          "oklch(88% 0.018 285)",
+          "oklch(92% 0.018 285)"
+        ]
+      },
+      "deep-stone-lilac": {
+        "role": "neutral",
+        "displayName": "Deep Stone Lilac",
+        "canonical": "oklch(54% 0.022 285)",
+        "tonalRamp": [
+          "oklch(20% 0.022 285)",
+          "oklch(32% 0.022 285)",
+          "oklch(44% 0.022 285)",
+          "oklch(54% 0.022 285)",
+          "oklch(66% 0.022 285)",
+          "oklch(78% 0.022 285)",
+          "oklch(88% 0.018 285)",
+          "oklch(95% 0.012 285)"
+        ]
+      },
+      "aubergine-border": {
+        "role": "neutral",
+        "displayName": "Aubergine Border",
+        "canonical": "oklch(34% 0.022 320)",
+        "tonalRamp": [
+          "oklch(18% 0.022 320)",
+          "oklch(28% 0.022 320)",
+          "oklch(34% 0.022 320)",
+          "oklch(46% 0.022 320)",
+          "oklch(58% 0.022 320)",
+          "oklch(72% 0.018 320)",
+          "oklch(84% 0.014 320)",
+          "oklch(94% 0.010 320)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (32px Lato)",
+        "purpose": "The name 'Ankit Sachdeva' h1 on the home tab. Single-use marker."
+      },
+      "title": {
+        "displayName": "Title (15px Lato Bold)",
+        "purpose": "Cool entry titles, track names, playlist names. Bold-on-body hierarchy."
+      },
+      "body": {
+        "displayName": "Body (15px Lato, 1.65)",
+        "purpose": "Bio paragraphs, cool descriptions. Generous line-height for personal-essay rhythm."
+      },
+      "label": {
+        "displayName": "Label (12-14px Lato, Stone Lilac)",
+        "purpose": "Tab labels, dates, secondary metadata. The 'quiet' tier."
+      },
+      "meta": {
+        "displayName": "Meta (11px Lato, opacity 0.7)",
+        "purpose": "Domain badges, track count. Smallest readable tier."
+      },
+      "mono": {
+        "displayName": "Mono (12px monospace, 8px for kbd)",
+        "purpose": "Track numbers, track durations, kbd shortcut badges. Tabular signal."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state-quick",
+        "value": "0.15s ease",
+        "purpose": "Link color shift, track-item background fade."
+      },
+      {
+        "name": "state-medium",
+        "value": "0.2s ease",
+        "purpose": "Tab nav color, panel entrance."
+      },
+      {
+        "name": "underline-grow",
+        "value": "0.25s ease",
+        "purpose": "Tab nav underline width transition."
+      },
+      {
+        "name": "entrance-fade",
+        "value": "0.3s ease",
+        "purpose": "Body fade-in on initial load."
+      },
+      {
+        "name": "cool-stagger",
+        "value": "0.4s ease, capped at 0.6s total delay",
+        "purpose": "Cool entries fade and translate-up as they enter viewport. Stagger capped so long lists don't drag."
+      },
+      {
+        "name": "squiggle-loop",
+        "value": "0.3s linear infinite",
+        "purpose": "Link hover squiggle background-position loop. Linear is correct for continuous loops."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "600px",
+        "purpose": "Below this, .bio-layout switches from flex-row to flex-column (photo stacks below bio)."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "The only chromatic element in the system. Squiggle underline appears on hover.",
+      "html": "<a href=\"#\" class=\"ds-link\">a link with squiggle hover</a>",
+      "css": ".ds-link { color: #355691; text-decoration: none; transition: color 0.15s ease; font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 15px; line-height: 1.65; } .ds-link:hover { color: #5F5AA2; padding-bottom: 2px; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='4'%3E%3Cpath d='M0 2 A3 2 0 0 1 6 2 A3 2 0 0 0 12 2' stroke='%235F5AA2' stroke-width='1.2' fill='none'/%3E%3C/svg%3E\"); background-size: 12px 4px; background-repeat: repeat-x; background-position: 0 100%; animation: ds-squiggle 0.3s linear infinite; } .ds-link:focus-visible { outline: 2px solid #5F5AA2; outline-offset: 3px; border-radius: 2px; } @keyframes ds-squiggle { from { background-position: 0 100%; } to { background-position: 12px 100%; } }"
+    },
+    {
+      "name": "Tab Navigation Link",
+      "kind": "nav",
+      "refersTo": "tab-link",
+      "description": "Lowercase tab label with animated underline and monospace kbd shortcut badge.",
+      "html": "<a href=\"#\" class=\"ds-tab-link ds-tab-active\">cool <kbd class=\"ds-kbd\">4</kbd></a>",
+      "css": ".ds-tab-link { position: relative; padding: 0.5em 0; margin-right: 1.75em; font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 14px; color: #7e7c94; text-decoration: none; transition: color 0.2s ease; display: inline-block; } .ds-tab-link::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 0; height: 1px; background: #30292f; transition: width 0.25s ease; } .ds-tab-link:hover, .ds-tab-active { color: #30292f; } .ds-tab-link:hover::after, .ds-tab-active::after { width: 100%; } .ds-kbd { font-family: monospace; font-size: 8px; color: #30292f; opacity: 0.35; border: 1px solid #30292f; border-radius: 2px; padding: 0 2px; vertical-align: super; line-height: 1; margin-left: 2px; transition: opacity 0.2s; } .ds-tab-link:hover .ds-kbd, .ds-tab-active .ds-kbd { opacity: 0.8; }"
+    },
+    {
+      "name": "Cool Entry",
+      "kind": "card",
+      "refersTo": "cool-entry",
+      "description": "Indexed entry in the cool feed: date column, title with optional domain badge, description.",
+      "html": "<div class=\"ds-cool-entry\"><div class=\"ds-cool-date\">May 26, 2026</div><div><p class=\"ds-cool-title\"><a href=\"#\" class=\"ds-cool-link\">Impeccable</a><span class=\"ds-cool-domain\">impeccable.style</span></p><p class=\"ds-cool-desc\">Paul Bakaus: a design-fluency skill for AI coding agents.</p></div></div>",
+      "css": ".ds-cool-entry { display: grid; grid-template-columns: 80px 1fr; gap: 0 1.5em; padding: 1em 0; border-top: 1px solid #d8d6e8; border-bottom: 1px solid #d8d6e8; font-family: 'Lato', Verdana, Helvetica, sans-serif; } .ds-cool-date { font-size: 12px; color: #7e7c94; padding-top: 2px; white-space: nowrap; } .ds-cool-title { font-weight: 700; font-size: 15px; margin: 0 0 0.25em; } .ds-cool-link { color: #30292f; text-decoration: none; } .ds-cool-link:hover { color: #5F5AA2; } .ds-cool-domain { font-size: 11px; color: #7e7c94; font-weight: 400; margin-left: 0.4em; opacity: 0.7; } .ds-cool-desc { font-size: 14px; color: #7e7c94; margin: 0; line-height: 1.5; }"
+    },
+    {
+      "name": "Track List Item",
+      "kind": "list-item",
+      "refersTo": "track-item",
+      "description": "Tracklist row with mono number, title + artist, and mono duration. Hover fills with Mist Border.",
+      "html": "<ul class=\"ds-track-list\"><li class=\"ds-track-item\"><span class=\"ds-track-num\">1</span><div class=\"ds-track-info\"><div class=\"ds-track-name\">Stargazing</div><div class=\"ds-track-artist\">Myles Smith</div></div><span class=\"ds-track-duration\">2:53</span></li></ul>",
+      "css": ".ds-track-list { list-style: none; margin: 0; padding: 0; font-family: 'Lato', Verdana, Helvetica, sans-serif; } .ds-track-item { display: grid; grid-template-columns: 20px 1fr auto; align-items: center; gap: 10px; padding: 5px 8px; margin: 0 -8px; border-bottom: 1px solid #d8d6e8; border-radius: 4px; transition: background 0.15s ease; } .ds-track-item:hover { background: #d8d6e8; } .ds-track-num { font-size: 12px; color: #7e7c94; text-align: right; font-family: monospace; } .ds-track-info { min-width: 0; display: flex; gap: 0.4em; align-items: baseline; } .ds-track-name { font-size: 14px; font-weight: 600; color: #30292f; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .ds-track-artist { font-size: 12px; color: #7e7c94; white-space: nowrap; flex-shrink: 0; } .ds-track-duration { font-size: 12px; color: #7e7c94; font-family: monospace; white-space: nowrap; }"
+    },
+    {
+      "name": "Headshot",
+      "kind": "custom",
+      "refersTo": "headshot",
+      "description": "The single image on the site; carries weight by being the only one. Perfect circle, no shadow.",
+      "html": "<img src=\"https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=640&q=80\" alt=\"profile photo\" class=\"ds-headshot\" width=\"640\" height=\"640\">",
+      "css": ".ds-headshot { border-radius: 50%; width: 240px; height: 240px; max-width: 100%; object-fit: cover; display: block; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Workshop",
+    "overview": "The site reads as a place where someone makes things. The surface is tinted paper, the ink is plum, the only accent is a deep indigo that earns its presence by being the only color in the room. Restraint is the voice; craft is the proof. Nothing here is shouting, and the absence of shouting is the signal: the person whose work this is doesn't need to. The reference lane is tech-minimal SaaS-adjacent: Stripe, Vercel, Linear marketing. Precise spacing, deliberate typography, motion that earns its place.",
+    "keyCharacteristics": [
+      "One accent color, used as link only. Lavender-tinted neutrals carry everything else.",
+      "Lato across the entire system. Hierarchy comes from weight (400 / 600 / 700) and size, not from a second family.",
+      "No shadows. Depth comes from borders and tonal layering on the same hue family.",
+      "Motion is small and serves state: link hover, tab underline, panel entrance. No scroll choreography.",
+      "Light and dark themes hold the same identity; both are tinted toward plum/lavender."
+    ],
+    "rules": [
+      {
+        "name": "The One Voice Rule",
+        "body": "Signal Indigo (and its dark-theme twin Wisteria Signal) is the only saturated color in the system. It marks interactivity, nothing else. Never use it on a background, never on a divider, never on a non-interactive label. Its rarity is the signal that something is a link.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tinted Neutral Rule",
+        "body": "Every neutral is tinted toward the brand hue (lavender/plum). Pure #000 and pure #fff are forbidden, in both themes. The chroma is small (≤0.01) but consistent across the palette.",
+        "section": "colors"
+      },
+      {
+        "name": "The Twin-Theme Rule",
+        "body": "Light and dark themes carry the same identity. Both tint toward plum/lavender. Switching themes should feel like one space at two times of day, not two different spaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Lato carries the entire system. Hierarchy comes from weight, size, and color, not from adding a second family. A display serif on top of Lato would be costume.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lowercase Voice Rule",
+        "body": "Tab labels (hi, music, blog, cool) and section headers are lowercase. The site's name is title-case. Lowercase navigation is voice; it makes the surface feel hand-set rather than corporate.",
+        "section": "typography"
+      },
+      {
+        "name": "The kbd-as-Affordance Rule",
+        "body": "Monospace superscript shortcut badges appear only on tabs whose shortcuts actually work. If a shortcut is not wired, the badge is not shown.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "No box-shadow. No filter: drop-shadow. No glassmorphism. Depth is conveyed via borders and tonal hue layering.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Border-Hairline Rule",
+        "body": "All borders are 1px solid. Side-stripe borders (border-left or border-right greater than 1px as a colored accent) are absolutely forbidden.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Signal Indigo (#355691) as the only chromatic color. It marks interactivity. Treat its rarity as the system's voice.",
+      "Do tint every neutral toward the lavender-plum hue family. Pure #000 and #fff are forbidden.",
+      "Do carry typography hierarchy through weight and size in a single family. Lato 400 / 600 / 700 covers the entire system.",
+      "Do animate state transitions in 0.15s–0.30s with ease (long-term: migrate to ease-out-quart or quint).",
+      "Do honor prefers-reduced-motion: reduce on every entrance, hover loop, and panel transition.",
+      "Do keep the squiggle hover, lowercase nav, kbd badges, and the keycaps-and-TFT line in the bio. Those are the memorability hooks.",
+      "Do use lowercase for nav and section labels. Title case is reserved for the name and proper nouns.",
+      "Do verify keyboard shortcuts before showing kbd badges. A badge that doesn't work is a lie."
+    ],
+    "donts": [
+      "Don't add a second font family. Lato carries the system.",
+      "Don't add purple gradients, fake metrics, skill bars, identical icon-heading-paragraph cards, or generic stock photography.",
+      "Don't add a Linktree-style stack of pill buttons over a tinted background. The site is not a directory.",
+      "Don't add an 'available for hire' CTA button, services grid, testimonial carousel, or 'let's work together' footer.",
+      "Don't add scroll-driven choreography, oversized hero imagery, custom cursors, or section-by-section art direction.",
+      "Don't add a box-shadow anywhere. The system is flat.",
+      "Don't use border-left or border-right greater than 1px as a colored accent. Side-stripe borders are forbidden.",
+      "Don't use background-clip: text with a gradient. Gradient text is decorative and meaningless here.",
+      "Don't introduce a second saturated color. Signal Indigo is the One Voice.",
+      "Don't reintroduce kbd badges on tabs whose shortcuts don't work.",
+      "Don't use em dashes in new UX copy or metadata. Use commas, colons, semicolons, or parentheses.",
+      "Don't trim the playful elements to look more serious. Removing the squiggle, lowercase tabs, kbd badges, or music/cool tabs would convert the site into a template."
+    ]
+  }
+}

@@ -203,11 +203,16 @@
       }
 
       function buildEntry(e) {
+        if (!e || !e.title || !e.url) return null;
         var dateStr = e.date
           ? new Date(e.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
           : '';
         var domain = '';
-        try { domain = new URL(e.url).hostname.replace(/^www\./, ''); } catch (x) {}
+        try {
+          var u = new URL(e.url);
+          if (u.protocol !== 'http:' && u.protocol !== 'https:' && u.protocol !== 'mailto:') return null;
+          domain = u.hostname.replace(/^www\./, '');
+        } catch (x) { return null; }
         var entry = document.createElement('div');
         entry.className = 'cool-entry';
         entry.innerHTML = '<div class="cool-date">' + esc(dateStr) + '</div>'
@@ -226,13 +231,15 @@
         fetch('cool.json')
           .then(function (r) { return r.json(); })
           .then(function (entries) {
+            if (!Array.isArray(entries)) entries = [];
             entries.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
-            if (!entries.length) {
+            var valid = entries.map(buildEntry).filter(Boolean);
+            if (!valid.length) {
               list.innerHTML = '<p class="cool-empty">nothing here yet.</p>';
               return;
             }
             list.innerHTML = '';
-            entries.forEach(function (e) { list.appendChild(buildEntry(e)); });
+            valid.forEach(function (el) { list.appendChild(el); });
 
             if ('IntersectionObserver' in window) {
               var observer = new IntersectionObserver(function (items) {
