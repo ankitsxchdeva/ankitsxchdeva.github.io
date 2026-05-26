@@ -229,6 +229,7 @@
         if (loaded) return;
         loaded = true;
         var list = document.getElementById('cool-list');
+        list.innerHTML = '<p class="cool-empty">loading...</p>';
         fetch('cool.json')
           .then(function (r) { return r.json(); })
           .then(function (entries) {
@@ -258,9 +259,19 @@
             }
           })
           .catch(function () {
-            list.innerHTML = '<p class="cool-empty">couldn\'t load entries.</p>';
+            list.innerHTML = '<p class="cool-empty">couldn\'t load entries. <a href="#" class="cool-retry">try again</a></p>';
           });
       }
+
+      // Delegated retry handler: clicking "try again" resets state and re-fires.
+      document.addEventListener('click', function (e) {
+        var t = e.target;
+        if (t && t.classList && t.classList.contains('cool-retry')) {
+          e.preventDefault();
+          loaded = false;
+          loadCool();
+        }
+      });
 
       window.__coolLoad = loadCool;
     })();
