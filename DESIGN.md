@@ -6,13 +6,13 @@ colors:
   lavender-paper: "#f5f4fa"
   signal-indigo: "#355691"
   wisteria-hover: "#5F5AA2"
-  stone-lilac: "#7e7c94"
+  stone-lilac: "#6a6884"
   mist-border: "#d8d6e8"
   night-plum: "#1e1c22"
   pale-lavender: "#e8e4f4"
   wisteria-signal: "#8b87c8"
   sky-indigo: "#9db8dc"
-  deep-stone-lilac: "#7a7693"
+  deep-stone-lilac: "#8e8aab"
   aubergine-border: "#413F54"
 typography:
   display:
@@ -124,11 +124,11 @@ A nearly monochromatic system: tinted neutrals on a lavender-paper surface, with
 ### Neutral
 - **Plum Ink** (`#30292f`): Primary text color in light theme. Near-black, tinted purple by ~0.005 chroma. Never `#000`; the tint is the point.
 - **Lavender Paper** (`#f5f4fa`): Page background in light theme. Pale lavender, not white. Never `#fff`; the tint is the point.
-- **Stone Lilac** (`#7e7c94`): Secondary text in light theme (cool descriptions, dates, domains, tab labels at rest). The "quiet" voice.
+- **Stone Lilac** (`#6a6884`): Secondary text in light theme (cool descriptions, dates, domains, tab labels at rest). The "quiet" voice. Tuned to clear WCAG AA 4.5:1 on Lavender Paper.
 - **Mist Border** (`#d8d6e8`): Hairline borders and dividers in light theme. Also the hover background on track-items.
 - **Night Plum** (`#1e1c22`): Page background in dark theme.
 - **Pale Lavender Mist** (`#e8e4f4`): Primary text color in dark theme.
-- **Deep Stone Lilac** (`#7a7693`): Secondary text in dark theme.
+- **Deep Stone Lilac** (`#8e8aab`): Secondary text in dark theme. Tuned to clear WCAG AA 4.5:1 on Night Plum.
 - **Aubergine Border** (`#413F54`): Hairline borders and dividers in dark theme.
 
 ### Named Rules

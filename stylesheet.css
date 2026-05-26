@@ -78,7 +78,7 @@
   --fg: #30292f;
   --link: #355691;
   --link-hover: #5F5AA2;
-  --muted: #7e7c94;
+  --muted: #6a6884;
   --border: #d8d6e8;
 }
 @media (prefers-color-scheme: dark) {
@@ -87,7 +87,7 @@
     --fg: #e8e4f4;
     --link: #8b87c8;
     --link-hover: #9db8dc;
-    --muted: #7a7693;
+    --muted: #8e8aab;
     --border: #413F54;
   }
   a:focus, a:hover {

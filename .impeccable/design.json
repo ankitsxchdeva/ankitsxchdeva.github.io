@@ -97,13 +97,13 @@
       "stone-lilac": {
         "role": "neutral",
         "displayName": "Stone Lilac",
-        "canonical": "oklch(56% 0.024 285)",
+        "canonical": "oklch(53% 0.024 285)",
         "tonalRamp": [
           "oklch(22% 0.024 285)",
-          "oklch(34% 0.024 285)",
-          "oklch(46% 0.024 285)",
-          "oklch(56% 0.024 285)",
-          "oklch(68% 0.024 285)",
+          "oklch(33% 0.024 285)",
+          "oklch(43% 0.024 285)",
+          "oklch(53% 0.024 285)",
+          "oklch(66% 0.024 285)",
           "oklch(78% 0.024 285)",
           "oklch(88% 0.020 285)",
           "oklch(95% 0.015 285)"
@@ -157,13 +157,13 @@
       "deep-stone-lilac": {
         "role": "neutral",
         "displayName": "Deep Stone Lilac",
-        "canonical": "oklch(54% 0.022 285)",
+        "canonical": "oklch(65% 0.022 285)",
         "tonalRamp": [
-          "oklch(20% 0.022 285)",
-          "oklch(32% 0.022 285)",
-          "oklch(44% 0.022 285)",
-          "oklch(54% 0.022 285)",
-          "oklch(66% 0.022 285)",
+          "oklch(22% 0.022 285)",
+          "oklch(34% 0.022 285)",
+          "oklch(46% 0.022 285)",
+          "oklch(56% 0.022 285)",
+          "oklch(65% 0.022 285)",
           "oklch(78% 0.022 285)",
           "oklch(88% 0.018 285)",
           "oklch(95% 0.012 285)"
