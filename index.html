@@ -39,15 +39,16 @@
 </head>
 
 <body>
-  <main>
+  <a href="#main" class="skip-link">skip to content</a>
+  <main id="main">
   <div class="main-wrapper">
 
           <!-- Tab navigation -->
-          <nav class="tab-nav">
-            <a href="#home" class="tab-link" data-tab="home">hi <kbd class="tab-key">1</kbd></a>
-            <a href="#music" class="tab-link" data-tab="music">music <kbd class="tab-key">2</kbd></a>
-            <span title="coming soon">blog</span>
-            <a href="#cool" class="tab-link" data-tab="cool">cool <kbd class="tab-key">4</kbd></a>
+          <nav class="tab-nav" aria-label="primary">
+            <a href="#home" class="tab-link" data-tab="home" aria-keyshortcuts="1">hi <kbd class="tab-key">1</kbd></a>
+            <a href="#music" class="tab-link" data-tab="music" aria-keyshortcuts="2">music <kbd class="tab-key">2</kbd></a>
+            <span aria-disabled="true" title="coming soon">blog</span>
+            <a href="#cool" class="tab-link" data-tab="cool" aria-keyshortcuts="4">cool <kbd class="tab-key">4</kbd></a>
           </nav>
 
           <!-- Home tab -->
