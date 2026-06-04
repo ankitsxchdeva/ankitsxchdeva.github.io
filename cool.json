@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-06-04",
+    "url": "https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1",
+    "title": "Building an MCP Ecosystem at Pinterest",
+    "description": "Pinterest built a production ecosystem of domain-specific MCP servers behind a central registry, saving an estimated 7,000 engineering hours per month across 66,000 monthly invocations.",
+    "image": ""
+  },
+  {
+    "date": "2026-06-04",
+    "url": "https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/",
+    "title": "Introducing the MCP Registry",
+    "description": "Preview of an open catalog and API for discovering publicly available MCP servers, with room for public and private sub-registries to build on top.",
+    "image": ""
+  },
+  {
     "date": "2026-05-26",
     "url": "https://impeccable.style/",
     "title": "Impeccable",
@@ -81,6 +95,13 @@
     "url": "https://github.com/garrytan/gstack",
     "title": "gstack",
     "description": "Garry Tan's Claude Code setup: 23 opinionated skills covering CEO, designer, eng manager, release manager, and QA roles.",
+    "image": ""
+  },
+  {
+    "date": "2026-04-18",
+    "url": "https://paulgraham.com/cities.html",
+    "title": "Cities and Ambition",
+    "description": "Different cities send different messages. New York says you should make more money. Cambridge says you should be smarter.",
     "image": ""
   }
 ]
