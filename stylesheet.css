@@ -399,10 +399,19 @@ a:focus .link-hint {
   padding: 0 1.5%;
 }
 .project-entry {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 1.5em;
   padding: 1em 0;
   border-bottom: 1px solid var(--border);
 }
 .project-entry:first-child { border-top: 1px solid var(--border); }
+.project-date {
+  font-size: 12px;
+  color: var(--muted);
+  padding-top: 2px;
+  white-space: nowrap;
+}
 .project-title {
   font-weight: 700;
   font-size: 15px;
