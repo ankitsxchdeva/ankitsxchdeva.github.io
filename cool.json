@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-06-11",
+    "url": "https://medium.com/@arghajitsingha47/hermes-agent-for-qa-automation-8d0dfcc03bb0",
+    "title": "Hermes Agent for QA Automation",
+    "description": "Arghajit Singha on Hermes: a terminal-native AI agent for QA workflows that runs against local LLMs, holds persistent memory of your test environment, and turns repetitive shell commands into reusable skills.",
+    "image": ""
+  },
+  {
     "date": "2026-06-04",
     "url": "https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1",
     "title": "Building an MCP Ecosystem at Pinterest",
