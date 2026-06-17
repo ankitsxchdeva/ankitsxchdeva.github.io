@@ -434,13 +434,16 @@ summary.embed-header {
 summary.embed-header::-webkit-details-marker { display: none; }
 summary.embed-header::before {
   content: '\25b8';
-  font-size: 9px;
+  font-size: 11px;
   color: var(--muted);
   display: inline-block;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 .playlist-fold[open] > summary.embed-header::before { transform: rotate(90deg); }
-summary.embed-header:hover .embed-playlist-name { color: var(--link-hover); }
+/* Hover feedback lives on the caret (the control) and the count, so the whole
+   row reads as "expands" without implying the plain-text name is a link. */
+summary.embed-header:hover::before,
+summary.embed-header:hover .embed-track-count { color: var(--fg); }
 summary.embed-header:focus-visible {
   outline: 2px solid var(--link-hover);
   outline-offset: 3px;
