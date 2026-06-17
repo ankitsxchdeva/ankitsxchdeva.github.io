@@ -4,55 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(✖╭╮✖)</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#f5f4fa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1e1c22" media="(prefers-color-scheme: dark)">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/lato-400-latin.woff2" crossorigin>
+    <link rel="stylesheet" href="stylesheet.css">
     <style>
-        body{
-            background-image: url("pointy_rock.jpg");
-            background-size: cover;
-            font-family: 'Roboto', 'sans-serif';
-        }
-        main{
+        .nf {
+            min-height: 100dvh;
             display: flex;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-        }
-        .header404{
-            font-family: 'Chango', cursive;
-            font-size: 48px;
-        }
-        .content-404{
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            color: #fff;
-            background: rgba(30, 28, 34, 0.55);
-            padding: 0.6em 1em;
-            border-radius: 4px;
-            margin-top: 0.6em;
+            gap: 0.6em;
+            padding: 2em 1.5em;
         }
-        .content-404 a{
-            color: #fff;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+        .nf-face {
+            font-size: 48px;
+            letter-spacing: -0.5px;
+            color: var(--fg);
+            margin: 0;
         }
-        .content-404 a:hover{
-            text-decoration: none;
-        }
-        .header404{
-            color: #fff;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+        .nf-copy {
+            color: var(--muted);
+            max-width: 34ch;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <main>
-        <h1 class="header404">(✖╭╮✖)</h1>
-        <div class="content-404">
-           this page doesn't exist and it's probably my fault.<br>
-           <a href="/">back to home</a>
-        </div>
+    <main class="nf">
+        <h1 class="nf-face">(✖╭╮✖)</h1>
+        <p class="nf-copy">this page doesn't exist and it's probably my fault.</p>
+        <p class="nf-copy"><a href="/">back to home</a></p>
     </main>
 </body>
 </html>
-

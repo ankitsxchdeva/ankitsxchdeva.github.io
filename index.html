@@ -5,6 +5,7 @@
 <html lang="en">
 
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJS062F0ET"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -30,10 +31,29 @@
   <meta name="twitter:image" content="https://ankitsachdeva.com/images/headshot2.webp">
 
   <link rel="canonical" href="https://ankitsachdeva.com">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ankit Sachdeva",
+    "url": "https://ankitsachdeva.com",
+    "image": "https://ankitsachdeva.com/images/headshot2.webp",
+    "jobTitle": "Software Engineer",
+    "worksFor": { "@type": "Organization", "name": "dynaConnections" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology" },
+    "sameAs": [
+      "https://github.com/ankitsxchdeva",
+      "https://www.linkedin.com/in/ankitsxchdeva/"
+    ]
+  }
+  </script>
+
   <meta name="theme-color" content="#f5f4fa" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1e1c22" media="(prefers-color-scheme: dark)">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/lato-400-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/lato-700-latin.woff2" crossorigin>
   <link rel="preload" as="image" href="images/headshot2.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="stylesheet.css">
 </head>
@@ -82,7 +102,7 @@
                     <p>
                       In my free time I'm usually failing to <a href="https://ankitsachdeva.com/sbd/" target="_blank" rel="noopener">lift weights</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank" rel="noopener">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank" rel="noopener">tft</a>.
                     </p>
-                    <p class="centered">
+                    <p class="centered contact-line">
                       <a href="mailto:ankitsachdeva@gatech.edu">email <span class="link-hint">copy</span></a> &nbsp;//&nbsp;
                       <a href="https://ankitsachdeva.com/resume" target="_blank" rel="noopener">resume</a> <span class="link-hint">pdf</span> &nbsp;//&nbsp;
                       <a href="https://www.github.com/ankitsxchdeva" target="_blank" rel="noopener me">github</a> &nbsp;//&nbsp;
@@ -153,10 +173,11 @@
           <!-- Music tab -->
           <div id="tab-music" class="tab-panel">
             <div class="music-wrap">
-              <div class="embed-header">
-                <span class="embed-playlist-name"><a href="https://open.spotify.com/playlist/6CiTaXzkZuk2USSgwOxMQF?si=2967aedd8edc4058" target="_blank" rel="noopener">june 2026</a></span>
-                <span class="embed-track-count">23 tracks</span>
-              </div>
+              <details class="playlist-fold" open>
+                <summary class="embed-header">
+                  <span class="embed-playlist-name">june 2026</span>
+                  <span class="embed-track-count">23 tracks</span>
+                </summary>
               <ul class="track-list">
                 <li class="track-item"><span class="track-num">1</span><div class="track-info"><div class="track-name">car crash</div><div class="track-artist">jigitz, Charlotte Plank</div></div><span class="track-duration">2:40</span></li>
                 <li class="track-item"><span class="track-num">2</span><div class="track-info"><div class="track-name">Shivering</div><div class="track-artist">ILLENIUM, Spiritbox</div></div><span class="track-duration">5:00</span></li>
@@ -182,10 +203,13 @@
                 <li class="track-item"><span class="track-num">22</span><div class="track-info"><div class="track-name">Live It All</div><div class="track-artist">Lost Frequencies</div></div><span class="track-duration">2:41</span></li>
                 <li class="track-item"><span class="track-num">23</span><div class="track-info"><div class="track-name">eye2eye</div><div class="track-artist">Tsu Nami</div></div><span class="track-duration">3:15</span></li>
               </ul>
-              <div class="embed-header">
-                <span class="embed-playlist-name"><a href="https://open.spotify.com/playlist/6tuEpLwb6tU7jirkdlV6Lm?si=d87b77ec10b949e5" target="_blank" rel="noopener">may 2026</a></span>
-                <span class="embed-track-count">19 tracks</span>
-              </div>
+                <p class="playlist-link"><a href="https://open.spotify.com/playlist/6CiTaXzkZuk2USSgwOxMQF?si=2967aedd8edc4058" target="_blank" rel="noopener">listen on spotify <span aria-hidden="true">↗</span></a></p>
+              </details>
+              <details class="playlist-fold">
+                <summary class="embed-header">
+                  <span class="embed-playlist-name">may 2026</span>
+                  <span class="embed-track-count">19 tracks</span>
+                </summary>
               <ul class="track-list">
                 <li class="track-item"><span class="track-num">1</span><div class="track-info"><div class="track-name">Stargazing</div><div class="track-artist">Myles Smith</div></div><span class="track-duration">2:53</span></li>
                 <li class="track-item"><span class="track-num">2</span><div class="track-info"><div class="track-name">Man I Need</div><div class="track-artist">Olivia Dean</div></div><span class="track-duration">3:04</span></li>
@@ -207,10 +231,13 @@
                 <li class="track-item"><span class="track-num">18</span><div class="track-info"><div class="track-name">Habits (Stay High)</div><div class="track-artist">Tove Lo</div></div><span class="track-duration">3:29</span></li>
                 <li class="track-item"><span class="track-num">19</span><div class="track-info"><div class="track-name">Indigo (feat. Avery Anna)</div><div class="track-artist">Sam Barber, Avery Anna</div></div><span class="track-duration">4:47</span></li>
               </ul>
-              <div class="embed-header">
-                <span class="embed-playlist-name"><a href="https://open.spotify.com/playlist/5t2pJOYBTKMCmagDLeB06v?si=0b9b5896bebb4652" target="_blank" rel="noopener">april 26</a></span>
-                <span class="embed-track-count">13 tracks</span>
-              </div>
+                <p class="playlist-link"><a href="https://open.spotify.com/playlist/6tuEpLwb6tU7jirkdlV6Lm?si=d87b77ec10b949e5" target="_blank" rel="noopener">listen on spotify <span aria-hidden="true">↗</span></a></p>
+              </details>
+              <details class="playlist-fold">
+                <summary class="embed-header">
+                  <span class="embed-playlist-name">april 26</span>
+                  <span class="embed-track-count">13 tracks</span>
+                </summary>
               <ul class="track-list">
                 <li class="track-item"><span class="track-num">1</span><div class="track-info"><div class="track-name">The More I Hope</div><div class="track-artist">Sam Barber</div></div><span class="track-duration">4:07</span></li>
                 <li class="track-item"><span class="track-num">2</span><div class="track-info"><div class="track-name">Hanging on Hope</div><div class="track-artist">Buffalo Traffic Jam</div></div><span class="track-duration">3:44</span></li>
@@ -226,6 +253,8 @@
                 <li class="track-item"><span class="track-num">12</span><div class="track-info"><div class="track-name">Condemned</div><div class="track-artist">Zach Bryan</div></div><span class="track-duration">2:55</span></li>
                 <li class="track-item"><span class="track-num">13</span><div class="track-info"><div class="track-name">Heading South</div><div class="track-artist">Zach Bryan</div></div><span class="track-duration">2:52</span></li>
               </ul>
+                <p class="playlist-link"><a href="https://open.spotify.com/playlist/5t2pJOYBTKMCmagDLeB06v?si=0b9b5896bebb4652" target="_blank" rel="noopener">listen on spotify <span aria-hidden="true">↗</span></a></p>
+              </details>
             </div>
           </div>
 
@@ -333,6 +362,7 @@
         if (tab === 'blog') showBlog(sub || null);
         else document.title = baseTitle;
         if (tab === 'cool' && window.__coolLoad) window.__coolLoad();
+        window.scrollTo(0, 0);
       }
 
       function showBlog(slug) {
