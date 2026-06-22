@@ -327,6 +327,9 @@ a:focus .link-hint {
 }
 @media (max-width: 600px) {
   .kbd-legend { display: none !important; }
+  .tab-key { display: none; }
+  /* "copy" hint is for the desktop clipboard affordance; mobile uses native mailto */
+  a[href^="mailto:"] .link-hint { display: none; }
 }
 
 /* ─── Tab panels ─────────────────────────────────────────────────────────── */

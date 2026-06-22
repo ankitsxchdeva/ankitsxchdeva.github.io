@@ -579,8 +579,9 @@
       });
     })();
 
-    // Copy email to clipboard
+    // Copy email to clipboard (desktop only — mobile uses the native mailto)
     (function () {
+      if (window.matchMedia('(max-width: 600px)').matches) return;
       var link = document.querySelector('a[href^="mailto:"]');
       if (!link) return;
       var email = link.href.replace('mailto:', '');
