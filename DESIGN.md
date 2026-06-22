@@ -210,7 +210,7 @@ Depth strategy:
 ### Headshot
 - **Character:** the one image on the site; carries weight by being the only one.
 - **Shape:** perfect circle (`border-radius: 50%`).
-- **Behavior:** square source asset, `width: 100%; height: auto; max-width: 100%`. Width 37% of the bio-layout on desktop; fixed 160px and stacked below the bio on mobile (the photo as closing note, not opening).
+- **Behavior:** square source asset, `width: 100%; height: auto; max-width: 100%`. Width 37% of the bio-layout on desktop; on mobile it shrinks to a 56px avatar that shares a header row with the name (the bio-cell box is dissolved via `display: contents` so the photo and name align, with the bio paragraphs spanning full width below). The photo reads as a profile avatar, not an orphaned footer.
 - **Loading:** `<picture>` with WebP source and JPG fallback, 1x and 2x srcset, `fetchpriority="high"`, `decoding="async"`. The headshot is preloaded in `<head>` so first paint includes it.
 
 ### Selection
