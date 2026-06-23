@@ -190,7 +190,6 @@ p.centered a {
 .link-hint {
   font-size: 11px;
   color: var(--muted);
-  opacity: 0.7;
   margin-left: 0.15em;
 }
 a:hover .link-hint,
@@ -287,7 +286,7 @@ a:focus .link-hint {
   font-family: monospace;
   font-size: 8px;
   color: var(--fg);
-  opacity: 0.35;
+  opacity: 0.6;
   border: 1px solid var(--fg);
   border-radius: 2px;
   padding: 0 2px;
@@ -413,7 +412,6 @@ html:not(.js) #tab-home { display: block; }
   color: var(--muted);
   font-weight: 400;
   margin-left: 0.4em;
-  opacity: 0.7;
 }
 
 /* ─── Cool tab (fade-in animation) ─────────────────────────────────────── */
@@ -585,4 +583,55 @@ summary.embed-header:focus-visible {
 }
 .blog-note p { margin: 0 0 0.8em; }
 .blog-note p:last-child { margin-bottom: 0; }
+
+/* ─── Blog diagrams (inline SVG, on-palette + dark-mode via the CSS vars) ── */
+.blog-figure { margin: 1.75em 0; }
+.blog-figure svg { display: block; width: 100%; height: auto; }
+.blog-figure figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0.85em 0 0;
+}
+.blog-figure .dg-box   { fill: var(--bg); stroke: var(--border); stroke-width: 1; }
+.blog-figure .dg-repo  { stroke: var(--fg); }
+.blog-figure .dg-badge { fill: var(--bg); stroke: var(--fg); stroke-width: 1.5; }
+.blog-figure .dg-gate  { fill: var(--bg); stroke: var(--muted); stroke-width: 1.4; }
+.blog-figure .dg-line  { stroke: var(--muted); stroke-width: 1.4; fill: none; }
+.blog-figure .dg-dash  { stroke-dasharray: 4 4; }
+.blog-figure .dg-mk    { fill: var(--muted); }
+.blog-figure .dg-title     { fill: var(--fg);    font: 700 15px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-num       { fill: var(--fg);    font: 700 13px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-gatetitle { fill: var(--muted); font: 700 13px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-sub       { fill: var(--muted); font: 400 12px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-edge      { fill: var(--muted); font: 400 11px 'Lato', Verdana, sans-serif; }
+
+/* ─── Screen-reader-only utility ─────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Print: force readable light output, drop interactive chrome ─────────── */
+@media print {
+  :root {
+    --bg: #fff;
+    --fg: #1a1a1a;
+    --muted: #444;
+    --border: #bbb;
+    --link: #1a1a6e;
+    --link-hover: #1a1a6e;
+  }
+  html, body { background: #fff; color: #1a1a1a; }
+  .skip-link, .tab-nav, .kbd-legend, .blog-back { display: none !important; }
+  a { color: #1a1a6e; }
+}
 

@@ -19,16 +19,23 @@
   <meta name="author" content="Ankit Sachdeva">
   <meta name="description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ankitsachdeva.com">
   <meta property="og:title" content="Ankit Sachdeva">
   <meta property="og:description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
   <meta property="og:image" content="https://ankitsachdeva.com/images/headshot2.webp">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:alt" content="Ankit Sachdeva">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="640">
+  <meta property="og:site_name" content="Ankit Sachdeva">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ankit Sachdeva">
   <meta name="twitter:description" content="Ankit Sachdeva — software engineer at dynaConnections, CS+AI master's at Georgia Tech. Previously PayPal and Fox Factory.">
   <meta name="twitter:image" content="https://ankitsachdeva.com/images/headshot2.webp">
+  <meta name="twitter:image:alt" content="Ankit Sachdeva">
 
   <link rel="canonical" href="https://ankitsachdeva.com">
 
@@ -54,13 +61,13 @@
 
   <link rel="preload" as="font" type="font/woff2" href="fonts/lato-400-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/lato-700-latin.woff2" crossorigin>
-  <link rel="preload" as="image" href="images/headshot2.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="images/headshot2.webp 1x, images/headshot2@2x.webp 2x" fetchpriority="high">
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
   <a href="#main" class="skip-link">skip to content</a>
-  <aside id="kbd-legend" class="kbd-legend" role="dialog" aria-label="keyboard shortcuts" aria-hidden="true">
+  <aside id="kbd-legend" class="kbd-legend" role="note" aria-label="keyboard shortcuts" aria-hidden="true">
     <kbd class="kbd-legend-key">1</kbd> hi
     <span class="kbd-legend-sep">·</span>
     <kbd class="kbd-legend-key">2</kbd> projects
@@ -97,15 +104,15 @@
                       Before that I prototyped blockchain settlement at <a href="https://www.paypal.com/us/home" target="_blank" rel="noopener">PayPal</a>. Earlier, I did embedded work at <a href="https://ridefox.com/" target="_blank" rel="noopener">Fox Factory</a>, designing PCBs and writing C firmware for Live Valve Neo, the wireless bike suspension reimagining what mountain biking looks like.
                     </p>
                     <p>
-                      Lately I've been pretty deep in AI-assisted development. Write a spec, let the agents take a rough pass, then review what comes back. My <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">home server</a> is the playground for this, where any silly idea for a microservice goes from concept to deployed in a couple prompts. At work it's a Playwright framework that <a href="#blog/ai-qa-legacy-coverage" data-blog-slug="ai-qa-legacy-coverage">halved our regression runtime</a>. The newest piece is <a href="https://github.com/DebugBase/glance" target="_blank" rel="noopener">Glance</a>, which lets the agent drive a real browser and catch its own mistakes.
+                      Lately I've been pretty deep in AI-assisted development. Write a spec, let the agents take a rough pass, then review what comes back. My <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">home server</a> is the playground for this, where any silly idea for a microservice goes from concept to deployed in a couple prompts. At work it's an AI agent that <a href="#blog/ai-qa-legacy-coverage" data-blog-slug="ai-qa-legacy-coverage">runs QA on a legacy MLS platform</a> — reading the ticket, driving the browser, and checking the database and feed underneath.
                     </p>
                     <p>
                       In my free time I'm usually failing to <a href="https://ankitsachdeva.com/sbd/" target="_blank" rel="noopener">lift weights</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank" rel="noopener">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank" rel="noopener">tft</a>.
                     </p>
                     <p class="centered contact-line">
-                      <a href="mailto:ankitsachdeva@gatech.edu">email <span class="link-hint">copy</span></a> &nbsp;//&nbsp;
+                      <a href="mailto:me@ankitsachdeva.com">email <span class="link-hint">copy</span></a> &nbsp;//&nbsp;
                       <a href="https://ankitsachdeva.com/resume" target="_blank" rel="noopener">resume</a> <span class="link-hint">pdf</span> &nbsp;//&nbsp;
-                      <a href="https://www.github.com/ankitsxchdeva" target="_blank" rel="noopener me">github</a> &nbsp;//&nbsp;
+                      <a href="https://github.com/ankitsxchdeva" target="_blank" rel="noopener me">github</a> &nbsp;//&nbsp;
                       <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener me">linkedin</a>
                     </p>
               </div>
@@ -126,12 +133,13 @@
 
           <!-- Projects tab -->
           <div id="tab-projects" class="tab-panel">
+            <h2 class="sr-only">projects</h2>
             <div class="projects-list">
               <div class="project-entry">
                 <div class="project-date">Jun 18, 2026</div>
                 <div>
                   <p class="project-title">
-                    <a href="https://github.com/ankitsxchdeva/quantlab" target="_blank" rel="noopener">quantlab</a>
+                    <a href="https://github.com/ankitsxchdeva/quantlab" target="_blank" rel="noopener">QuantLab</a>
                     <span class="project-domain">github.com/ankitsxchdeva</span>
                   </p>
                   <p class="project-desc">A quant lab for normal people. Describe a trading idea in plain English and get a real backtest — the LLM emits a structured strategy DSL instead of code, and a pure-TypeScript engine runs it against free market data, benchmarked against buy-and-hold. BYO LLM key.</p>
@@ -182,6 +190,7 @@
 
           <!-- Music tab -->
           <div id="tab-music" class="tab-panel">
+            <h2 class="sr-only">music</h2>
             <div class="music-wrap">
               <details class="playlist-fold" open>
                 <summary class="embed-header">
@@ -270,6 +279,7 @@
 
           <!-- Blog tab -->
           <div id="tab-blog" class="tab-panel">
+            <h2 class="sr-only">blog</h2>
             <div class="blog-index">
               <div class="blog-entry">
                 <div class="blog-date">Jun 22, 2026</div>
@@ -286,7 +296,7 @@
                   <p class="blog-title">
                     <a href="#blog/ai-qa-legacy-coverage" data-blog-slug="ai-qa-legacy-coverage">AI QA on legacy code</a>
                   </p>
-                  <p class="blog-desc">Pointing an agent at a low-coverage app via Glance got us most of the way there, then stalled. White-box tests in the middle and Playwright underneath fixed the rest.</p>
+                  <p class="blog-desc">Putting an AI agent in charge of QA for a legacy MLS platform. The hard part wasn't the agent — it was how it drives the browser (Glance, then Claude's built-in Chrome, then Playwright MCP) and making sure it never gets to decide what "correct" means.</p>
                 </div>
               </div>
             </div>
@@ -295,29 +305,23 @@
               <a href="#blog" class="blog-back" data-blog-back><span aria-hidden="true">←</span> all posts</a>
               <header class="blog-post-header">
                 <h2 id="post-past-day-one-title" class="blog-post-title">Past day one</h2>
-                <p class="blog-post-meta">Jun 22, 2026 · ~4 min read</p>
+                <p class="blog-post-meta">Jun 22, 2026 · ~3 min read</p>
               </header>
 
-              <p class="blog-lede">Failure is a great motivator, and that's exactly why it's a trap. Every time I fail at something I care about, I get a jolt of resolve to fix my entire life, and every time, the jolt burns out before it changes anything. I think I finally see why, and what that jolt is actually good for.</p>
+              <p class="blog-lede">Failure is a great motivator, and that's exactly why it's a trap. Every time something I care about falls through, I get a surge of resolve, and every time it's gone before it changes anything. The mistake was thinking the surge was the point. It isn't — but spent fast, it's good for exactly one thing.</p>
 
-              <h3>A familiar jolt</h3>
-              <p>This week's version: I walked out of an interview certain I'd nailed it, and the rejection email beat me back to my apartment. I took the customary couple of hours to feel sorry for myself, then stood up wanting to overhaul everything at once. Train harder, study more, read the books stacked on my desk instead of letting them sit there. Productive, motivated, finally ready.</p>
-              <p>I've been exactly here before, after every failure that stung enough. The wanting never survives contact with an ordinary Tuesday.</p>
+              <h3>After the email</h3>
+              <p>This week it was an interview. I walked out sure I'd nailed it; the rejection landed before I got home. That happens. What's predictable is what came after — the urge to overhaul everything at once. Train harder, study more, finally read the stack of books I keep stepping around. I've been in this exact spot after every failure that stung, and the resolve has never once survived an ordinary Tuesday.</p>
 
-              <h3>Motivation is a bad souvenir</h3>
-              <p>The trap is treating that motivation as the thing the failure handed me, as if the point of bombing the interview was the surge of resolve that came after it. If that surge is your engine, your growth is outsourced to bad luck. You only improve when something hurts, and you reset to zero the moment it stops.</p>
-              <p>Motivation that arrives as a consequence of failure is the least reliable fuel there is, because it drains exactly when the pain does, which is the moment you stop needing comfort and start needing to do the work. Waiting to fail in order to feel driven is a terrible system, and feeling driven was never the part that mattered anyway.</p>
+              <h3>Bad fuel</h3>
+              <p>The trap is treating that surge as the prize, as if the point of bombing the interview was the resolve that came after it. If that's your engine, your growth is outsourced to bad luck: you only move when something hurts, and you reset to zero the moment it stops. It's the least reliable fuel there is, because it drains exactly when the pain does — right when you'd need it to start working. (Cal Newport has made a version of this point for years: the routine runs whether the feeling shows up or not, which is why the people who don't wait to feel inspired out-ship everyone who does.)</p>
 
-              <h3>Newport was right about this</h3>
-              <p>Cal Newport has been making the same point for years: motivation is more or less worthless next to the systems and habits you build around the work. Professionals don't wait to feel inspired; they keep routines that run whether the feeling shows up or not. The feeling is pleasant when it appears and irrelevant when it doesn't, because the habit never asked how you felt.</p>
-              <p>That sounds like it lets motivation off the hook completely. It doesn't. It just demotes it to one specific job.</p>
+              <h3>What it's for</h3>
+              <p>So the surge can't carry the work. It can carry the setup, though, and that's the entirety of its job: spend it, right now, on building the system that has to run once it's gone. You need some push to go make the habits in the first place — that's what the push is for, and nothing else.</p>
+              <p>So I'm not using this week's jolt to feel fired up. I'm using it to install structure while I still have the energy: training on the calendar, work hours set, entertainment decided in advance, the books moved somewhere I can't ignore them. Convert the feeling into a system before the feeling expires. The motivation pays for the construction, then it's free to leave.</p>
 
-              <h3>Motivation's one job</h3>
-              <p>Motivation can't carry the work, but it can carry the setup. The only thing a post-failure surge is genuinely good for is spending it, right now, on building the habit that has to run once it's gone. You do need some motivation to go and make the habits in the first place. That's the whole of what it's for.</p>
-              <p>So I don't get to use this week's jolt to feel fired up. I get to use it to install structure while I still have the energy to: put the training on the calendar, set the work hours, decide in advance what entertainment is for and when it's allowed, move the books somewhere I have to deal with them. Convert the feeling into a system before the feeling expires. The motivation pays for the construction, then it's free to leave.</p>
-
-              <h3>The rules I wrote down</h3>
-              <p>When I got up, I wrote the rules I'm installing on a note and stuck it where I can't avoid it. Not affirmations. Rules, the kind that decide for me at the moments I won't decide well on my own.</p>
+              <h3>The rules</h3>
+              <p>When I got up I wrote the rules I'm installing on a note and stuck it where I can't avoid it. Not affirmations — rules, the kind that decide for me at the moments I won't decide well on my own.</p>
               <blockquote class="blog-note">
                 <p>Don't eat or drink alone. There's a time and a place for both, and on my own at the wrong hour isn't it.</p>
                 <p>Work hard first, then play hard. I can't have it all, but I can have the best of it.</p>
@@ -335,56 +339,110 @@
               <a href="#blog" class="blog-back" data-blog-back><span aria-hidden="true">←</span> all posts</a>
               <header class="blog-post-header">
                 <h2 id="post-ai-qa-title" class="blog-post-title">AI QA on legacy code</h2>
-                <p class="blog-post-meta">Jun 17, 2026 · ~6 min read</p>
+                <p class="blog-post-meta">Jun 17, 2026 · ~7 min read</p>
               </header>
 
-              <p class="blog-lede">We inherited a real estate portal that thousands of brokers used every day and a test suite that covered roughly nothing the user actually touched. A year later the gate is Playwright, the suite runs in roughly half the time it used to, and the browser-driving MCP I co-wrote isn't in it. Here's why.</p>
+              <p class="blog-lede">We spent the last stretch putting an AI agent in charge of QA for an MLS platform that thousands of brokers log into every day — a decade-old app of listing wizards, search filters, and modals that open modals. The agent does the work now: it reads the ticket, figures out what the change touches, writes the test cases, drives the browser, and checks the database and the feed underneath. The interesting part wasn't the agent. It was the unglamorous question every phase leaned on — how does the agent actually click through the app? — and we answered that one three times before it stuck.</p>
 
-              <h3>The starting state</h3>
-              <p>If you've ever opened an MLS portal you know what we were working with: a decade of forms, listing wizards, search filters, modals that open modals, and one specific dropdown that everyone in the office had a story about. Unit coverage hovered around 12%. Most of it sat on utility functions nobody had ever broken. The flows that mattered (listing creation, broker invite, search-to-offer) had no automated coverage at all. QA happened on Tuesdays, by hand.</p>
-              <p>When we started looking at agent-driven QA, the pitch was hard to argue with. Hand the agent a running build, tell it what a listing should look like, let it click around. We'd just shipped <a href="https://github.com/DebugBase/glance" target="_blank" rel="noopener">Glance</a>, an MCP server that gives Claude Code a real browser, and the demos were impressive: it'd log in, find the broken filter, screenshot the diff, write up the bug. For exploratory testing it felt like magic.</p>
+              <h3>What we inherited</h3>
+              <p>If you've ever opened an MLS portal you know the shape of it: forms stacked on forms, a listing wizard with a dozen steps, search filters nobody fully remembers, and one specific dropdown everyone in the office has a story about. QA happened by hand, on a schedule. The flows that actually mattered — creating a listing, inviting a broker, pushing a record out to the data feed — had close to no automated coverage, and what coverage existed sat on the safe, boring utility code that never broke anyway.</p>
+              <p>So the goal wasn't "write more tests." It was to hand an agent a release ticket and have it do the QA the way a careful engineer would, end to end, and leave behind evidence a human could sign off on.</p>
 
-              <h3>Where browser-driving agents stop being magic</h3>
-              <p>The problem with using an MCP to run regressions is that the loop is non-deterministic exactly where regressions need to be boring: selector strategy, retry behavior, and what counts as a pass. The same prompt against the same build can take a different path through the UI depending on what the model decides looks "right." That's fine when you're exploring. It's a problem when you're gating a deploy.</p>
-              <p>Three concrete failures kept showing up in our first month:</p>
-              <ul>
-                <li>A flaky selector strategy. The agent would click a button by accessible name on one run, then by index on the next. When the team renamed a label, half the runs noticed and half didn't.</li>
-                <li>Runaway token cost. It scaled with the number of regression cases, not the size of the change. Re-running a couple hundred scenarios after a one-line CSS fix made nobody happy.</li>
-                <li>No useful failure artifact. When a run failed, we had a transcript. What we wanted was a trace, a video, a network log, and a deterministic seed.</li>
-              </ul>
-              <p>An MCP-driven agent is great the first time you do something and worse than a script every time after.</p>
+              <h3>The pipeline</h3>
+              <p>What we built isn't a regression suite. It's a pipeline the agent runs once per ticket. Give it a ticket key and it pulls the ticket into a working dossier, diffs the code change against our local clones to figure out the blast radius — which surfaces and fields the change can actually reach — writes a test plan and a set of cases, executes them against a running build, verifies the backend the UI was supposed to have changed (the database rows, the records on the feed), and writes a sign-off back to the ticket. A QA engineer approves at two gates: once on the plan, once on the results. Nothing moves on the agent's say-so alone.</p>
 
-              <h3>White-box tests in the middle</h3>
-              <p>Before we touched the browser layer again we did something boring: we wrote unit tests. Not for the whole app — for the four or five modules the agent kept tripping over. The listing-form reducer. The search query builder. The permission resolver. Each one had a clear input and output and a small enough surface that unit tests were obvious.</p>
-              <p>The unit layer is what made the end-to-end layer cheap. Once the reducer had unit tests, the Playwright spec for "agent creates a listing" stopped needing to assert on twenty intermediate states. It could assert on the final API call and trust the unit suite to catch the rest.</p>
-              <p>We used the AI agent here, but as an author, not a runner. We pointed it at a module, asked it to enumerate the behaviors it could see in the code, and reviewed what it proposed. Some of the suggestions were wrong. The ratio of "good first draft" to "I'd have written this myself" was high enough that the agent paid for itself by the end of the first week.</p>
+              <figure class="blog-figure">
+                <svg viewBox="0 0 520 410" role="img" xmlns="http://www.w3.org/2000/svg" aria-label="The steps of one testing run, top to bottom: 1 Gather the ticket into a dossier, 2 Blast radius from the code diff, 3 Author the test plan and cases, Gate A where a QA engineer approves the plan, 4 Execute by driving the app and verifying the backend, 5 Sign-off when everything is green, and Gate B where a QA engineer approves the results.">
+                  <line class="dg-line" x1="40" y1="36" x2="40" y2="384"/>
+                  <circle class="dg-badge" cx="40" cy="36" r="14"/>
+                  <text class="dg-num" x="40" y="41" text-anchor="middle">1</text>
+                  <text class="dg-title" x="66" y="34">Gather</text>
+                  <text class="dg-sub" x="66" y="50">pull the ticket into a working dossier</text>
+                  <circle class="dg-badge" cx="40" cy="94" r="14"/>
+                  <text class="dg-num" x="40" y="99" text-anchor="middle">2</text>
+                  <text class="dg-title" x="66" y="92">Blast radius</text>
+                  <text class="dg-sub" x="66" y="108">diff the code &#8594; which surfaces &amp; fields it reaches</text>
+                  <circle class="dg-badge" cx="40" cy="152" r="14"/>
+                  <text class="dg-num" x="40" y="157" text-anchor="middle">3</text>
+                  <text class="dg-title" x="66" y="150">Author</text>
+                  <text class="dg-sub" x="66" y="166">write the test plan + test cases</text>
+                  <path class="dg-gate" d="M40 197 L53 210 L40 223 L27 210 Z"/>
+                  <text class="dg-gatetitle" x="66" y="208">Gate A</text>
+                  <text class="dg-sub" x="66" y="224">a QA engineer approves the plan</text>
+                  <circle class="dg-badge" cx="40" cy="268" r="14"/>
+                  <text class="dg-num" x="40" y="273" text-anchor="middle">4</text>
+                  <text class="dg-title" x="66" y="266">Execute</text>
+                  <text class="dg-sub" x="66" y="282">drive the app (Playwright MCP), verify the DB &amp; feed</text>
+                  <circle class="dg-badge" cx="40" cy="326" r="14"/>
+                  <text class="dg-num" x="40" y="331" text-anchor="middle">5</text>
+                  <text class="dg-title" x="66" y="324">Sign-off</text>
+                  <text class="dg-sub" x="66" y="340">synthesize &#8212; only when everything is green</text>
+                  <path class="dg-gate" d="M40 371 L53 384 L40 397 L27 384 Z"/>
+                  <text class="dg-gatetitle" x="66" y="382">Gate B</text>
+                  <text class="dg-sub" x="66" y="398">a QA engineer approves the results</text>
+                </svg>
+                <figcaption>One run per ticket, top to bottom. Steps 1&#8211;5 are the agent's; the two diamonds are human gates &#8212; nothing reaches the ticket until a QA engineer signs off on the plan, then on the results.</figcaption>
+              </figure>
 
-              <h3>Why Playwright won the bottom layer</h3>
-              <p>For the end-to-end layer we tried three things in parallel: Glance driving Chrome via MCP, a Cypress suite, and a Playwright suite. Cypress fell out first for unrelated reasons (cross-origin in our auth flow). The real comparison was Glance vs Playwright.</p>
-              <p>Playwright won on four axes:</p>
-              <ul>
-                <li><strong>Determinism.</strong> A spec is a spec. The same input gives the same output. A regression failure points at a line of code, not a transcript.</li>
-                <li><strong>Speed.</strong> Parallel workers, browser context reuse, and trace-on-failure replaced our agent loop's serial click-and-wait. Our full regression run dropped by roughly half.</li>
-                <li><strong>Artifacts.</strong> When a spec fails in CI you get a trace viewer, a video, a network log, and a DOM snapshot. The first time an on-call engineer opened a trace and found the bug without rerunning anything, the pushback stopped.</li>
-                <li><strong>Cost.</strong> A Playwright run costs CPU minutes. An MCP run costs tokens times retries. The math isn't close once you're running on every PR.</li>
-              </ul>
-              <p>None of that is a knock on Glance. It's a knock on using a non-deterministic tool for a deterministic job.</p>
+              <p>Underneath it sits the piece that took the most thought: a separate repo of behavioral docs — what each surface is supposed to do, which fields exist, who's allowed to see them, the business rules. We call it the vault, and it's the agent's reference for what "correct" means. I'll come back to why it's a separate thing and not just the code, because that turns out to be the whole game.</p>
 
-              <h3>Where the agent still earns its keep</h3>
-              <p>We didn't throw the MCP layer away. Glance lives in two places now:</p>
-              <ul>
-                <li><strong>Exploratory passes on new features.</strong> Before we write Playwright specs for a flow, the agent walks it. It finds the surprises a human tester would find, and we write the specs against the surprises instead of against the happy path.</li>
-                <li><strong>Bug reproduction.</strong> A customer report comes in. The agent reads the report, tries to reproduce it against staging, and either pastes the steps or tells us it can't. The Playwright spec, if one is warranted, comes after.</li>
-              </ul>
+              <figure class="blog-figure">
+                <svg viewBox="0 0 640 300" role="img" xmlns="http://www.w3.org/2000/svg" aria-label="How the two repos work together. The vault repo holds the spec for what is correct. The engine repo reads the spec, drives the running app and reads the page back, and writes the plan, cases, and sign-off to the ticket in Jira. A dashed loop shows the engine staging back into the vault what it learns.">
+                  <defs>
+                    <marker id="rg-ar" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto">
+                      <path class="dg-mk" d="M0 0 L6 3 L0 6 Z"/>
+                    </marker>
+                  </defs>
+                  <path class="dg-line dg-dash" d="M288 92 C288 42 110 42 86 90" marker-end="url(#rg-ar)"/>
+                  <text class="dg-edge" x="186" y="34" text-anchor="middle">stages back what it learns</text>
+                  <line class="dg-line" x1="150" y1="124" x2="251" y2="124" marker-end="url(#rg-ar)"/>
+                  <text class="dg-edge" x="201" y="116" text-anchor="middle">reads the spec</text>
+                  <line class="dg-line" x1="385" y1="118" x2="486" y2="118" marker-end="url(#rg-ar)"/>
+                  <text class="dg-edge" x="437" y="110" text-anchor="middle">drives</text>
+                  <line class="dg-line" x1="490" y1="134" x2="389" y2="134" marker-end="url(#rg-ar)"/>
+                  <text class="dg-edge" x="438" y="148" text-anchor="middle">reads back</text>
+                  <line class="dg-line" x1="320" y1="156" x2="320" y2="210" marker-end="url(#rg-ar)"/>
+                  <text class="dg-edge" x="330" y="180" text-anchor="start">writes the plan,</text>
+                  <text class="dg-edge" x="330" y="194" text-anchor="start">cases &amp; sign-off</text>
+                  <rect class="dg-box dg-repo" x="20" y="92" width="130" height="64" rx="5"/>
+                  <text class="dg-title" x="85" y="121" text-anchor="middle">vault</text>
+                  <text class="dg-sub" x="85" y="138" text-anchor="middle">what "correct" is</text>
+                  <rect class="dg-box dg-repo" x="255" y="92" width="130" height="64" rx="5"/>
+                  <text class="dg-title" x="320" y="121" text-anchor="middle">engine</text>
+                  <text class="dg-sub" x="320" y="138" text-anchor="middle">skills + scripts</text>
+                  <rect class="dg-box" x="490" y="92" width="130" height="64" rx="5"/>
+                  <text class="dg-title" x="555" y="121" text-anchor="middle">running app</text>
+                  <text class="dg-sub" x="555" y="138" text-anchor="middle">the build under test</text>
+                  <rect class="dg-box" x="255" y="214" width="130" height="54" rx="5"/>
+                  <text class="dg-title" x="320" y="238" text-anchor="middle">the ticket</text>
+                  <text class="dg-sub" x="320" y="254" text-anchor="middle">Jira</text>
+                </svg>
+                <figcaption>Two repos do the work. The <strong>vault</strong> is the spec &#8212; the independent source of what "correct" means; the <strong>engine</strong> reads it, drives the live app, and writes the plan, cases, and sign-off back to the ticket. Whatever it learns about a surface gets staged back into the vault, so the spec grows with every run.</figcaption>
+              </figure>
 
-              <h3>The order that actually worked</h3>
-              <p>If you're staring at a legacy codebase with low coverage and an agent prompt that can sort of do QA, the order that worked for us was: white-box the modules that hurt, write deterministic E2E specs for the flows that gate revenue, and keep the agent around for the parts of testing that are still creative.</p>
-              <p>The Playwright suite halved our regression runtime. The part that changed the team was the unit layer in the middle. Boring, and the thing I'd do first next time.</p>
+              <h3>Driving the browser</h3>
+              <p>Every phase above bottoms out in the same primitive: the agent has to operate a real browser — log in, walk the wizard, read what's on the page, fill fields, and come back with proof of what happened. We tried three ways to give it that.</p>
+              <p>We started with <a href="https://github.com/DebugBase/glance" target="_blank" rel="noopener">Glance</a>, an MCP server a friend and I had just shipped that hands Claude Code a real browser. For exploratory testing it's genuinely good — point it at staging, let it wander, and it'll turn up the broken filter and screenshot it for you. But a QA pipeline needs the same run to mean the same thing twice, and to leave behind something a human can audit without re-running it. What Glance left behind was a transcript of what the model decided to do. That's the right artifact for exploring and the wrong one for a gate. No knock on Glance — it's built for the open-ended case, and a per-ticket QA run is the opposite of open-ended.</p>
+              <p>The next thing to try was the one already in the box: Claude's built-in browser control. No extra server to run, no config — the agent can just drive Chrome. It didn't make the cut, and the reasons were all the ways QA differs from casual browsing. It works off what it can see rendered on screen, so on a dense legacy form it's slow and it misses things that aren't visually obvious. There's no structured snapshot of the page to assert against or to diff a baseline from — you get pixels, not a tree. We couldn't reliably hand it a saved login and have it start authenticated, couldn't capture the network traffic a feed test depends on, and couldn't pin it to a specific local build with managed test credentials. For "go look at this website" it's fine. For "produce the same evidence-backed result on every release," it wasn't the tool.</p>
+              <p>Where we landed was <strong>Playwright MCP</strong> — the Playwright browser exposed to the agent as a server, with its testing, storage, and network capabilities turned on. The difference that mattered: it gives the agent the accessibility tree, not a screenshot. The agent targets a field by its role and name the way a screen reader would, which holds up far better across a sprawling old UI, and that same tree is a structured artifact we can diff a page against later to catch a surface drifting out from under its spec. Saved auth means a run starts already logged in, with no credentials anywhere near the prompt. Network capture and screenshots come for free on every run, so a failure ships with a trace instead of a story. And it's the same engine we'd later promote a throwaway agent walk into — a durable, checked-in spec — so there's a path from "the agent did this once" to "this is covered for good."</p>
+              <p>The correction worth making, because the easy version of this story is wrong: we didn't replace the agent with a static test suite. The agent is still the one running the tests. Playwright MCP is just the substrate it drives. What changed across the three attempts wasn't whether an agent was in the loop — it was whether the thing under the agent could give a QA gate three boring necessities: determinism, real evidence, and a login.</p>
+
+              <h3>Where "correct" comes from</h3>
+              <p>The failure mode with an agent grading software is the obvious one: it reads the code, decides what the code does, then "verifies" that the code does that. It's a tautology, and it passes even when the code is wrong. So the rule the whole thing is built around is that the expected answer never comes from the implementation under test.</p>
+              <blockquote class="blog-note">
+                <p>The live app is only ever "what is" — never "what's correct." Correct lives a layer up: the ticket's acceptance criteria, a product decision, or the vault. The agent doesn't get a vote on it.</p>
+              </blockquote>
+              <p>Around that we layered the usual defense-in-depth idea, with one specific demand: every class of bug has to be catchable by at least two layers that fail for different reasons, so one blind spot doesn't reach production. A wrong fix gets caught both by a coverage check — did we even write a case for the path that changed? — and by asserting the same behavior in the UI and the database and the feed at once. A fix that quietly breaks something else gets caught by the code-derived blast radius and by diffing the page against its last known baseline. And when something slips through anyway, the job isn't just to fix it — it's to add the check that would have caught it, so the same bug can't escape twice. The vault grows every time the agent touches a surface, and a bug it finds gets written back as a permanent note rather than left in a ticket comment that evaporates.</p>
+
+              <h3>Where it stands</h3>
+              <p>I'll be honest about the state of it: some of those layers are solid and in daily use, and some are still scaffolding with a TODO on them. The design is further along than the build. But the spine — agent runs the ticket, Playwright MCP drives the browser, the oracle for "correct" lives above the code — is load-bearing and real, and it's run against actual release tickets, not a demo.</p>
+              <p>If I were starting this over, the part I'd protect from day one isn't the browser layer. That took three tries and the third one stuck; it's the part people ask about and it's the easy part. The hard part — the one that decides whether agent-driven QA is real or theater — is making sure the agent is never the one who gets to decide what "correct" means.</p>
             </article>
           </div>
 
           <!-- Cool tab -->
           <div id="tab-cool" class="tab-panel">
+            <h2 class="sr-only">cool</h2>
             <div class="cool-list" id="cool-list">
               <p class="cool-empty">loading...</p>
             </div>
