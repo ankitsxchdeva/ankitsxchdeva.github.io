@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-06-29",
+    "url": "https://github.com/kunchenguid/no-mistakes",
+    "title": "no-mistakes",
+    "description": "A local git proxy that sits in front of your remote: push to it instead of origin and it spins up a disposable worktree, runs an AI validation pipeline (review, test, docs, lint), auto-fixes safe issues, escalates the rest, and opens a clean PR only after every check passes.",
+    "image": ""
+  },
+  {
     "date": "2026-06-25",
     "url": "https://www.paraform.com/talent-density-index",
     "title": "Paraform Talent Density Index",
