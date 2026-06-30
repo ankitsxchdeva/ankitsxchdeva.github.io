@@ -1,6 +1,13 @@
 [
   {
     "date": "2026-06-29",
+    "url": "https://clawd.rip/",
+    "title": "Everything That Went Wrong With Claude",
+    "description": "A RIP-themed timeline (not affiliated with Anthropic) cataloging Claude's controversies, outages, pricing shocks, and lawsuits — from cache-amnesia billing surprises and DMCA takedown sprees to Pentagon supply-chain fights and the great Claude Code nerf.",
+    "image": ""
+  },
+  {
+    "date": "2026-06-29",
     "url": "https://github.com/kunchenguid/no-mistakes",
     "title": "no-mistakes",
     "description": "A local git proxy that sits in front of your remote: push to it instead of origin and it spins up a disposable worktree, runs an AI validation pipeline (review, test, docs, lint), auto-fixes safe issues, escalates the rest, and opens a clean PR only after every check passes.",
