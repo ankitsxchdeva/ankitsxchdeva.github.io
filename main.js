@@ -10,8 +10,9 @@ console.log(
   var panels = document.querySelectorAll('.tab-panel');
 
   var baseTitle = document.title;
+  var valid = Array.from(links).map(function (l) { return l.dataset.tab; });
 
-  function activate(tab, sub) {
+  function activate(tab, sub, user) {
     links.forEach(function (l) {
       var isActive = l.dataset.tab === tab;
       l.classList.toggle('active', isActive);
@@ -21,9 +22,16 @@ console.log(
     panels.forEach(function (p) {
       p.classList.toggle('active', p.id === 'tab-' + tab);
     });
+    if (user) {
+      var heading = document.querySelector('#tab-' + tab + ' h1, #tab-' + tab + ' h2');
+      if (heading) heading.focus({ preventScroll: true });
+    }
     if (tab === 'blog') showBlog(sub || null);
-    else document.title = baseTitle;
-    if (tab === 'cool' && window.__coolLoad) window.__coolLoad();
+    else document.title = user && tab !== 'home' ? tab + ' · ' + baseTitle : baseTitle;
+    if (tab === 'cool') {
+      if (window.__coolLoad) window.__coolLoad();
+      else window.__coolPending = true;
+    }
     window.scrollTo(0, 0);
   }
 
@@ -38,7 +46,7 @@ console.log(
         if (posts[i].dataset.slug === slug) { match = posts[i]; break; }
       }
       if (!match) {
-        history.replaceState({ tab: 'blog' }, '', '#blog');
+        history.replaceState(null, '', '#blog');
       }
     }
     if (match) {
@@ -66,8 +74,8 @@ console.log(
       e.preventDefault();
       var tab = l.dataset.tab;
       var target = '#' + tab;
-      if (location.hash !== target) history.pushState({ tab: tab }, '', target);
-      activate(tab);
+      if (location.hash !== target) history.pushState(null, '', target);
+      activate(tab, null, true);
     });
   });
 
@@ -77,7 +85,6 @@ console.log(
     activate(t, h.sub);
   }
 
-  window.addEventListener('popstate', syncFromHash);
   window.addEventListener('hashchange', syncFromHash);
 
   window.__tabActivate = activate;
@@ -88,19 +95,18 @@ console.log(
       e.preventDefault();
       var slug = t.getAttribute('data-blog-slug');
       var target = '#blog/' + slug;
-      if (location.hash !== target) history.pushState({ tab: 'blog', sub: slug }, '', target);
-      activate('blog', slug);
+      if (location.hash !== target) history.pushState(null, '', target);
+      activate('blog', slug, true);
       return;
     }
     var b = e.target.closest && e.target.closest('[data-blog-back]');
     if (b) {
       e.preventDefault();
-      if (location.hash !== '#blog') history.pushState({ tab: 'blog' }, '', '#blog');
-      activate('blog');
+      if (location.hash !== '#blog') history.pushState(null, '', '#blog');
+      activate('blog', null, true);
     }
   });
 
-  var valid = Array.from(links).map(function (l) { return l.dataset.tab; });
   var initial = parseHash();
   activate(valid.indexOf(initial.tab) !== -1 ? initial.tab : 'home', initial.sub);
 })();
@@ -130,7 +136,7 @@ console.log(
     entry.className = 'cool-entry';
     entry.innerHTML = '<div class="cool-date">' + esc(dateStr) + '</div>'
       + '<div>'
-      + '<p class="cool-title"><a href="' + esc(e.url) + '" target="_blank" rel="noopener">' + esc(e.title) + '</a>'
+      + '<p class="cool-title"><a href="' + esc(u.href) + '" target="_blank" rel="noopener">' + esc(e.title) + '</a>'
       + (domain ? '<span class="cool-domain">' + esc(domain) + '</span>' : '') + '</p>'
       + (e.description ? '<p class="cool-desc">' + esc(e.description) + '</p>' : '')
       + '</div>';
@@ -186,6 +192,12 @@ console.log(
   });
 
   window.__coolLoad = loadCool;
+  // The tab system may have activated #cool before this IIFE ran (fresh load
+  // of /#cool); consume the pending flag it left behind.
+  if (window.__coolPending) {
+    window.__coolPending = false;
+    loadCool();
+  }
 })();
 
 // Keyboard tab shortcuts (1–5) + legend toggle (?)
@@ -225,8 +237,8 @@ console.log(
     if (tab && window.__tabActivate) {
       if (legendVisible()) hideLegend();
       var target = '#' + tab;
-      if (location.hash !== target) history.pushState({ tab: tab }, '', target);
-      window.__tabActivate(tab);
+      if (location.hash !== target) history.pushState(null, '', target);
+      window.__tabActivate(tab, null, true);
     }
   });
 })();

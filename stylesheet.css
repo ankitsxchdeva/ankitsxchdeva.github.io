@@ -80,7 +80,7 @@ html, body { background: var(--bg); color: var(--fg); }
   outline-offset: 2px;
 }
 
-body, td, th, tr, p, a {
+body, p {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.65;
@@ -94,6 +94,13 @@ p { margin: 0 0 1em 0; }
   font-weight: 400;
   letter-spacing: -0.5px;
   margin: 0 0 1em;
+}
+
+/* Quiet status line under the name: muted meta tier, not a badge */
+.status-line {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: -0.6em;
 }
 
 img.circle { border-radius: 50%; }
@@ -242,7 +249,7 @@ a:focus .link-hint {
   padding: 1.5% 1.5% 0;
   margin-bottom: 1.5em;
 }
-.tab-nav a, .tab-nav span {
+.tab-nav a {
   position: relative;
   padding: 0.5em 0;
   margin-right: 1.75em;
@@ -272,10 +279,6 @@ a:focus .link-hint {
 .tab-nav a:hover::after,
 .tab-nav a.active::after { transform: scaleX(1); }
 .tab-nav a.active { color: var(--fg); }
-.tab-nav span {
-  cursor: default;
-  opacity: 0.4;
-}
 @media (prefers-reduced-motion: reduce) {
   .tab-nav a::after { transition: none; }
   .tab-nav a { transition: none; }
@@ -284,7 +287,7 @@ a:focus .link-hint {
 /* Keyboard shortcut badges */
 .tab-key {
   font-family: monospace;
-  font-size: 8px;
+  font-size: 9px;
   color: var(--fg);
   opacity: 0.6;
   border: 1px solid var(--fg);
@@ -352,8 +355,11 @@ a:focus .link-hint {
 /* ─── Tab panels ─────────────────────────────────────────────────────────── */
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
-/* No-JS fallback: keep the bio (the conversion content) visible without JS */
+/* No-JS fallback: keep the bio (the conversion content) visible without JS.
+   The tab nav dead-ends without JS, so hide it (and the kbd badges) too. */
 html:not(.js) #tab-home { display: block; }
+html:not(.js) .tab-nav,
+html:not(.js) .tab-key { display: none; }
 
 @keyframes panelIn {
   from { opacity: 0; transform: translateY(6px); }
@@ -605,6 +611,21 @@ summary.embed-header:focus-visible {
 .blog-figure .dg-gatetitle { fill: var(--muted); font: 700 13px 'Lato', Verdana, sans-serif; }
 .blog-figure .dg-sub       { fill: var(--muted); font: 400 12px 'Lato', Verdana, sans-serif; }
 .blog-figure .dg-edge      { fill: var(--muted); font: 400 11px 'Lato', Verdana, sans-serif; }
+
+@media (max-width: 600px) {
+  /* Stack the shared listing grid: date becomes a small muted line above the
+     title instead of squeezing descriptions into a narrow right column. */
+  .cool-entry, .project-entry, .blog-entry {
+    grid-template-columns: 1fr;
+    gap: 0.15em 0;
+  }
+  .cool-date, .project-date, .blog-date { padding-top: 0; }
+  /* Diagram SVGs scale down with their viewBox on small screens; larger
+     source sizes keep the labels legible. */
+  .blog-figure .dg-title { font-size: 19px; }
+  .blog-figure .dg-sub   { font-size: 16px; }
+  .blog-figure .dg-edge  { font-size: 15px; }
+}
 
 /* ─── Screen-reader-only utility ─────────────────────────────────────────── */
 .sr-only {
