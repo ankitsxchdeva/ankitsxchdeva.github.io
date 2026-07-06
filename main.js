@@ -28,10 +28,6 @@ console.log(
     }
     if (tab === 'blog') showBlog(sub || null);
     else document.title = user && tab !== 'home' ? tab + ' · ' + baseTitle : baseTitle;
-    if (tab === 'cool') {
-      if (window.__coolLoad) window.__coolLoad();
-      else window.__coolPending = true;
-    }
     window.scrollTo(0, 0);
   }
 
@@ -111,93 +107,25 @@ console.log(
   activate(valid.indexOf(initial.tab) !== -1 ? initial.tab : 'home', initial.sub);
 })();
 
-// Cool tab
+// Cool tab (entries are static HTML; this just staggers the fade-in)
 (function () {
-  var loaded = false;
-
-  function esc(str) {
-    var d = document.createElement('div');
-    d.textContent = str || '';
-    return d.innerHTML;
+  var entries = document.querySelectorAll('#cool-list .cool-entry');
+  if (!('IntersectionObserver' in window)) {
+    entries.forEach(function (el) { el.classList.add('visible'); });
+    return;
   }
-
-  function buildEntry(e) {
-    if (!e || !e.title || !e.url) return null;
-    var dateStr = e.date
-      ? new Date(e.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-      : '';
-    var domain = '';
-    try {
-      var u = new URL(e.url);
-      if (u.protocol !== 'http:' && u.protocol !== 'https:' && u.protocol !== 'mailto:') return null;
-      domain = u.hostname.replace(/^www\./, '');
-    } catch (x) { return null; }
-    var entry = document.createElement('div');
-    entry.className = 'cool-entry';
-    entry.innerHTML = '<div class="cool-date">' + esc(dateStr) + '</div>'
-      + '<div>'
-      + '<p class="cool-title"><a href="' + esc(u.href) + '" target="_blank" rel="noopener">' + esc(e.title) + '</a>'
-      + (domain ? '<span class="cool-domain">' + esc(domain) + '</span>' : '') + '</p>'
-      + (e.description ? '<p class="cool-desc">' + esc(e.description) + '</p>' : '')
-      + '</div>';
-    return entry;
-  }
-
-  function loadCool() {
-    if (loaded) return;
-    loaded = true;
-    var list = document.getElementById('cool-list');
-    list.innerHTML = '<p class="cool-empty">loading...</p>';
-    fetch('cool.json')
-      .then(function (r) { return r.json(); })
-      .then(function (entries) {
-        if (!Array.isArray(entries)) entries = [];
-        entries.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
-        var valid = entries.map(buildEntry).filter(Boolean);
-        if (!valid.length) {
-          list.innerHTML = '<p class="cool-empty">nothing here yet.</p>';
-          return;
-        }
-        list.innerHTML = '';
-        valid.forEach(function (el) { list.appendChild(el); });
-
-        if ('IntersectionObserver' in window) {
-          var observer = new IntersectionObserver(function (items) {
-            items.forEach(function (item) {
-              if (item.isIntersecting) {
-                item.target.classList.add('visible');
-                observer.unobserve(item.target);
-              }
-            });
-          }, { threshold: 0.1 });
-          list.querySelectorAll('.cool-entry').forEach(function (el, i) {
-            el.style.transitionDelay = Math.min(i * 0.07, 0.6) + 's';
-            observer.observe(el);
-          });
-        }
-      })
-      .catch(function () {
-        list.innerHTML = '<p class="cool-empty">couldn\'t load entries. <a href="#" class="cool-retry">try again</a></p>';
-      });
-  }
-
-  // Delegated retry handler: clicking "try again" resets state and re-fires.
-  document.addEventListener('click', function (e) {
-    var t = e.target;
-    if (t && t.classList && t.classList.contains('cool-retry')) {
-      e.preventDefault();
-      loaded = false;
-      loadCool();
-    }
+  var observer = new IntersectionObserver(function (items) {
+    items.forEach(function (item) {
+      if (item.isIntersecting) {
+        item.target.classList.add('visible');
+        observer.unobserve(item.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  entries.forEach(function (el, i) {
+    el.style.transitionDelay = Math.min(i * 0.07, 0.6) + 's';
+    observer.observe(el);
   });
-
-  window.__coolLoad = loadCool;
-  // The tab system may have activated #cool before this IIFE ran (fresh load
-  // of /#cool); consume the pending flag it left behind.
-  if (window.__coolPending) {
-    window.__coolPending = false;
-    loadCool();
-  }
 })();
 
 // Keyboard tab shortcuts (1–5) + legend toggle (?)

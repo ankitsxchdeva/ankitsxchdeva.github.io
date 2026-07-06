@@ -37,7 +37,8 @@
     "@type": "Person",
     "name": "Ankit Sachdeva",
     "url": "https://ankitsachdeva.com",
-    "image": "https://ankitsachdeva.com/images/headshot2.webp",
+    "image": "https://ankitsachdeva.com/images/headshot2-640.jpg",
+    "description": "Software engineer at dynaConnections and CS+AI master's student at Georgia Tech. Previously PayPal and Fox Factory.",
     "jobTitle": "Software Engineer",
     "worksFor": { "@type": "Organization", "name": "dynaConnections" },
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology" },
@@ -106,7 +107,7 @@
                       Before that I interned at <a href="https://www.paypal.com/us/home" target="_blank" rel="noopener">PayPal</a>, prototyping a distributed-ledger file exchange that reconciled settlements 3x faster than the incumbent and fed the settlement org's on-chain feasibility review. Earlier, I did embedded work at <a href="https://ridefox.com/" target="_blank" rel="noopener">Fox Factory</a>, designing PCBs and writing C firmware for Live Valve Neo, Fox's wireless suspension system for mountain bikes.
                     </p>
                     <p>
-                      Lately I've been pretty deep in AI-assisted development. Write a spec, let the agents take a rough pass, then review what comes back. My <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">home server</a> is the playground for this, where any silly idea for a microservice goes from concept to deployed in a couple prompts. At work it's an AI agent that <a href="#blog/ai-qa-legacy-coverage" data-blog-slug="ai-qa-legacy-coverage">runs QA on a legacy MLS platform</a> — reading the ticket, driving the browser, and checking the database and feed underneath. So far: 140 manual test scenarios automated, 80+ bugs caught before release.
+                      Lately I've been pretty deep in AI-assisted development. Write a spec, let the agents take a rough pass, then review what comes back. My <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">home server</a> is the playground for this, where any silly idea for a microservice goes from concept to deployed in a couple prompts. At work it's an AI agent that <!-- <a href="#blog/ai-qa-legacy-coverage" data-blog-slug="ai-qa-legacy-coverage">runs QA on a legacy MLS platform</a> -->runs QA on a legacy MLS platform — reading the ticket, driving the browser, and checking the database and feed underneath. So far: 140 manual test scenarios automated, 80+ bugs caught before release.
                     </p>
                     <p>
                       In my free time I'm usually <a href="https://ankitsachdeva.com/sbd/" target="_blank" rel="noopener">chasing a bigger total</a>, getting humbled by V3s, collecting <a href="https://www.instagram.com/ankitscaps/" target="_blank" rel="noopener">artisan keycaps</a>, or theorycrafting in <a href="https://lolchess.gg/profile/na/ankitty-meow/" target="_blank" rel="noopener">tft</a>.
@@ -283,6 +284,7 @@
           <div id="tab-blog" class="tab-panel">
             <h2 class="sr-only" tabindex="-1">blog</h2>
             <div class="blog-index">
+              <!--
               <div class="blog-entry">
                 <div class="blog-date">Jun 17, 2026</div>
                 <div>
@@ -301,8 +303,10 @@
                   <p class="blog-desc">Failure hands you a jolt of motivation, and mistaking that jolt for progress is the trap. On why habits beat motivation, and the one good use for the surge before it fades.</p>
                 </div>
               </div>
+              -->
             </div>
 
+            <!--
             <article class="blog-post" data-slug="past-day-one" tabindex="-1" aria-labelledby="post-past-day-one-title" hidden>
               <a href="#blog" class="blog-back" data-blog-back><span aria-hidden="true">←</span> all posts</a>
               <header class="blog-post-header">
@@ -440,13 +444,167 @@
               <p>I'll be honest about the state of it: some of those layers are solid and in daily use, and some are still scaffolding with a TODO on them. The design is further along than the build. But the spine — agent runs the ticket, Playwright MCP drives the browser, the oracle for "correct" lives above the code — is load-bearing and real, and it's run against actual release tickets, not a demo. In its first two months it automated 140 previously manual test scenarios and caught 80+ defects before they shipped.</p>
               <p>If I were starting this over, the part I'd protect from day one isn't the browser layer. That took three tries and the third one stuck; it's the part people ask about and it's the easy part. The hard part — the one that decides whether agent-driven QA is real or theater — is making sure the agent is never the one who gets to decide what "correct" means.</p>
             </article>
+            -->
           </div>
 
           <!-- Cool tab -->
           <div id="tab-cool" class="tab-panel">
             <h2 class="sr-only" tabindex="-1">cool</h2>
             <div class="cool-list" id="cool-list">
-              <p class="cool-empty">loading...</p>
+              <div class="cool-entry">
+                <div class="cool-date">Jul 6, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://roadmap.sh/forward-deployed-engineer" target="_blank" rel="noopener">Forward Deployed Engineer Roadmap</a><span class="cool-domain">roadmap.sh</span></p>
+                  <p class="cool-desc">roadmap.sh's step-by-step guide to becoming a Forward Deployed Engineer in 2026 — the Palantir-popularized role that embeds engineers directly with customers, sitting somewhere between software engineering, solutions architecture, and consulting.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Jul 2, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://eieio.games/blog/one-million-checkboxes/" target="_blank" rel="noopener">One Million Checkboxes</a><span class="cool-domain">eieio.games</span></p>
+                  <p class="cool-desc">Nolen Royalty built a site with one million checkboxes shared live by everyone on the internet — check one and it's checked for all. Behind the chaos: a Redis bit array, WebSocket broadcasts, react-window rendering, and a fun bit-ordering bug between Python and JavaScript.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Jun 29, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://clawd.rip/" target="_blank" rel="noopener">Everything That Went Wrong With Claude</a><span class="cool-domain">clawd.rip</span></p>
+                  <p class="cool-desc">A RIP-themed timeline (not affiliated with Anthropic) cataloging Claude's controversies, outages, pricing shocks, and lawsuits — from cache-amnesia billing surprises and DMCA takedown sprees to Pentagon supply-chain fights and the great Claude Code nerf.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Jun 29, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://github.com/kunchenguid/no-mistakes" target="_blank" rel="noopener">no-mistakes</a><span class="cool-domain">github.com</span></p>
+                  <p class="cool-desc">A local git proxy that sits in front of your remote: push to it instead of origin and it spins up a disposable worktree, runs an AI validation pipeline (review, test, docs, lint), auto-fixes safe issues, escalates the rest, and opens a clean PR only after every check passes.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Jun 25, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://www.paraform.com/talent-density-index" target="_blank" rel="noopener">Paraform Talent Density Index</a><span class="cool-domain">paraform.com</span></p>
+                  <p class="cool-desc">Paraform ranks companies not by funding or logos but by how badly the market wants their people — an algorithm over hiring data across thousands of roles and millions of candidate profiles. Thinking Machines, OpenAI, and Anthropic top the list.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Jun 23, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://dunkels.com/adam/signs-your-text-was-written-by-an-ai/" target="_blank" rel="noopener">32 Ways Your Writing Looks Like an AI Wrote It</a><span class="cool-domain">dunkels.com</span></p>
+                  <p class="cool-desc">Adam Dunkels: 32 recurring patterns that mark text as AI-written — em-dash overuse, hedging, filler phrases, uniform sentences — plus tools to spot and strip them from your own writing.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Jun 11, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://medium.com/@arghajitsingha47/hermes-agent-for-qa-automation-8d0dfcc03bb0" target="_blank" rel="noopener">Hermes Agent for QA Automation</a><span class="cool-domain">medium.com</span></p>
+                  <p class="cool-desc">Arghajit Singha on Hermes: a terminal-native AI agent for QA workflows that runs against local LLMs, holds persistent memory of your test environment, and turns repetitive shell commands into reusable skills.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Jun 4, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1" target="_blank" rel="noopener">Building an MCP Ecosystem at Pinterest</a><span class="cool-domain">medium.com</span></p>
+                  <p class="cool-desc">Pinterest built a production ecosystem of domain-specific MCP servers behind a central registry, saving an estimated 7,000 engineering hours per month across 66,000 monthly invocations.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Jun 4, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/" target="_blank" rel="noopener">Introducing the MCP Registry</a><span class="cool-domain">blog.modelcontextprotocol.io</span></p>
+                  <p class="cool-desc">Preview of an open catalog and API for discovering publicly available MCP servers, with room for public and private sub-registries to build on top.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">May 26, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://impeccable.style/" target="_blank" rel="noopener">Impeccable</a><span class="cool-domain">impeccable.style</span></p>
+                  <p class="cool-desc">Paul Bakaus: a design-fluency skill for AI coding agents — teaches Claude and others real design vocabulary and patterns so they stop generating purple gradients, nested cards, and other AI slop.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">May 26, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://www.tasteskill.dev/" target="_blank" rel="noopener">Taste Skill</a><span class="cool-domain">tasteskill.dev</span></p>
+                  <p class="cool-desc">Leon Lin and blueemi: an open-source design-system framework that gives AI coding agents the rules and templates to ship polished, coherent frontends instead of generic AI output.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">May 22, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://www.langchain.com/blog/the-anatomy-of-an-agent-harness" target="_blank" rel="noopener">The Anatomy of an Agent Harness</a><span class="cool-domain">langchain.com</span></p>
+                  <p class="cool-desc">LangChain: a breakdown of the harness layer that wraps an LLM into a working agent — the loop, tools, memory, and control flow that turn raw model calls into reliable autonomous behavior.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">May 17, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://paulgraham.com/genius.html" target="_blank" rel="noopener">The Bus Ticket Theory of Genius</a><span class="cool-domain">paulgraham.com</span></p>
+                  <p class="cool-desc">Paul Graham: great work requires natural ability, determination, and a disinterested obsession with something that matters — an intense, purposeless interest that lets you follow unpromising paths others overlook.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">May 17, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://paulgraham.com/before.html" target="_blank" rel="noopener">Before the Startup</a><span class="cool-domain">paulgraham.com</span></p>
+                  <p class="cool-desc">Paul Graham: the best preparation for founding a startup is pursuing genuine intellectual curiosity and interesting problems, not attempting to launch ventures while still in school.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">May 4, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://www.youtube.com/watch?v=Nsx5RDVKZSk" target="_blank" rel="noopener">Why Startup Founders Should Launch Sooner Than They Think</a><span class="cool-domain">youtube.com</span></p>
+                  <p class="cool-desc">Y Combinator: the cost of launching too early is lower than you think, and the cost of waiting is higher.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">May 4, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://www.youtube.com/watch?v=rWUWfj_PqmM" target="_blank" rel="noopener">The New Way To Build A Startup</a><span class="cool-domain">youtube.com</span></p>
+                  <p class="cool-desc">Y Combinator: how AI is collapsing the team size needed to build a company from the ground up.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">May 4, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://www.youtube.com/watch?v=ShYKkPPhOoc" target="_blank" rel="noopener">How to Spend Your 20s in the AI Era</a><span class="cool-domain">youtube.com</span></p>
+                  <p class="cool-desc">Y Combinator: where to focus your energy when AI is compressing the value of credentials and raising the ceiling on what one person can build.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Apr 29, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://blog.fsck.com/2025/09/29/using-graphviz-for-claudemd/" target="_blank" rel="noopener">Using GraphViz for CLAUDE.md</a><span class="cool-domain">blog.fsck.com</span></p>
+                  <p class="cool-desc">Trigger-based GraphViz flowcharts help Claude follow instructions more reliably than markdown rules.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Apr 29, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://github.com/garrytan/gstack" target="_blank" rel="noopener">gstack</a><span class="cool-domain">github.com</span></p>
+                  <p class="cool-desc">Garry Tan's Claude Code setup: 23 opinionated skills covering CEO, designer, eng manager, release manager, and QA roles.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Apr 28, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://mitchellh.com/writing/my-ai-adoption-journey" target="_blank" rel="noopener">My AI Adoption Journey</a><span class="cool-domain">mitchellh.com</span></p>
+                  <p class="cool-desc">Mitchell Hashimoto's six-step journey from dismissing AI to running agents continuously in the background.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Apr 28, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://levelup.gitconnected.com/your-ai-agent-doesnt-care-about-your-readme-6cd1f0d86ac8" target="_blank" rel="noopener">Your AI Agent Doesn't Care About Your README</a><span class="cool-domain">levelup.gitconnected.com</span></p>
+                  <p class="cool-desc">Reya Vir: Auto-generate a hierarchy of AGENTS.md files so your AI agent gets dense, folder-specific context instead of one giant README.</p>
+                </div>
+              </div>
+              <div class="cool-entry">
+                <div class="cool-date">Apr 18, 2026</div>
+                <div>
+                  <p class="cool-title"><a href="https://paulgraham.com/cities.html" target="_blank" rel="noopener">Cities and Ambition</a><span class="cool-domain">paulgraham.com</span></p>
+                  <p class="cool-desc">Different cities send different messages. New York says you should make more money. Cambridge says you should be smarter.</p>
+                </div>
+              </div>
             </div>
           </div>
 
