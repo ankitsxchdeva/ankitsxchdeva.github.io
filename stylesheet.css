@@ -1,4 +1,33 @@
 /* ─── Fonts ──────────────────────────────────────────────────────────────── */
+/* Anthropic Sans (self-hosted, Latin subset) — primary; Lato below is fallback */
+@font-face {
+  font-family: 'Anthropic Sans Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/anthropic-sans-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Anthropic Sans Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/anthropic-sans-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Anthropic Sans Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/anthropic-sans-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Anthropic Mono Web';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/anthropic-mono-400.woff2') format('woff2');
+}
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -81,7 +110,7 @@ html, body { background: var(--bg); color: var(--fg); }
 }
 
 body, p {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.65;
 }
@@ -89,7 +118,7 @@ body, p {
 p { margin: 0 0 1em 0; }
 
 .name {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
   font-weight: 400;
   letter-spacing: -0.5px;
@@ -286,7 +315,7 @@ a:focus .link-hint {
 
 /* Keyboard shortcut badges */
 .tab-key {
-  font-family: monospace;
+  font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 9px;
   color: var(--fg);
   opacity: 0.6;
@@ -313,7 +342,7 @@ a:focus .link-hint {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 4px;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 1;
   color: var(--muted);
@@ -330,7 +359,7 @@ a:focus .link-hint {
   to   { opacity: 1; transform: translateY(0); }
 }
 .kbd-legend-key {
-  font-family: monospace;
+  font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 11px;
   color: var(--fg);
   border: 1px solid var(--border);
@@ -500,11 +529,11 @@ summary.embed-header:focus-visible {
   margin: 0 -8px;
   border-bottom: 1px solid var(--border);
 }
-.track-num { font-size: 12px; color: var(--muted); text-align: right; font-family: monospace; }
+.track-num { font-size: 12px; color: var(--muted); text-align: right; font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .track-info { min-width: 0; display: flex; gap: 0.4em; align-items: baseline; }
 .track-name { font-size: 14px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-.track-duration { font-size: 12px; color: var(--muted); font-family: monospace; white-space: nowrap; }
+.track-duration { font-size: 12px; color: var(--muted); font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
 
 /* ─── Blog tab (post body) ─────────────────────────────────────────────── */
 .blog-post {
