@@ -73,6 +73,12 @@
   --link-hover: #5F5AA2;
   --muted: #6a6884;
   --border: #d8d6e8;
+  /* The second ink: warm coral against the indigo/lavender family. Editorial
+     only (name misprint, separators) — links stay indigo. */
+  --accent: #bf5a4a;
+  /* Name misprint offsets: the site's two inks slipping out of register */
+  --misprint-a: rgba(191, 90, 74, 0.5);
+  --misprint-b: rgba(53, 86, 145, 0.45);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -82,6 +88,10 @@
     --link-hover: #9db8dc;
     --muted: #8e8aab;
     --border: #413F54;
+    --accent: #de9180;
+    /* Light ink on dark paper: deeper passes of the same two inks */
+    --misprint-a: rgba(164, 74, 58, 0.8);
+    --misprint-b: rgba(90, 104, 178, 0.8);
   }
 }
 
@@ -119,17 +129,32 @@ p { margin: 0 0 1em 0; }
 
 .name {
   font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: -0.5px;
-  margin: 0 0 1em;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.15;
+  margin: 0 0 0.25em;
+  /* Misprint offset: a brick and a teal copy peeking out behind the ink,
+     like a riso pass that slipped; colors are theme-tuned via the vars */
+  text-shadow:
+    0.04em -0.025em 0 var(--misprint-a),
+    -0.04em 0.04em 0 var(--misprint-b);
 }
 
-/* Quiet status line under the name: muted meta tier, not a badge */
+/* One quiet card around the whole intro: coral hairline, larger radius so
+   it reads as a panel, no shadow (depth from the border) */
+.home-card {
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.75em;
+}
+
+/* Quiet status line under the name: muted meta tier, not a badge. It closes
+   the name pair, so it carries the gap before the affiliation lines. */
 .status-line {
   font-size: 13px;
   color: var(--muted);
-  margin-top: -0.6em;
+  margin: 0 0 1.75em;
 }
 
 img.circle { border-radius: 50%; }
@@ -181,46 +206,57 @@ body { animation: fadeIn 0.3s ease; }
   margin: 0 auto;
 }
 
-.bio-layout {
-  display: flex;
-  align-items: stretch;
-}
-
+/* Home column: same 620px measure as the other tabs */
 .bio-cell {
-  flex: 1;
-  min-width: 0;
-  padding: 1.5%;
+  max-width: 620px;
+  padding: 0 1.5%;
 }
 
-.photo-cell {
-  flex-shrink: 0;
-  width: 37%;
-  padding: 2.5%;
+/* Affiliations with the die sitting close on their right */
+.affil-row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 3em;
 }
 
-.photo-cell picture {
+.affil-col { min-width: 0; }
+
+/* The rolling die (canvas, painted in main.js). Square, small: a framed
+   specimen beside the experience lines, not a centerpiece. The hairline box
+   gives the animation a stage, on-system (depth from borders, no shadow).
+   Alpha comes from the canvas, not opacity. */
+.dice-canvas {
   display: block;
-  width: 100%;
+  flex-shrink: 0;
+  width: 150px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
 .centered { text-align: center; }
 
+/* Tight affiliation lines under the status line: fg text, small, no gaps */
+.affil {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* Bump contact-line link tap targets to clear WCAG 2.5.8 AA (24×24) */
-p.centered a {
+.contact-line a {
   display: inline-block;
   padding: 0.2em 0;
 }
 
-/* Quiet anchor for the one conversion action: a hairline + breathing room,
-   no CTA button (explicit non-goal), color still carries the links. */
+/* Quiet anchor for the one conversion action: breathing room only, no CTA
+   button (explicit non-goal), color still carries the links. */
 .contact-line {
   margin-top: 1.75em;
-  padding-top: 1.25em;
-  border-top: 1px solid var(--border);
 }
+
+/* Decorative separators (the // and ·) wear the second ink */
+.sep { color: var(--accent); }
 
 /* Muted-meta-tier hint after a link (e.g. "email copy", "resume pdf") */
 .link-hint {
@@ -240,34 +276,9 @@ a:focus .link-hint {
 }
 
 @media (max-width: 600px) {
-  /* Avatar-beside-name header: dissolve the bio-cell box so the name and the
-     photo can share one grid row, with the paragraphs spanning full width
-     below it. The photo reads as a profile avatar, not an orphaned footer. */
-  .bio-layout {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 0.85em;
-    align-items: center;
-    padding: 0 1.5%;
-  }
-  .bio-cell { display: contents; }
-  .photo-cell {
-    display: block;
-    grid-row: 1;
-    grid-column: 1;
-    width: 56px;
-    padding: 0;
-    margin: 0;
-  }
-  .name {
-    grid-column: 2;
-    align-self: center;
-    margin: 0;
-  }
-  .bio-cell > p { grid-column: 1 / -1; }
-  /* The name carries no bottom margin in the header row, so re-establish the
-     gap before the bio body on the first paragraph. */
-  .bio-cell > p:first-of-type { margin-top: 1em; }
+  /* Tighter gap so the die stays beside the experience lines on small screens */
+  .affil-row { gap: 1.25em; }
+  .dice-canvas { width: 110px; }
   .blog-post-title { font-size: 19px; }
 }
 
@@ -308,6 +319,18 @@ a:focus .link-hint {
 .tab-nav a:hover::after,
 .tab-nav a.active::after { transform: scaleX(1); }
 .tab-nav a.active { color: var(--fg); }
+
+/* Struck-through placeholder tabs: not links, no hover, no shortcut badge */
+.tab-dead {
+  padding: 0.5em 0;
+  margin-right: 1.75em;
+  font-size: 14px;
+  color: var(--muted);
+  opacity: 0.55;
+  text-decoration: line-through;
+  cursor: default;
+  user-select: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .tab-nav a::after { transition: none; }
   .tab-nav a { transition: none; }
