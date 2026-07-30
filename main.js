@@ -27,7 +27,7 @@ console.log(
       if (heading) heading.focus({ preventScroll: true });
     }
     if (tab === 'blog') showBlog(sub || null);
-    else document.title = user && tab !== 'home' ? tab + ' · ' + baseTitle : baseTitle;
+    else document.title = tab !== 'home' ? tab + ' · ' + baseTitle : baseTitle;
     window.scrollTo(0, 0);
   }
 
@@ -207,18 +207,26 @@ console.log(
   }, { once: true });
 })();
 
-// Intro choreography plays once: after the final animation (the last slash
-// taking the coral ink) finishes, pin every end state via a class so switching
-// tabs (display:none resets CSS animations) never replays the sequence.
+// Intro choreography plays once: pin every end state via a class so switching
+// tabs (display:none resets CSS animations) never replays the sequence. The
+// stamp lands when the last slash finishes — or immediately if the visitor
+// leaves the home tab mid-intro (the animations cancel), so early bouncers
+// come back to the finished state rather than a replay.
 (function () {
   var slashes = document.querySelectorAll('.contact-line .sep span');
   var last = slashes[slashes.length - 1];
   if (!last) return;
-  function done(e) {
-    if (e.animationName === 'sep-ink' && e.target === last) {
-      document.documentElement.classList.add('intro-done');
-      document.removeEventListener('animationend', done);
-    }
+  function stamp() {
+    document.documentElement.classList.add('intro-done');
+    document.removeEventListener('animationend', onEnd);
+    document.removeEventListener('animationcancel', onCancel);
   }
-  document.addEventListener('animationend', done);
+  function onEnd(e) {
+    if (e.animationName === 'sep-ink' && e.target === last) stamp();
+  }
+  function onCancel(e) {
+    if (e.animationName === 'card-sweep' || e.animationName === 'sep-ink') stamp();
+  }
+  document.addEventListener('animationend', onEnd);
+  document.addEventListener('animationcancel', onCancel);
 })();
