@@ -134,19 +134,51 @@ p { margin: 0 0 1em 0; }
   letter-spacing: 1.5px;
   line-height: 1.15;
   margin: 0 0 0.25em;
-  /* Misprint offset: a brick and a teal copy peeking out behind the ink,
-     like a riso pass that slipped; colors are theme-tuned via the vars */
+  /* Misprint offset: the two ink passes slip out of register behind the
+     letters — but only after the card border and slashes have lit (~4.1s).
+     Starts flat (shadows hidden at zero offset), ends offset, stays. */
   text-shadow:
-    0.04em -0.025em 0 var(--misprint-a),
-    -0.04em 0.04em 0 var(--misprint-b);
+    0 0 0 var(--misprint-a),
+    0 0 0 var(--misprint-b);
+  animation: name-ink 0.5s ease-out 4.1s forwards;
+}
+@keyframes name-ink {
+  to {
+    text-shadow:
+      0.04em -0.025em 0 var(--misprint-a),
+      -0.04em 0.04em 0 var(--misprint-b);
+  }
 }
 
-/* One quiet card around the whole intro: coral hairline, larger radius so
-   it reads as a panel, no shadow (depth from the border) */
+/* One quiet card around the whole intro: the hairline starts grey and the
+   coral ink sweeps around it clockwise once, at an even pace, then stays
+   lit. No shadow; depth from the border. */
+@property --card-sweep {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
 .home-card {
-  border: 1px solid var(--accent);
+  border: 1px solid transparent;
   border-radius: 12px;
   padding: 1.75em;
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    conic-gradient(from -90deg,
+      var(--accent) var(--card-sweep),
+      var(--border) var(--card-sweep)) border-box;
+  animation: card-sweep 2.6s linear forwards;
+}
+@keyframes card-sweep {
+  from { --card-sweep: 0deg; }
+  to   { --card-sweep: 360deg; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-card {
+    animation: none;
+    background: none;
+    border-color: var(--accent);
+  }
 }
 
 /* Quiet status line under the name: muted meta tier, not a badge. It closes
@@ -197,6 +229,13 @@ body { animation: fadeIn 0.3s ease; }
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; }
   a:hover { animation: none; }
+  /* Skip the intro choreography: land on the finished misprint state */
+  .name {
+    animation: none;
+    text-shadow:
+      0.04em -0.025em 0 var(--misprint-a),
+      -0.04em 0.04em 0 var(--misprint-b);
+  }
 }
 
 /* ─── Layout ─────────────────────────────────────────────────────────────── */
@@ -257,6 +296,29 @@ body { animation: fadeIn 0.3s ease; }
 
 /* Decorative separators (the // and ·) wear the second ink */
 .sep { color: var(--accent); }
+
+/* The contact slashes start in the link purple and take the coral ink one
+   slash at a time, left to right, once the card border finishes lighting up
+   (~2.6s) */
+.contact-line .sep span {
+  color: var(--link);
+  animation: sep-ink 0.3s ease-out forwards;
+}
+.contact-line .sep:nth-of-type(1) span:nth-child(1) { animation-delay: 2.7s; }
+.contact-line .sep:nth-of-type(1) span:nth-child(2) { animation-delay: 2.9s; }
+.contact-line .sep:nth-of-type(2) span:nth-child(1) { animation-delay: 3.1s; }
+.contact-line .sep:nth-of-type(2) span:nth-child(2) { animation-delay: 3.3s; }
+.contact-line .sep:nth-of-type(3) span:nth-child(1) { animation-delay: 3.5s; }
+.contact-line .sep:nth-of-type(3) span:nth-child(2) { animation-delay: 3.7s; }
+@keyframes sep-ink {
+  to { color: var(--accent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-line .sep span {
+    animation: none;
+    color: var(--accent);
+  }
+}
 
 /* Muted-meta-tier hint after a link (e.g. "email copy", "resume pdf") */
 .link-hint {
