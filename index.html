@@ -85,8 +85,8 @@
             <a href="#home" class="tab-link" data-tab="home" aria-keyshortcuts="1">hi <kbd class="tab-key">1</kbd></a>
             <a href="#projects" class="tab-link" data-tab="projects" aria-keyshortcuts="2">projects <kbd class="tab-key">2</kbd></a>
             <a href="#music" class="tab-link" data-tab="music" aria-keyshortcuts="3">music <kbd class="tab-key">3</kbd></a>
-            <span class="tab-dead" aria-disabled="true" title="coming soon">blog</span>
-            <span class="tab-dead" aria-disabled="true" title="coming soon">cool</span>
+            <span class="tab-dead" title="coming soon">blog</span>
+            <span class="tab-dead" title="coming soon">cool</span>
           </nav>
 
           <!-- Home tab -->
@@ -95,21 +95,14 @@
                   <div class="home-card">
                   <h1 class="name" tabindex="-1">Ankit Sachdeva</h1>
                   <p class="status-line">software engineer <span class="sep">·</span> austin, tx</p>
-                  <div class="affil-row">
-                    <div class="affil-col">
-                      <p class="affil">Currently at <a href="https://www.dynaconnections.com/" target="_blank" rel="noopener">dynaConnections</a></p>
-                      <p class="affil">Previously at <a href="https://www.paypal.com/us/home" target="_blank" rel="noopener">PayPal</a>, <a href="https://ridefox.com/" target="_blank" rel="noopener">Fox Factory</a></p>
-                    </div>
-                    <!--
-                    <canvas id="dice" class="dice-canvas" width="600" height="600"
-                            role="img" aria-label="A slowly turning gem-like die that rolls into a new randomly cut crystal shape on each throw"></canvas>
-                    -->
-                  </div>
+                  <p class="affil">Currently at <a href="https://www.dynaconnections.com/" target="_blank" rel="noopener">dynaConnections</a></p>
+                  <p class="affil">Previously at <a href="https://www.paypal.com/us/home" target="_blank" rel="noopener">PayPal</a>, <a href="https://ridefox.com/" target="_blank" rel="noopener">Fox Factory</a></p>
                   <p class="contact-line">
-                    <a href="mailto:me@ankitsachdeva.com" title="me@ankitsachdeva.com">email <span class="link-hint">copy</span></a> &nbsp;<span class="sep"><span>/</span><span>/</span></span>&nbsp;
+                    <a href="mailto:me@ankitsachdeva.com" title="me@ankitsachdeva.com">email</a><button type="button" class="copy-btn" aria-label="copy email address">copy</button> &nbsp;<span class="sep"><span>/</span><span>/</span></span>&nbsp;
                     <a href="https://ankitsachdeva.com/resume/Ankit_Sachdeva_Resume.pdf" target="_blank" rel="noopener">resume <span class="link-hint">pdf</span></a> &nbsp;<span class="sep"><span>/</span><span>/</span></span>&nbsp;
                     <a href="https://github.com/ankitsxchdeva" target="_blank" rel="noopener me">github</a> &nbsp;<span class="sep"><span>/</span><span>/</span></span>&nbsp;
                     <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener me">linkedin</a>
+                    <span class="sr-only" role="status" id="copy-status"></span>
                   </p>
                   </div>
             </div>
@@ -296,402 +289,23 @@
             </div>
           </div>
 
-          <!-- Blog tab -->
+          <!-- Blog tab (parked on the parked-content branch until it ships) -->
           <div id="tab-blog" class="tab-panel">
             <h2 class="sr-only" tabindex="-1">blog</h2>
-            <div class="blog-index">
-              <!--
-              <div class="blog-entry">
-                <div class="blog-date">Jun 17, 2026</div>
-                <div>
-                  <p class="blog-title">
-                    <a href="#blog/ai-qa-legacy-coverage" data-blog-slug="ai-qa-legacy-coverage">AI QA on legacy code</a>
-                  </p>
-                  <p class="blog-desc">Putting an AI agent in charge of QA for a legacy MLS platform. The hard part turned out to be how the agent drives the browser (Glance, then Claude's built-in Chrome, then Playwright MCP), and making sure it never gets to decide what "correct" means.</p>
-                </div>
-              </div>
-              <div class="blog-entry">
-                <div class="blog-date">Jun 22, 2026</div>
-                <div>
-                  <p class="blog-title">
-                    <a href="#blog/past-day-one" data-blog-slug="past-day-one">Past day one</a>
-                  </p>
-                  <p class="blog-desc">Failure hands you a jolt of motivation, and mistaking that jolt for progress is the trap. On why habits beat motivation, and the one good use for the surge before it fades.</p>
-                </div>
-              </div>
-              -->
-            </div>
-
-            <!--
-            <article class="blog-post" data-slug="past-day-one" tabindex="-1" aria-labelledby="post-past-day-one-title" hidden>
-              <a href="#blog" class="blog-back" data-blog-back><span aria-hidden="true">←</span> all posts</a>
-              <header class="blog-post-header">
-                <h2 id="post-past-day-one-title" class="blog-post-title">Past day one</h2>
-                <p class="blog-post-meta">Jun 22, 2026 · ~3 min read</p>
-              </header>
-
-              <p class="blog-lede">Failure is a great motivator, and that's exactly why it's a trap. Every time something I care about falls through, I get a surge of resolve, and every time it's gone before it changes anything. The mistake was thinking the surge was the point. It isn't — but spent fast, it's good for exactly one thing.</p>
-
-              <h3>After the email</h3>
-              <p>This week it was an interview. I walked out sure I'd nailed it; the rejection landed before I got home. That happens. What's predictable is what came after — the urge to overhaul everything at once. Train harder, study more, finally read the stack of books I keep stepping around. I've been in this exact spot after every failure that stung, and the resolve has never once survived an ordinary Tuesday.</p>
-
-              <h3>Bad fuel</h3>
-              <p>The trap is treating that surge as the prize, as if the point of bombing the interview was the resolve that came after it. If that's your engine, your growth is outsourced to bad luck: you only move when something hurts, and you reset to zero the moment it stops. It's the least reliable fuel there is, because it drains exactly when the pain does — right when you'd need it to start working. (Cal Newport has made a version of this point for years: the routine runs whether the feeling shows up or not, which is why the people who don't wait to feel inspired out-ship everyone who does.)</p>
-
-              <h3>What it's for</h3>
-              <p>So the surge can't carry the work. It can carry the setup, though, and that's the entirety of its job: spend it, right now, on building the system that has to run once it's gone. You need some push to go make the habits in the first place — that's what the push is for, and nothing else.</p>
-              <p>So I'm not using this week's jolt to feel fired up. I'm using it to install structure while I still have the energy: training on the calendar, work hours set, entertainment decided in advance, the books moved somewhere I can't ignore them. Convert the feeling into a system before the feeling expires. The motivation pays for the construction, then it's free to leave.</p>
-
-              <h3>The rules</h3>
-              <p>When I got up I wrote the rules I'm installing on a note and stuck it where I can't avoid it. Not affirmations — rules, the kind that decide for me at the moments I won't decide well on my own.</p>
-              <blockquote class="blog-note">
-                <p>Don't eat or drink alone. There's a time and a place for both, and on my own at the wrong hour isn't it.</p>
-                <p>Work hard first, then play hard. I can't have it all, but I can have the best of it.</p>
-                <p>Earn entertainment. It's a reward for when I'm too tired to work, not an escape, and it belongs with people, not with hiding.</p>
-                <p>Read the books. They aren't decoration; they're distilled, high-value input. Use what's already on the desk.</p>
-                <p>Make the change now, not the next time something hurts.</p>
-              </blockquote>
-
-              <h3>Past day one</h3>
-              <p>Day one is easy, because day one still has the jolt in it. I called this "past day one" because the only day that proves anything is the first one where I don't feel like it and the system has to carry me anyway. That handoff, from motivation to habit, is the exact point where every previous version of this note got quietly ignored.</p>
-              <p>So I'm not tracking whether I feel motivated. That number's going to crash, and I already know it. I'm tracking whether the habit is still standing on the day the feeling isn't. Let's see if I make it past day one.</p>
-            </article>
-
-            <article class="blog-post" data-slug="ai-qa-legacy-coverage" tabindex="-1" aria-labelledby="post-ai-qa-title" hidden>
-              <a href="#blog" class="blog-back" data-blog-back><span aria-hidden="true">←</span> all posts</a>
-              <header class="blog-post-header">
-                <h2 id="post-ai-qa-title" class="blog-post-title">AI QA on legacy code</h2>
-                <p class="blog-post-meta">Jun 17, 2026 · ~7 min read</p>
-              </header>
-
-              <p class="blog-lede">We spent the last stretch putting an AI agent in charge of QA for an MLS platform that thousands of brokers log into every day — a decade-old app of listing wizards, search filters, and modals that open modals. The agent does the work now: it reads the ticket, figures out what the change touches, writes the test cases, drives the browser, and checks the database and the feed underneath. The interesting part wasn't the agent. It was the unglamorous question every phase leaned on — how does the agent actually click through the app? — and we answered that one three times before it stuck.</p>
-
-              <h3>What we inherited</h3>
-              <p>If you've ever opened an MLS portal you know the shape of it: forms stacked on forms, a listing wizard with a dozen steps, search filters nobody fully remembers, and one specific dropdown everyone in the office has a story about. QA happened by hand, on a schedule. The flows that actually mattered — creating a listing, inviting a broker, pushing a record out to the data feed — had close to no automated coverage, and what coverage existed sat on the safe, boring utility code that never broke anyway.</p>
-              <p>The goal: hand an agent a release ticket and have it do the QA the way a careful engineer would, end to end, leaving behind evidence a human could sign off on.</p>
-
-              <h3>The pipeline</h3>
-              <p>We built a pipeline the agent runs once per ticket, not a regression suite. Give it a ticket key and it pulls the ticket into a working dossier, diffs the code change against our local clones to figure out the blast radius — which surfaces and fields the change can actually reach — writes a test plan and a set of cases, executes them against a running build, verifies the backend the UI was supposed to have changed (the database rows, the records on the feed), and writes a sign-off back to the ticket. A QA engineer approves at two gates: once on the plan, once on the results. Nothing moves on the agent's say-so alone.</p>
-
-              <figure class="blog-figure">
-                <svg viewBox="0 0 520 410" role="img" xmlns="http://www.w3.org/2000/svg" aria-label="The steps of one testing run, top to bottom: 1 Gather the ticket into a dossier, 2 Blast radius from the code diff, 3 Author the test plan and cases, Gate A where a QA engineer approves the plan, 4 Execute by driving the app and verifying the backend, 5 Sign-off when everything is green, and Gate B where a QA engineer approves the results.">
-                  <line class="dg-line" x1="40" y1="36" x2="40" y2="384"/>
-                  <circle class="dg-badge" cx="40" cy="36" r="14"/>
-                  <text class="dg-num" x="40" y="41" text-anchor="middle">1</text>
-                  <text class="dg-title" x="66" y="34">Gather</text>
-                  <text class="dg-sub" x="66" y="50">pull the ticket into a working dossier</text>
-                  <circle class="dg-badge" cx="40" cy="94" r="14"/>
-                  <text class="dg-num" x="40" y="99" text-anchor="middle">2</text>
-                  <text class="dg-title" x="66" y="92">Blast radius</text>
-                  <text class="dg-sub" x="66" y="108">diff the code &#8594; which surfaces &amp; fields it reaches</text>
-                  <circle class="dg-badge" cx="40" cy="152" r="14"/>
-                  <text class="dg-num" x="40" y="157" text-anchor="middle">3</text>
-                  <text class="dg-title" x="66" y="150">Author</text>
-                  <text class="dg-sub" x="66" y="166">write the test plan + test cases</text>
-                  <path class="dg-gate" d="M40 197 L53 210 L40 223 L27 210 Z"/>
-                  <text class="dg-gatetitle" x="66" y="208">Gate A</text>
-                  <text class="dg-sub" x="66" y="224">a QA engineer approves the plan</text>
-                  <circle class="dg-badge" cx="40" cy="268" r="14"/>
-                  <text class="dg-num" x="40" y="273" text-anchor="middle">4</text>
-                  <text class="dg-title" x="66" y="266">Execute</text>
-                  <text class="dg-sub" x="66" y="282">drive the app (Playwright MCP), verify the DB &amp; feed</text>
-                  <circle class="dg-badge" cx="40" cy="326" r="14"/>
-                  <text class="dg-num" x="40" y="331" text-anchor="middle">5</text>
-                  <text class="dg-title" x="66" y="324">Sign-off</text>
-                  <text class="dg-sub" x="66" y="340">synthesize &#8212; only when everything is green</text>
-                  <path class="dg-gate" d="M40 371 L53 384 L40 397 L27 384 Z"/>
-                  <text class="dg-gatetitle" x="66" y="382">Gate B</text>
-                  <text class="dg-sub" x="66" y="398">a QA engineer approves the results</text>
-                </svg>
-                <figcaption>One run per ticket, top to bottom. Steps 1&#8211;5 are the agent's; the two diamonds are human gates &#8212; nothing reaches the ticket until a QA engineer signs off on the plan, then on the results.</figcaption>
-              </figure>
-
-              <p>Underneath it sits the piece that took the most thought: a separate repo of behavioral docs — what each surface is supposed to do, which fields exist, who's allowed to see them, the business rules. We call it the vault, and it's the agent's reference for what "correct" means. I'll come back to why it's a separate thing and not just the code, because that turns out to be the whole game.</p>
-
-              <figure class="blog-figure">
-                <svg viewBox="0 0 640 300" role="img" xmlns="http://www.w3.org/2000/svg" aria-label="How the two repos work together. The vault repo holds the spec for what is correct. The engine repo reads the spec, drives the running app and reads the page back, and writes the plan, cases, and sign-off to the ticket in Jira. A dashed loop shows the engine staging back into the vault what it learns.">
-                  <defs>
-                    <marker id="rg-ar" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto">
-                      <path class="dg-mk" d="M0 0 L6 3 L0 6 Z"/>
-                    </marker>
-                  </defs>
-                  <path class="dg-line dg-dash" d="M288 92 C288 42 110 42 86 90" marker-end="url(#rg-ar)"/>
-                  <text class="dg-edge" x="186" y="34" text-anchor="middle">stages back what it learns</text>
-                  <line class="dg-line" x1="150" y1="124" x2="251" y2="124" marker-end="url(#rg-ar)"/>
-                  <text class="dg-edge" x="201" y="116" text-anchor="middle">reads the spec</text>
-                  <line class="dg-line" x1="385" y1="118" x2="486" y2="118" marker-end="url(#rg-ar)"/>
-                  <text class="dg-edge" x="437" y="110" text-anchor="middle">drives</text>
-                  <line class="dg-line" x1="490" y1="134" x2="389" y2="134" marker-end="url(#rg-ar)"/>
-                  <text class="dg-edge" x="438" y="148" text-anchor="middle">reads back</text>
-                  <line class="dg-line" x1="320" y1="156" x2="320" y2="210" marker-end="url(#rg-ar)"/>
-                  <text class="dg-edge" x="330" y="180" text-anchor="start">writes the plan,</text>
-                  <text class="dg-edge" x="330" y="194" text-anchor="start">cases &amp; sign-off</text>
-                  <rect class="dg-box dg-repo" x="20" y="92" width="130" height="64" rx="5"/>
-                  <text class="dg-title" x="85" y="121" text-anchor="middle">vault</text>
-                  <text class="dg-sub" x="85" y="138" text-anchor="middle">what "correct" is</text>
-                  <rect class="dg-box dg-repo" x="255" y="92" width="130" height="64" rx="5"/>
-                  <text class="dg-title" x="320" y="121" text-anchor="middle">engine</text>
-                  <text class="dg-sub" x="320" y="138" text-anchor="middle">skills + scripts</text>
-                  <rect class="dg-box" x="490" y="92" width="130" height="64" rx="5"/>
-                  <text class="dg-title" x="555" y="121" text-anchor="middle">running app</text>
-                  <text class="dg-sub" x="555" y="138" text-anchor="middle">the build under test</text>
-                  <rect class="dg-box" x="255" y="214" width="130" height="54" rx="5"/>
-                  <text class="dg-title" x="320" y="238" text-anchor="middle">the ticket</text>
-                  <text class="dg-sub" x="320" y="254" text-anchor="middle">Jira</text>
-                </svg>
-                <figcaption>Two repos do the work. The <strong>vault</strong> is the spec &#8212; the independent source of what "correct" means; the <strong>engine</strong> reads it, drives the live app, and writes the plan, cases, and sign-off back to the ticket. Whatever it learns about a surface gets staged back into the vault, so the spec grows with every run.</figcaption>
-              </figure>
-
-              <h3>Driving the browser</h3>
-              <p>Every phase above bottoms out in the same primitive: the agent has to operate a real browser — log in, walk the wizard, read what's on the page, fill fields, and come back with proof of what happened. We tried three ways to give it that.</p>
-              <p>We started with <a href="https://github.com/DebugBase/glance" target="_blank" rel="noopener">Glance</a>, an MCP server a friend and I had just shipped that hands Claude Code a real browser. For exploratory testing it's genuinely good — point it at staging, let it wander, and it'll turn up the broken filter and screenshot it for you. But a QA pipeline needs the same run to mean the same thing twice, and to leave behind something a human can audit without re-running it. What Glance left behind was a transcript of what the model decided to do. That's the right artifact for exploring and the wrong one for a gate. No knock on Glance — it's built for the open-ended case, and a per-ticket QA run is the opposite of open-ended.</p>
-              <p>The next thing to try was the one already in the box: Claude's built-in browser control. No extra server to run, no config — the agent can just drive Chrome. It didn't make the cut, and the reasons were all the ways QA differs from casual browsing. It works off what it can see rendered on screen, so on a dense legacy form it's slow and it misses things that aren't visually obvious. There's no structured snapshot of the page to assert against or to diff a baseline from — you get pixels, not a tree. We couldn't reliably hand it a saved login and have it start authenticated, couldn't capture the network traffic a feed test depends on, and couldn't pin it to a specific local build with managed test credentials. For "go look at this website" it's fine. For "produce the same evidence-backed result on every release," it wasn't the tool.</p>
-              <p>Where we landed was <strong>Playwright MCP</strong> — the Playwright browser exposed to the agent as a server, with its testing, storage, and network capabilities turned on. The difference that mattered: it gives the agent the accessibility tree, not a screenshot. The agent targets a field by its role and name the way a screen reader would, which holds up far better across a sprawling old UI, and that same tree is a structured artifact we can diff a page against later to catch a surface drifting out from under its spec. Saved auth means a run starts already logged in, with no credentials anywhere near the prompt. Network capture and screenshots come for free on every run, so a failure ships with a trace instead of a story. And it's the same engine we'd later promote a throwaway agent walk into — a durable, checked-in spec — so there's a path from "the agent did this once" to "this is covered for good."</p>
-              <p>The correction worth making, because the easy version of this story is wrong: we didn't replace the agent with a static test suite. The agent is still the one running the tests. Playwright MCP is just the substrate it drives. Across the three attempts an agent was always in the loop; what changed was whether the thing under it could give a QA gate three boring necessities: determinism, real evidence, and a login.</p>
-
-              <h3>Where "correct" comes from</h3>
-              <p>The failure mode with an agent grading software is the obvious one: it reads the code, decides what the code does, then "verifies" that the code does that. It's a tautology, and it passes even when the code is wrong. So the rule the whole thing is built around is that the expected answer never comes from the implementation under test.</p>
-              <blockquote class="blog-note">
-                <p>The live app is only ever "what is" — never "what's correct." Correct lives a layer up: the ticket's acceptance criteria, a product decision, or the vault. The agent doesn't get a vote on it.</p>
-              </blockquote>
-              <p>Around that we layered the usual defense-in-depth idea, with one specific demand: every class of bug has to be catchable by at least two layers that fail for different reasons, so one blind spot doesn't reach production. A wrong fix gets caught both by a coverage check — did we even write a case for the path that changed? — and by asserting the same behavior in the UI and the database and the feed at once. A fix that quietly breaks something else gets caught by the code-derived blast radius and by diffing the page against its last known baseline. And when something slips through anyway, we fix it and add the check that would have caught it, so the same bug can't escape twice. The vault grows every time the agent touches a surface, and a bug it finds gets written back as a permanent note rather than left in a ticket comment that evaporates.</p>
-
-              <h3>Where it stands</h3>
-              <p>I'll be honest about the state of it: some of those layers are solid and in daily use, and some are still scaffolding with a TODO on them. The design is further along than the build. But the spine — agent runs the ticket, Playwright MCP drives the browser, the oracle for "correct" lives above the code — is load-bearing and real, and it's run against actual release tickets, not a demo. In its first two months it automated 140 previously manual test scenarios and caught 80+ defects before they shipped.</p>
-              <p>If I were starting this over, the part I'd protect from day one isn't the browser layer. That took three tries and the third one stuck; it's the part people ask about and it's the easy part. The hard part — the one that decides whether agent-driven QA is real or theater — is making sure the agent is never the one who gets to decide what "correct" means.</p>
-            </article>
-            -->
+            <div class="blog-index"></div>
           </div>
 
-          <!-- Cool tab -->
+          <!-- Cool tab (entries parked on the parked-content branch) -->
           <div id="tab-cool" class="tab-panel">
             <h2 class="sr-only" tabindex="-1">cool</h2>
-            <div class="cool-list" id="cool-list">
-              <div class="cool-entry">
-                <div class="cool-date">Jul 23, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://github.com/nutlope/hallmark" target="_blank" rel="noopener">Hallmark</a><span class="cool-domain">github.com</span> + <a href="https://github.com/facebook/astryx" target="_blank" rel="noopener">Astryx</a><span class="cool-domain">github.com</span></p>
-                  <p class="cool-desc">Two takes on fixing AI-generated design slop. Hallmark (Nutlope / Together AI) is a design skill for Claude Code, Cursor, and Codex — fifty-seven slop-test gates plus a pre-emit self-critique so generated sites stop looking AI-made, with twenty themes that stay structurally distinct instead of template variations. Astryx is Meta's internal design system, eight years in the making and powering 13,000+ apps, now open source: 150+ accessible React components on StyleX, themeable via CSS variables, built so AI assistants and humans work through identical tooling. One teaches the model taste; the other hands it a system that already has it.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 22, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://cursor.com/blog/continually-improving-agent-harness" target="_blank" rel="noopener">Continually Improving Our Agent Harness</a><span class="cool-domain">cursor.com</span> + <a href="https://www.anthropic.com/engineering/harness-design-long-running-apps" target="_blank" rel="noopener">Harness Design for Long-Running Apps</a><span class="cool-domain">anthropic.com</span></p>
-                  <p class="cool-desc">Two engineering posts, from Cursor and Anthropic, making the same case: once the models are good, the harness around them is the differentiator, not the weights. Cursor stacks small, measured optimizations (dynamic context retrieval, keep-rate A/B tests, per-model tuning). Anthropic's Labs team splits the work across a planner, a generator, and an evaluator, so the agent judging the output isn't the one that wrote it. Both keep ripping out scaffolding as the models improve. Model quality is table stakes; harness engineering is where the leverage is.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 19, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://github.com/ayghri/i-have-adhd" target="_blank" rel="noopener">i-have-adhd</a><span class="cool-domain">github.com</span></p>
-                  <p class="cool-desc">A Claude Code plugin that stops the model from burying the answer — action first, steps numbered, no "Hope this helps!" ADHD-friendly output, no diagnosis required.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 10, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.gingerbill.org/article/2026/07/10/good-tools-are-invisible/" target="_blank" rel="noopener">Good Tools Are Invisible</a><span class="cool-domain">gingerbill.org</span></p>
-                  <p class="cool-desc">gingerBill argues the best tools disappear in use — you think through them, not about them — and that treating a tool's friction as a fun challenge rather than a flaw is muddled thinking about how good design should feel.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 9, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://blog.dannycastonguay.com/how-to-write-an-email/" target="_blank" rel="noopener">How to Write an Email</a><span class="cool-domain">blog.dannycastonguay.com</span></p>
-                  <p class="cool-desc">Danny Castonguay's 18 rules for emails people can read and act on fast — lead with the point, cut the words, be specific, and make sure it still makes sense when forwarded. "This is not about grammar. It is about speed, clarity, and judgment."</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 9, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.pangram.com/" target="_blank" rel="noopener">Pangram</a><span class="cool-domain">pangram.com</span></p>
-                  <p class="cool-desc">An AI-detection tool from ex-Google and Tesla ML researchers that claims to spot ChatGPT/Claude/Gemini text with a 1-in-10,000 false-positive rate — validated by independent research out of UChicago and Maryland, with browser extension, LMS, and API integrations for educators and publishers.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 8, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.theatlantic.com/magazine/2026/08/reading-crisis-postliterate-age/687618/" target="_blank" rel="noopener">The Age of Reading Is Over</a><span class="cool-domain">theatlantic.com</span></p>
-                  <p class="cool-desc">Rose Horowitch's Atlantic cover story on the decline of reading in America — how the collapse of the reading habit is reshaping cognition and ushering in a postliterate age.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 7, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://30papers.com/" target="_blank" rel="noopener">30 Papers</a><span class="cool-domain">30papers.com</span></p>
-                  <p class="cool-desc">Curated research papers worth understanding — one paper a month, presented with enough context and commentary that you can actually read it without getting lost in the jargon.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 7, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://fortelabs.com/blog/para/" target="_blank" rel="noopener">The PARA Method</a><span class="cool-domain">fortelabs.com</span></p>
-                  <p class="cool-desc">Tiago Forte's system for organizing your digital life — Projects, Areas, Resources, Archives — so you stop wasting time looking for information and gain greater focus on what matters most.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 6, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://roadmap.sh/forward-deployed-engineer" target="_blank" rel="noopener">Forward Deployed Engineer Roadmap</a><span class="cool-domain">roadmap.sh</span></p>
-                  <p class="cool-desc">roadmap.sh's step-by-step guide to becoming a Forward Deployed Engineer in 2026 — the Palantir-popularized role that embeds engineers directly with customers, sitting somewhere between software engineering, solutions architecture, and consulting.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jul 2, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://eieio.games/blog/one-million-checkboxes/" target="_blank" rel="noopener">One Million Checkboxes</a><span class="cool-domain">eieio.games</span></p>
-                  <p class="cool-desc">Nolen Royalty built a site with one million checkboxes shared live by everyone on the internet — check one and it's checked for all. Behind the chaos: a Redis bit array, WebSocket broadcasts, react-window rendering, and a fun bit-ordering bug between Python and JavaScript.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jun 29, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://clawd.rip/" target="_blank" rel="noopener">Everything That Went Wrong With Claude</a><span class="cool-domain">clawd.rip</span></p>
-                  <p class="cool-desc">A RIP-themed timeline (not affiliated with Anthropic) cataloging Claude's controversies, outages, pricing shocks, and lawsuits — from cache-amnesia billing surprises and DMCA takedown sprees to Pentagon supply-chain fights and the great Claude Code nerf.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jun 29, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://github.com/kunchenguid/no-mistakes" target="_blank" rel="noopener">no-mistakes</a><span class="cool-domain">github.com</span></p>
-                  <p class="cool-desc">A local git proxy that sits in front of your remote: push to it instead of origin and it spins up a disposable worktree, runs an AI validation pipeline (review, test, docs, lint), auto-fixes safe issues, escalates the rest, and opens a clean PR only after every check passes.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jun 25, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.paraform.com/talent-density-index" target="_blank" rel="noopener">Paraform Talent Density Index</a><span class="cool-domain">paraform.com</span></p>
-                  <p class="cool-desc">Paraform ranks companies not by funding or logos but by how badly the market wants their people — an algorithm over hiring data across thousands of roles and millions of candidate profiles. Thinking Machines, OpenAI, and Anthropic top the list.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jun 23, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://dunkels.com/adam/signs-your-text-was-written-by-an-ai/" target="_blank" rel="noopener">32 Ways Your Writing Looks Like an AI Wrote It</a><span class="cool-domain">dunkels.com</span></p>
-                  <p class="cool-desc">Adam Dunkels: 32 recurring patterns that mark text as AI-written — em-dash overuse, hedging, filler phrases, uniform sentences — plus tools to spot and strip them from your own writing.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jun 11, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://medium.com/@arghajitsingha47/hermes-agent-for-qa-automation-8d0dfcc03bb0" target="_blank" rel="noopener">Hermes Agent for QA Automation</a><span class="cool-domain">medium.com</span></p>
-                  <p class="cool-desc">Arghajit Singha on Hermes: a terminal-native AI agent for QA workflows that runs against local LLMs, holds persistent memory of your test environment, and turns repetitive shell commands into reusable skills.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jun 4, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1" target="_blank" rel="noopener">Building an MCP Ecosystem at Pinterest</a><span class="cool-domain">medium.com</span></p>
-                  <p class="cool-desc">Pinterest built a production ecosystem of domain-specific MCP servers behind a central registry, saving an estimated 7,000 engineering hours per month across 66,000 monthly invocations.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Jun 4, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/" target="_blank" rel="noopener">Introducing the MCP Registry</a><span class="cool-domain">blog.modelcontextprotocol.io</span></p>
-                  <p class="cool-desc">Preview of an open catalog and API for discovering publicly available MCP servers, with room for public and private sub-registries to build on top.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">May 26, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://impeccable.style/" target="_blank" rel="noopener">Impeccable</a><span class="cool-domain">impeccable.style</span></p>
-                  <p class="cool-desc">Paul Bakaus: a design-fluency skill for AI coding agents — teaches Claude and others real design vocabulary and patterns so they stop generating purple gradients, nested cards, and other AI slop.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">May 26, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.tasteskill.dev/" target="_blank" rel="noopener">Taste Skill</a><span class="cool-domain">tasteskill.dev</span></p>
-                  <p class="cool-desc">Leon Lin and blueemi: an open-source design-system framework that gives AI coding agents the rules and templates to ship polished, coherent frontends instead of generic AI output.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">May 22, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.langchain.com/blog/the-anatomy-of-an-agent-harness" target="_blank" rel="noopener">The Anatomy of an Agent Harness</a><span class="cool-domain">langchain.com</span></p>
-                  <p class="cool-desc">LangChain: a breakdown of the harness layer that wraps an LLM into a working agent — the loop, tools, memory, and control flow that turn raw model calls into reliable autonomous behavior.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">May 17, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://paulgraham.com/genius.html" target="_blank" rel="noopener">The Bus Ticket Theory of Genius</a><span class="cool-domain">paulgraham.com</span></p>
-                  <p class="cool-desc">Paul Graham: great work requires natural ability, determination, and a disinterested obsession with something that matters — an intense, purposeless interest that lets you follow unpromising paths others overlook.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">May 17, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://paulgraham.com/before.html" target="_blank" rel="noopener">Before the Startup</a><span class="cool-domain">paulgraham.com</span></p>
-                  <p class="cool-desc">Paul Graham: the best preparation for founding a startup is pursuing genuine intellectual curiosity and interesting problems, not attempting to launch ventures while still in school.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">May 4, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.youtube.com/watch?v=Nsx5RDVKZSk" target="_blank" rel="noopener">Why Startup Founders Should Launch Sooner Than They Think</a><span class="cool-domain">youtube.com</span></p>
-                  <p class="cool-desc">Y Combinator: the cost of launching too early is lower than you think, and the cost of waiting is higher.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">May 4, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.youtube.com/watch?v=rWUWfj_PqmM" target="_blank" rel="noopener">The New Way To Build A Startup</a><span class="cool-domain">youtube.com</span></p>
-                  <p class="cool-desc">Y Combinator: how AI is collapsing the team size needed to build a company from the ground up.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">May 4, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://www.youtube.com/watch?v=ShYKkPPhOoc" target="_blank" rel="noopener">How to Spend Your 20s in the AI Era</a><span class="cool-domain">youtube.com</span></p>
-                  <p class="cool-desc">Y Combinator: where to focus your energy when AI is compressing the value of credentials and raising the ceiling on what one person can build.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Apr 29, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://blog.fsck.com/2025/09/29/using-graphviz-for-claudemd/" target="_blank" rel="noopener">Using GraphViz for CLAUDE.md</a><span class="cool-domain">blog.fsck.com</span></p>
-                  <p class="cool-desc">Trigger-based GraphViz flowcharts help Claude follow instructions more reliably than markdown rules.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Apr 29, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://github.com/garrytan/gstack" target="_blank" rel="noopener">gstack</a><span class="cool-domain">github.com</span></p>
-                  <p class="cool-desc">Garry Tan's Claude Code setup: 23 opinionated skills covering CEO, designer, eng manager, release manager, and QA roles.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Apr 28, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://mitchellh.com/writing/my-ai-adoption-journey" target="_blank" rel="noopener">My AI Adoption Journey</a><span class="cool-domain">mitchellh.com</span></p>
-                  <p class="cool-desc">Mitchell Hashimoto's six-step journey from dismissing AI to running agents continuously in the background.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Apr 28, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://levelup.gitconnected.com/your-ai-agent-doesnt-care-about-your-readme-6cd1f0d86ac8" target="_blank" rel="noopener">Your AI Agent Doesn't Care About Your README</a><span class="cool-domain">levelup.gitconnected.com</span></p>
-                  <p class="cool-desc">Reya Vir: Auto-generate a hierarchy of AGENTS.md files so your AI agent gets dense, folder-specific context instead of one giant README.</p>
-                </div>
-              </div>
-              <div class="cool-entry">
-                <div class="cool-date">Apr 18, 2026</div>
-                <div>
-                  <p class="cool-title"><a href="https://paulgraham.com/cities.html" target="_blank" rel="noopener">Cities and Ambition</a><span class="cool-domain">paulgraham.com</span></p>
-                  <p class="cool-desc">Different cities send different messages. New York says you should make more money. Cambridge says you should be smarter.</p>
-                </div>
-              </div>
-            </div>
+            <div class="cool-list" id="cool-list"></div>
           </div>
 
 
   </div>
   </main>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=2"></script>
 </body>
 
 </html>

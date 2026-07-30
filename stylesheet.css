@@ -74,11 +74,8 @@
   --muted: #6a6884;
   --border: #d8d6e8;
   /* The second ink: warm coral against the indigo/lavender family. Editorial
-     only (name misprint, separators) — links stay indigo. */
+     only (separators, card frame) — links stay indigo. */
   --accent: #bf5a4a;
-  /* Name misprint offsets: the site's two inks slipping out of register */
-  --misprint-a: rgba(191, 90, 74, 0.5);
-  --misprint-b: rgba(53, 86, 145, 0.45);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -89,9 +86,6 @@
     --muted: #8e8aab;
     --border: #413F54;
     --accent: #de9180;
-    /* Light ink on dark paper: deeper passes of the same two inks */
-    --misprint-a: rgba(164, 74, 58, 0.8);
-    --misprint-b: rgba(90, 104, 178, 0.8);
   }
 }
 
@@ -131,23 +125,9 @@ p { margin: 0 0 1em 0; }
   font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: -0.5px;
   line-height: 1.15;
   margin: 0 0 0.25em;
-  /* Misprint offset: the two ink passes slip out of register behind the
-     letters — but only after the card border and slashes have lit (~4.1s).
-     Starts flat (shadows hidden at zero offset), ends offset, stays. */
-  text-shadow:
-    0 0 0 var(--misprint-a),
-    0 0 0 var(--misprint-b);
-  animation: name-ink 0.5s ease-out 4.1s forwards;
-}
-@keyframes name-ink {
-  to {
-    text-shadow:
-      0.04em -0.025em 0 var(--misprint-a),
-      -0.04em 0.04em 0 var(--misprint-b);
-  }
 }
 
 /* One quiet card around the whole intro: the hairline starts grey and the
@@ -167,7 +147,7 @@ p { margin: 0 0 1em 0; }
     conic-gradient(from -90deg,
       var(--accent) var(--card-sweep),
       var(--border) var(--card-sweep)) border-box;
-  animation: card-sweep 2.6s linear forwards;
+  animation: card-sweep 1.3s linear forwards;
 }
 @keyframes card-sweep {
   from { --card-sweep: 0deg; }
@@ -229,13 +209,6 @@ body { animation: fadeIn 0.3s ease; }
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; }
   a:hover { animation: none; }
-  /* Skip the intro choreography: land on the finished misprint state */
-  .name {
-    animation: none;
-    text-shadow:
-      0.04em -0.025em 0 var(--misprint-a),
-      -0.04em 0.04em 0 var(--misprint-b);
-  }
 }
 
 /* ─── Layout ─────────────────────────────────────────────────────────────── */
@@ -249,28 +222,6 @@ body { animation: fadeIn 0.3s ease; }
 .bio-cell {
   max-width: 620px;
   padding: 0 1.5%;
-}
-
-/* Affiliations with the die sitting close on their right */
-.affil-row {
-  display: flex;
-  align-items: center;
-  gap: 3em;
-}
-
-.affil-col { min-width: 0; }
-
-/* The rolling die (canvas, painted in main.js). Square, small: a framed
-   specimen beside the experience lines, not a centerpiece. The hairline box
-   gives the animation a stage, on-system (depth from borders, no shadow).
-   Alpha comes from the canvas, not opacity. */
-.dice-canvas {
-  display: block;
-  flex-shrink: 0;
-  width: 150px;
-  aspect-ratio: 1 / 1;
-  border: 1px solid var(--border);
-  border-radius: 4px;
 }
 
 .centered { text-align: center; }
@@ -299,17 +250,17 @@ body { animation: fadeIn 0.3s ease; }
 
 /* The contact slashes start in the link purple and take the coral ink one
    slash at a time, left to right, once the card border finishes lighting up
-   (~2.6s) */
+   (~1.3s) */
 .contact-line .sep span {
   color: var(--link);
   animation: sep-ink 0.3s ease-out forwards;
 }
-.contact-line .sep:nth-of-type(1) span:nth-child(1) { animation-delay: 2.7s; }
-.contact-line .sep:nth-of-type(1) span:nth-child(2) { animation-delay: 2.9s; }
-.contact-line .sep:nth-of-type(2) span:nth-child(1) { animation-delay: 3.1s; }
-.contact-line .sep:nth-of-type(2) span:nth-child(2) { animation-delay: 3.3s; }
-.contact-line .sep:nth-of-type(3) span:nth-child(1) { animation-delay: 3.5s; }
-.contact-line .sep:nth-of-type(3) span:nth-child(2) { animation-delay: 3.7s; }
+.contact-line .sep:nth-of-type(1) span:nth-child(1) { animation-delay: 1.35s; }
+.contact-line .sep:nth-of-type(1) span:nth-child(2) { animation-delay: 1.47s; }
+.contact-line .sep:nth-of-type(2) span:nth-child(1) { animation-delay: 1.59s; }
+.contact-line .sep:nth-of-type(2) span:nth-child(2) { animation-delay: 1.71s; }
+.contact-line .sep:nth-of-type(3) span:nth-child(1) { animation-delay: 1.83s; }
+.contact-line .sep:nth-of-type(3) span:nth-child(2) { animation-delay: 1.95s; }
 @keyframes sep-ink {
   to { color: var(--accent); }
 }
@@ -320,7 +271,12 @@ body { animation: fadeIn 0.3s ease; }
   }
 }
 
-/* Muted-meta-tier hint after a link (e.g. "email copy", "resume pdf") */
+/* Once the intro has played through, pin every finished state so switching
+   tabs (display:none resets CSS animations) never replays the choreography */
+.intro-done .home-card { animation: none; --card-sweep: 360deg; }
+.intro-done .contact-line .sep span { animation: none; color: var(--accent); }
+
+/* Muted-meta-tier hint after a link (e.g. "resume pdf") */
 .link-hint {
   font-size: 11px;
   color: var(--muted);
@@ -331,6 +287,25 @@ a:focus .link-hint {
   color: inherit;
 }
 
+/* The email "copy" affordance is a real button (the link stays a mailto);
+   styled to the same muted hint tier */
+.copy-btn {
+  background: none;
+  border: 0;
+  padding: 0.2em 0.15em;
+  margin-left: 0.15em;
+  font-family: inherit;
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.copy-btn:hover { color: var(--link-hover); }
+.copy-btn:focus-visible {
+  outline: 2px solid var(--link-hover);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .headshot-img {
   width: 100%;
   max-width: 100%;
@@ -338,9 +313,6 @@ a:focus .link-hint {
 }
 
 @media (max-width: 600px) {
-  /* Tighter gap so the die stays beside the experience lines on small screens */
-  .affil-row { gap: 1.25em; }
-  .dice-canvas { width: 110px; }
   .blog-post-title { font-size: 19px; }
 }
 
@@ -462,8 +434,8 @@ a:focus .link-hint {
 @media (max-width: 600px) {
   .kbd-legend { display: none !important; }
   .tab-key { display: none; }
-  /* "copy" hint is for the desktop clipboard affordance; mobile uses native mailto */
-  a[href^="mailto:"] .link-hint { display: none; }
+  /* "copy" is the desktop clipboard affordance; mobile taps the native mailto */
+  .copy-btn { display: none; }
 }
 
 /* ─── Tab panels ─────────────────────────────────────────────────────────── */

@@ -132,7 +132,7 @@ A nearly monochromatic system: tinted neutrals on a lavender-paper surface, with
 
 ### Named Rules
 
-**The Two Inks Rule.** Signal Indigo (dark-theme twin Wisteria Signal) marks interactivity, nothing else: never a background, never a divider, never a non-interactive label. Its rarity is the signal that something is a link. Coral Ink (`#bf5a4a`; dark-theme twin Pale Coral Ink `#de9180`) is the second, editorial ink: it appears only on decorative marks — the name's misprint offset, the `//` and `·` separators, and the home card's hairline frame — and never on anything interactive. Two inks, two jobs; no third color.
+**The Two Inks Rule.** Signal Indigo (dark-theme twin Wisteria Signal) marks interactivity, nothing else: never a background, never a divider, never a non-interactive label. Its rarity is the signal that something is a link. Coral Ink (`#bf5a4a`; dark-theme twin Pale Coral Ink `#de9180`) is the second, editorial ink: it appears only on decorative marks — the `//` and `·` separators and the home card's hairline frame — and never on anything interactive. Two inks, two jobs; no third color.
 
 **The Tinted Neutral Rule.** Every neutral is tinted toward the brand hue (lavender/plum). Pure `#000` and pure `#fff` are forbidden, in both themes. The chroma is small (≤0.01) but consistent across the palette. If a new neutral is added, it tints with the family or it doesn't ship.
 
