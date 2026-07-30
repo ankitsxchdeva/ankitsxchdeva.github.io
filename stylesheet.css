@@ -68,7 +68,7 @@
 /* ─── Theme ──────────────────────────────────────────────────────────────── */
 :root {
   --bg: #f5f4fa;
-  --fg: #30292f;
+  --fg: #4a4553;
   --link: #355691;
   --link-hover: #5F5AA2;
   --muted: #6a6884;
@@ -102,7 +102,7 @@ html, body { background: var(--bg); color: var(--fg); }
   color: var(--link);
   border: 1px solid var(--link);
   border-radius: 2px;
-  font-size: 13px;
+  font-size: 16px;
   z-index: 100;
   transition: top 0.2s ease;
 }
@@ -115,7 +115,7 @@ html, body { background: var(--bg); color: var(--fg); }
 
 body, p {
   font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.65;
 }
 
@@ -123,9 +123,9 @@ p { margin: 0 0 1em 0; }
 
 .name {
   font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.6px;
   line-height: 1.15;
   margin: 0 0 0.25em;
 }
@@ -167,7 +167,7 @@ p { margin: 0 0 1em 0; }
 /* Quiet status line under the name: muted meta tier, not a badge. It closes
    the name pair, so it carries the gap before the affiliation lines. */
 .status-line {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--muted);
   margin: 0 0 1.75em;
 }
@@ -217,13 +217,13 @@ body { animation: fadeIn 0.3s ease; }
 /* ─── Layout ─────────────────────────────────────────────────────────────── */
 .main-wrapper {
   width: 100%;
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
-/* Home column: same 620px measure as the other tabs */
+/* Home column: same 744px measure as the other tabs */
 .bio-cell {
-  max-width: 620px;
+  max-width: 744px;
   padding: 0 1.5%;
 }
 
@@ -231,7 +231,7 @@ body { animation: fadeIn 0.3s ease; }
 
 /* Tight affiliation lines under the status line: fg text, small, no gaps */
 .affil {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.7;
   margin: 0;
 }
@@ -281,7 +281,7 @@ body { animation: fadeIn 0.3s ease; }
 
 /* Muted-meta-tier hint after a link (e.g. "resume pdf") */
 .link-hint {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
   margin-left: 0.15em;
 }
@@ -298,7 +298,7 @@ a:focus .link-hint {
   padding: 0.2em 0.15em;
   margin-left: 0.15em;
   font-family: inherit;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
   cursor: pointer;
 }
@@ -316,7 +316,7 @@ a:focus .link-hint {
 }
 
 @media (max-width: 600px) {
-  .blog-post-title { font-size: 19px; }
+  .blog-post-title { font-size: 23px; }
 }
 
 /* ─── Tab nav ────────────────────────────────────────────────────────────── */
@@ -330,7 +330,7 @@ a:focus .link-hint {
   position: relative;
   padding: 0.5em 0;
   margin-right: 1.75em;
-  font-size: 14px;
+  font-size: 17px;
   color: var(--muted);
   background: none;
   animation: none;
@@ -362,13 +362,13 @@ a:focus .link-hint {
 .tab-dead {
   padding: 0.5em 0;
   margin-right: 1.75em;
-  font-size: 14px;
+  font-size: 17px;
   color: var(--muted);
   cursor: default;
   user-select: none;
 }
 .tab-soon {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   vertical-align: super;
   margin-left: 1px;
@@ -381,7 +381,7 @@ a:focus .link-hint {
 /* Keyboard shortcut badges */
 .tab-key {
   font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--fg);
   opacity: 0.75;
   border: 1px solid var(--fg);
@@ -408,7 +408,7 @@ a:focus .link-hint {
   border: 1px solid var(--border);
   border-radius: 4px;
   font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1;
   color: var(--muted);
   z-index: 50;
@@ -425,7 +425,7 @@ a:focus .link-hint {
 }
 .kbd-legend-key {
   font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--fg);
   border: 1px solid var(--border);
   border-radius: 2px;
@@ -467,12 +467,12 @@ html:not(.js) .tab-key { display: none; }
 
 /* ─── Listing rows (shared by cool, projects, blog index) ──────────────── */
 .cool-list, .projects-list, .blog-index {
-  max-width: 620px;
+  max-width: 744px;
   padding: 0 1.5%;
 }
 .cool-entry, .project-entry, .blog-entry {
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 96px 1fr;
   gap: 0 1.5em;
   padding: 1em 0;
   border-bottom: 1px solid var(--border);
@@ -481,14 +481,14 @@ html:not(.js) .tab-key { display: none; }
 .project-entry:first-child,
 .blog-entry:first-child { border-top: 1px solid var(--border); }
 .cool-date, .project-date, .blog-date {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   padding-top: 2px;
   white-space: nowrap;
 }
 .cool-title, .project-title, .blog-title {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 18px;
   margin: 0 0 0.25em;
   overflow-wrap: anywhere;
 }
@@ -501,14 +501,14 @@ html:not(.js) .tab-key { display: none; }
 .project-title a:hover,
 .blog-title a:hover { color: var(--link-hover); }
 .cool-desc, .project-desc, .blog-desc {
-  font-size: 14px;
+  font-size: 17px;
   color: var(--muted);
   margin: 0;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
 .cool-domain, .project-domain {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
   font-weight: 400;
   margin-left: 0.4em;
@@ -526,13 +526,13 @@ html:not(.js) .tab-key { display: none; }
 }
 .cool-empty {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 17px;
   padding: 1.5% 1.5%;
 }
 
 /* ─── Music tab ──────────────────────────────────────────────────────────── */
 .music-wrap {
-  max-width: 620px;
+  max-width: 744px;
   padding: 0 1.5%;
 }
 .embed-header {
@@ -553,7 +553,7 @@ summary.embed-header {
 summary.embed-header::-webkit-details-marker { display: none; }
 summary.embed-header::before {
   content: '\25b8';
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
   display: inline-block;
   transition: transform 0.2s ease, color 0.2s ease;
@@ -569,47 +569,47 @@ summary.embed-header:focus-visible {
   border-radius: 2px;
 }
 .playlist-link {
-  font-size: 12px;
+  font-size: 14px;
   margin: 0.85em 0 0;
 }
 @media (prefers-reduced-motion: reduce) {
   summary.embed-header::before { transition: none; }
 }
 .embed-playlist-name {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--fg);
 }
 .embed-track-count {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
 }
 .track-list { list-style: none; margin: 0; padding: 0; }
 .track-item {
   display: grid;
-  grid-template-columns: 20px 1fr auto;
+  grid-template-columns: 24px 1fr auto;
   align-items: center;
-  gap: 10px;
-  padding: 5px 8px;
-  margin: 0 -8px;
+  gap: 12px;
+  padding: 6px 10px;
+  margin: 0 -10px;
   border-bottom: 1px solid var(--border);
 }
-.track-num { font-size: 12px; color: var(--muted); text-align: right; font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.track-num { font-size: 14px; color: var(--muted); text-align: right; font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .track-info { min-width: 0; display: flex; gap: 0.4em; align-items: baseline; }
-.track-name { font-size: 14px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-.track-duration { font-size: 12px; color: var(--muted); font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
+.track-name { font-size: 17px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.track-artist { font-size: 14px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.track-duration { font-size: 14px; color: var(--muted); font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
 
 /* ─── Blog tab (post body) ─────────────────────────────────────────────── */
 .blog-post {
-  max-width: 620px;
+  max-width: 744px;
   padding: 0 1.5%;
 }
 .blog-post:focus { outline: none; }
 .blog-back {
   display: inline-block;
   margin: 0 0 1.5em;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   text-decoration: none;
 }
@@ -620,38 +620,38 @@ summary.embed-header:focus-visible {
   border-bottom: 1px solid var(--border);
 }
 .blog-post-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--fg);
   margin: 0 0 0.4em;
   overflow-wrap: anywhere;
 }
 .blog-post-meta {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   margin: 0;
 }
 .blog-lede {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--fg);
   margin: 0 0 1.5em;
   overflow-wrap: break-word;
 }
 .blog-post h3 {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--fg);
   margin: 1.5em 0 0.6em;
 }
 .blog-post p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.65;
   color: var(--fg);
   margin: 0 0 1em;
   overflow-wrap: break-word;
 }
 .blog-post ul {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.65;
   color: var(--fg);
   margin: 0 0 1em;
@@ -688,7 +688,7 @@ summary.embed-header:focus-visible {
 .blog-figure { margin: 1.75em 0; }
 .blog-figure svg { display: block; width: 100%; height: auto; }
 .blog-figure figcaption {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.55;
   margin: 0.85em 0 0;
@@ -700,11 +700,11 @@ summary.embed-header:focus-visible {
 .blog-figure .dg-line  { stroke: var(--muted); stroke-width: 1.4; fill: none; }
 .blog-figure .dg-dash  { stroke-dasharray: 4 4; }
 .blog-figure .dg-mk    { fill: var(--muted); }
-.blog-figure .dg-title     { fill: var(--fg);    font: 700 15px 'Lato', Verdana, sans-serif; }
-.blog-figure .dg-num       { fill: var(--fg);    font: 700 13px 'Lato', Verdana, sans-serif; }
-.blog-figure .dg-gatetitle { fill: var(--muted); font: 700 13px 'Lato', Verdana, sans-serif; }
-.blog-figure .dg-sub       { fill: var(--muted); font: 400 12px 'Lato', Verdana, sans-serif; }
-.blog-figure .dg-edge      { fill: var(--muted); font: 400 11px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-title     { fill: var(--fg);    font: 700 18px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-num       { fill: var(--fg);    font: 700 16px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-gatetitle { fill: var(--muted); font: 700 16px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-sub       { fill: var(--muted); font: 400 14px 'Lato', Verdana, sans-serif; }
+.blog-figure .dg-edge      { fill: var(--muted); font: 400 13px 'Lato', Verdana, sans-serif; }
 
 @media (max-width: 600px) {
   /* Stack the shared listing grid: date becomes a small muted line above the
@@ -716,9 +716,9 @@ summary.embed-header:focus-visible {
   .cool-date, .project-date, .blog-date { padding-top: 0; }
   /* Diagram SVGs scale down with their viewBox on small screens; larger
      source sizes keep the labels legible. */
-  .blog-figure .dg-title { font-size: 19px; }
-  .blog-figure .dg-sub   { font-size: 16px; }
-  .blog-figure .dg-edge  { font-size: 15px; }
+  .blog-figure .dg-title { font-size: 23px; }
+  .blog-figure .dg-sub   { font-size: 19px; }
+  .blog-figure .dg-edge  { font-size: 18px; }
 }
 
 /* ─── Screen-reader-only utility ─────────────────────────────────────────── */
