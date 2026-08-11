@@ -150,7 +150,7 @@ p { margin: 0 0 1em 0; }
     conic-gradient(from -90deg,
       var(--accent) var(--card-sweep),
       var(--border) var(--card-sweep)) border-box;
-  animation: card-sweep 1.3s linear forwards;
+  animation: card-sweep 0.7s linear forwards;
 }
 @keyframes card-sweep {
   from { --card-sweep: 0deg; }
@@ -253,17 +253,17 @@ body { animation: fadeIn 0.3s ease; }
 
 /* The contact slashes start in the link purple and take the coral ink one
    slash at a time, left to right, once the card border finishes lighting up
-   (~1.3s) */
+   (~0.7s) */
 .contact-line .sep span {
   color: var(--link);
-  animation: sep-ink 0.3s ease-out forwards;
+  animation: sep-ink 0.22s ease-out forwards;
 }
-.contact-line .sep:nth-of-type(1) span:nth-child(1) { animation-delay: 1.35s; }
-.contact-line .sep:nth-of-type(1) span:nth-child(2) { animation-delay: 1.47s; }
-.contact-line .sep:nth-of-type(2) span:nth-child(1) { animation-delay: 1.59s; }
-.contact-line .sep:nth-of-type(2) span:nth-child(2) { animation-delay: 1.71s; }
-.contact-line .sep:nth-of-type(3) span:nth-child(1) { animation-delay: 1.83s; }
-.contact-line .sep:nth-of-type(3) span:nth-child(2) { animation-delay: 1.95s; }
+.contact-line .sep:nth-of-type(1) span:nth-child(1) { animation-delay: 0.75s; }
+.contact-line .sep:nth-of-type(1) span:nth-child(2) { animation-delay: 0.83s; }
+.contact-line .sep:nth-of-type(2) span:nth-child(1) { animation-delay: 0.91s; }
+.contact-line .sep:nth-of-type(2) span:nth-child(2) { animation-delay: 0.99s; }
+.contact-line .sep:nth-of-type(3) span:nth-child(1) { animation-delay: 1.07s; }
+.contact-line .sep:nth-of-type(3) span:nth-child(2) { animation-delay: 1.15s; }
 @keyframes sep-ink {
   to { color: var(--accent); }
 }
