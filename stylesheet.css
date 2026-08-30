@@ -322,6 +322,7 @@ a:focus .link-hint {
 /* ─── Tab nav ────────────────────────────────────────────────────────────── */
 .tab-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 0;
   padding: 1.5% 1.5% 0;
   margin-bottom: 1.5em;
@@ -372,6 +373,7 @@ a:focus .link-hint {
   color: var(--muted);
   vertical-align: super;
   margin-left: 1px;
+  white-space: nowrap;
 }
 @media (prefers-reduced-motion: reduce) {
   .tab-nav a::after { transition: none; }
@@ -512,6 +514,34 @@ html:not(.js) .tab-key { display: none; }
   color: var(--muted);
   font-weight: 400;
   margin-left: 0.4em;
+}
+
+/* ─── Projects: links row, thumbnails ────────────────────────────────────── */
+/* Featured entries carry a screenshot; the date column and hairlines stay
+   identical to the compact rows, so the list reads as one index. */
+.project-featured { padding: 1.75em 0; }
+.project-links {
+  font-size: 14px;
+  margin: -0.1em 0 1em;
+}
+.project-thumb {
+  display: block;
+  margin: 0 0 1em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.project-thumb img { display: block; width: 100%; height: auto; }
+/* the squiggle underline is a text-link signal; on the block image link the
+   border takes over as the hover cue */
+a.project-thumb:hover {
+  background-image: none;
+  padding-bottom: 0;
+  border-color: var(--link-hover);
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-thumb { transition: none; }
 }
 
 /* ─── Cool tab (fade-in animation) ─────────────────────────────────────── */

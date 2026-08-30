@@ -2,3 +2,4 @@
 *.claude
 .gstack/
 .browser-sessions/
+.playwright-mcp/
