@@ -1,33 +1,6 @@
 /* ─── Fonts ──────────────────────────────────────────────────────────────── */
-/* Anthropic Sans (self-hosted, Latin subset) — primary; Lato below is fallback */
-@font-face {
-  font-family: 'Anthropic Sans Text';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('fonts/anthropic-sans-400.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Anthropic Sans Text';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('fonts/anthropic-sans-600.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Anthropic Sans Text';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('fonts/anthropic-sans-700.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Anthropic Mono Web';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('fonts/anthropic-mono-400.woff2') format('woff2');
-}
+/* Lato (self-hosted, Latin subsets) — the one family. Mono is the system
+   stack, earned only for data, ids, and kbd hints. (Quiet Workshop §2) */
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -76,6 +49,12 @@
   /* The second ink: warm coral against the indigo/lavender family. Editorial
      only (separators, card frame) — links stay indigo. */
   --accent: #bf5a4a;
+  /* Quiet Workshop tokens: the one motion clock, and the dimming ladder's
+     third rung (fg -> muted -> muted at --dim) */
+  --t: 150ms cubic-bezier(0.25, 1, 0.5, 1);
+  --t-underline: 250ms ease;
+  --t-entrance: 450ms;
+  --dim: 0.75;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -102,9 +81,9 @@ html, body { background: var(--bg); color: var(--fg); }
   color: var(--link);
   border: 1px solid var(--link);
   border-radius: 2px;
-  font-size: 16px;
+  font-size: 13px;
   z-index: 100;
-  transition: top 0.2s ease;
+  transition: top var(--t);
 }
 .skip-link:focus,
 .skip-link:focus-visible {
@@ -114,19 +93,19 @@ html, body { background: var(--bg); color: var(--fg); }
 }
 
 body, p {
-  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 18px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 15px;
   line-height: 1.65;
 }
 
 p { margin: 0 0 1em 0; }
 
 .name {
-  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: -0.6px;
-  line-height: 1.15;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
   margin: 0 0 0.25em;
 }
 /* The h1 receives programmatic focus (tabindex=-1) for a11y; keep the UA
@@ -143,7 +122,7 @@ p { margin: 0 0 1em 0; }
 }
 .home-card {
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 1.75em;
   background:
     linear-gradient(var(--bg), var(--bg)) padding-box,
@@ -167,7 +146,7 @@ p { margin: 0 0 1em 0; }
 /* Quiet status line under the name: muted meta tier, not a badge. It closes
    the name pair, so it carries the gap before the affiliation lines. */
 .status-line {
-  font-size: 16px;
+  font-size: 12px;
   color: var(--muted);
   margin: 0 0 1.75em;
 }
@@ -183,7 +162,7 @@ img.circle { border-radius: 50%; }
 a {
   color: var(--link);
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: color var(--t);
 }
 a:hover {
   color: var(--link-hover);
@@ -199,7 +178,8 @@ a:hover {
   from { background-position: 0 100%; }
   to   { background-position: 12px 100%; }
 }
-a:focus-visible {
+/* One ring for everything, offset, softly squared */
+:focus-visible {
   outline: 2px solid var(--link-hover);
   outline-offset: 3px;
   border-radius: 2px;
@@ -207,11 +187,18 @@ a:focus-visible {
 
 /* ─── Animations ─────────────────────────────────────────────────────────── */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-body { animation: fadeIn 0.3s ease; }
+body { animation: fadeIn var(--t-entrance) ease; }
 
+/* Reduced motion: everything lands instantly, no exceptions. The per-component
+   blocks below stay only where they change an end state, not just a duration. */
 @media (prefers-reduced-motion: reduce) {
-  body { animation: none; }
-  a:hover { animation: none; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ─── Layout ─────────────────────────────────────────────────────────────── */
@@ -231,8 +218,8 @@ body { animation: fadeIn 0.3s ease; }
 
 /* Tight affiliation lines under the status line: fg text, small, no gaps */
 .affil {
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -281,7 +268,7 @@ body { animation: fadeIn 0.3s ease; }
 
 /* Muted-meta-tier hint after a link (e.g. "resume pdf") */
 .link-hint {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--muted);
   margin-left: 0.15em;
 }
@@ -298,25 +285,17 @@ a:focus .link-hint {
   padding: 0.2em 0.15em;
   margin-left: 0.15em;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 11px;
   color: var(--muted);
   cursor: pointer;
+  transition: color var(--t);
 }
 .copy-btn:hover { color: var(--link-hover); }
-.copy-btn:focus-visible {
-  outline: 2px solid var(--link-hover);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
 
 .headshot-img {
   width: 100%;
   max-width: 100%;
   height: auto;
-}
-
-@media (max-width: 600px) {
-  .blog-post-title { font-size: 23px; }
 }
 
 /* ─── Tab nav ────────────────────────────────────────────────────────────── */
@@ -325,17 +304,17 @@ a:focus .link-hint {
   flex-wrap: wrap;
   gap: 0;
   padding: 1.5% 1.5% 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.75em;
 }
 .tab-nav a {
   position: relative;
   padding: 0.5em 0;
   margin-right: 1.75em;
-  font-size: 17px;
+  font-size: 14px;
   color: var(--muted);
   background: none;
   animation: none;
-  transition: color 0.2s ease;
+  transition: color var(--t);
 }
 .tab-nav a::after {
   content: '';
@@ -347,7 +326,7 @@ a:focus .link-hint {
   background: var(--fg);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.25s ease;
+  transition: transform var(--t-underline);
 }
 .tab-nav a:hover {
   color: var(--fg);
@@ -363,27 +342,23 @@ a:focus .link-hint {
 .tab-dead {
   padding: 0.5em 0;
   margin-right: 1.75em;
-  font-size: 17px;
+  font-size: 14px;
   color: var(--muted);
   cursor: default;
   user-select: none;
 }
 .tab-soon {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--muted);
   vertical-align: super;
   margin-left: 1px;
   white-space: nowrap;
 }
-@media (prefers-reduced-motion: reduce) {
-  .tab-nav a::after { transition: none; }
-  .tab-nav a { transition: none; }
-}
 
 /* Keyboard shortcut badges */
 .tab-key {
-  font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
   color: var(--fg);
   opacity: 0.75;
   border: 1px solid var(--fg);
@@ -391,13 +366,10 @@ a:focus .link-hint {
   padding: 0 2px;
   vertical-align: super;
   line-height: 1;
-  transition: opacity 0.2s;
+  transition: opacity var(--t);
 }
 .tab-nav a:hover .tab-key,
-.tab-nav a.active .tab-key { opacity: 0.8; }
-@media (prefers-reduced-motion: reduce) {
-  .tab-key { transition: none; }
-}
+.tab-nav a.active .tab-key { opacity: 1; }
 
 /* ─── Keyboard shortcut legend (? to toggle) ─────────────────────────────── */
 .kbd-legend {
@@ -408,9 +380,9 @@ a:focus .link-hint {
   padding: 0.45em 0.7em;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  border-radius: 3px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 12px;
   line-height: 1;
   color: var(--muted);
   z-index: 50;
@@ -419,15 +391,15 @@ a:focus .link-hint {
 }
 .kbd-legend.visible {
   display: block;
-  animation: legendIn 0.2s ease both;
+  animation: legendIn var(--t) ease both;
 }
 @keyframes legendIn {
   from { opacity: 0; transform: translateY(4px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .kbd-legend-key {
-  font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
   color: var(--fg);
   border: 1px solid var(--border);
   border-radius: 2px;
@@ -436,10 +408,7 @@ a:focus .link-hint {
 }
 .kbd-legend-sep {
   margin: 0 0.5em;
-  opacity: 0.5;
-}
-@media (prefers-reduced-motion: reduce) {
-  .kbd-legend.visible { animation: none; }
+  opacity: var(--dim);
 }
 @media (max-width: 600px) {
   .kbd-legend { display: none !important; }
@@ -458,14 +427,10 @@ html:not(.js) .tab-nav,
 html:not(.js) .tab-key { display: none; }
 
 @keyframes panelIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.tab-panel.active { animation: panelIn 0.2s ease; }
-
-@media (prefers-reduced-motion: reduce) {
-  .tab-panel.active { animation: none; }
-}
+.tab-panel.active { animation: panelIn var(--t-entrance) ease; }
 
 /* ─── Listing rows (shared by cool, projects, blog index) ──────────────── */
 .cool-list, .projects-list, .blog-index {
@@ -476,21 +441,21 @@ html:not(.js) .tab-key { display: none; }
   display: grid;
   grid-template-columns: 96px 1fr;
   gap: 0 1.5em;
-  padding: 1em 0;
+  padding: 0.65em 0;
   border-bottom: 1px solid var(--border);
 }
 .cool-entry:first-child,
 .project-entry:first-child,
 .blog-entry:first-child { border-top: 1px solid var(--border); }
 .cool-date, .project-date, .blog-date {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--muted);
   padding-top: 2px;
   white-space: nowrap;
 }
 .cool-title, .project-title, .blog-title {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   margin: 0 0 0.25em;
   overflow-wrap: anywhere;
 }
@@ -503,17 +468,18 @@ html:not(.js) .tab-key { display: none; }
 .project-title a:hover,
 .blog-title a:hover { color: var(--link-hover); }
 .cool-desc, .project-desc, .blog-desc {
-  font-size: 17px;
+  font-size: 13px;
   color: var(--muted);
   margin: 0;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
 .cool-domain, .project-domain {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--muted);
   font-weight: 400;
   margin-left: 0.4em;
+  opacity: var(--dim);
 }
 
 /* ─── Projects: links row, thumbnails ────────────────────────────────────── */
@@ -521,16 +487,16 @@ html:not(.js) .tab-key { display: none; }
    identical to the compact rows, so the list reads as one index. */
 .project-featured { padding: 1.75em 0; }
 .project-links {
-  font-size: 14px;
+  font-size: 13px;
   margin: -0.1em 0 1em;
 }
 .project-thumb {
   display: block;
   margin: 0 0 1em;
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
-  transition: border-color 0.15s ease;
+  transition: border-color var(--t);
 }
 .project-thumb img { display: block; width: 100%; height: auto; }
 /* the squiggle underline is a text-link signal; on the block image link the
@@ -548,7 +514,7 @@ a.project-thumb:hover {
 .cool-entry {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity var(--t-entrance) ease, transform var(--t-entrance) ease;
 }
 .cool-entry.visible { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) {
@@ -556,7 +522,7 @@ a.project-thumb:hover {
 }
 .cool-empty {
   color: var(--muted);
-  font-size: 17px;
+  font-size: 13px;
   padding: 1.5% 1.5%;
 }
 
@@ -574,7 +540,7 @@ a.project-thumb:hover {
   margin-bottom: 0;
 }
 .playlist-fold { margin: 0; }
-.playlist-fold + .playlist-fold { margin-top: 2.5em; }
+.playlist-fold + .playlist-fold { margin-top: 1.75em; }
 summary.embed-header {
   cursor: pointer;
   list-style: none;
@@ -586,32 +552,24 @@ summary.embed-header::before {
   font-size: 13px;
   color: var(--muted);
   display: inline-block;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform var(--t), color var(--t);
 }
 .playlist-fold[open] > summary.embed-header::before { transform: rotate(90deg); }
 /* Hover feedback lives on the caret (the control) and the count, so the whole
    row reads as "expands" without implying the plain-text name is a link. */
 summary.embed-header:hover::before,
 summary.embed-header:hover .embed-track-count { color: var(--fg); }
-summary.embed-header:focus-visible {
-  outline: 2px solid var(--link-hover);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
 .playlist-link {
-  font-size: 14px;
+  font-size: 13px;
   margin: 0.85em 0 0;
 }
-@media (prefers-reduced-motion: reduce) {
-  summary.embed-header::before { transition: none; }
-}
 .embed-playlist-name {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--fg);
 }
 .embed-track-count {
-  font-size: 14px;
+  font-size: 11px;
   color: var(--muted);
 }
 .track-list { list-style: none; margin: 0; padding: 0; }
@@ -624,11 +582,11 @@ summary.embed-header:focus-visible {
   margin: 0 -10px;
   border-bottom: 1px solid var(--border);
 }
-.track-num { font-size: 14px; color: var(--muted); text-align: right; font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.track-num { font-size: 12px; color: var(--muted); text-align: right; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .track-info { min-width: 0; display: flex; gap: 0.4em; align-items: baseline; }
-.track-name { font-size: 17px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.track-artist { font-size: 14px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-.track-duration { font-size: 14px; color: var(--muted); font-family: 'Anthropic Mono Web', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
+.track-name { font-size: 14px; font-weight: 700; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.track-duration { font-size: 12px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
 
 /* ─── Blog tab (post body) ─────────────────────────────────────────────── */
 .blog-post {
@@ -638,50 +596,51 @@ summary.embed-header:focus-visible {
 .blog-post:focus { outline: none; }
 .blog-back {
   display: inline-block;
-  margin: 0 0 1.5em;
-  font-size: 14px;
+  margin: 0 0 1.75em;
+  font-size: 13px;
   color: var(--muted);
   text-decoration: none;
+  transition: color var(--t);
 }
 .blog-back:hover { color: var(--link-hover); }
 .blog-post-header {
-  margin: 0 0 1.5em;
+  margin: 0 0 1.75em;
   padding-bottom: 1em;
   border-bottom: 1px solid var(--border);
 }
 .blog-post-title {
-  font-size: 26px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--fg);
   margin: 0 0 0.4em;
   overflow-wrap: anywhere;
 }
 .blog-post-meta {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--muted);
   margin: 0;
 }
 .blog-lede {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--fg);
-  margin: 0 0 1.5em;
+  margin: 0 0 1.75em;
   overflow-wrap: break-word;
 }
 .blog-post h3 {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--fg);
-  margin: 1.5em 0 0.6em;
+  margin: 1.75em 0 0.6em;
 }
 .blog-post p {
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.65;
   color: var(--fg);
   margin: 0 0 1em;
   overflow-wrap: break-word;
 }
 .blog-post ul {
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.65;
   color: var(--fg);
   margin: 0 0 1em;
@@ -706,10 +665,10 @@ summary.embed-header:focus-visible {
 /* Quoted note-to-self callout: a quiet hairline box, flat, on-palette. Depth
    from the border, not a shadow; no second color. */
 .blog-note {
-  margin: 1.5em 0;
+  margin: 1.75em 0;
   padding: 1em 1.25em;
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 .blog-note p { margin: 0 0 0.8em; }
 .blog-note p:last-child { margin-bottom: 0; }
@@ -718,7 +677,7 @@ summary.embed-header:focus-visible {
 .blog-figure { margin: 1.75em 0; }
 .blog-figure svg { display: block; width: 100%; height: auto; }
 .blog-figure figcaption {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.55;
   margin: 0.85em 0 0;

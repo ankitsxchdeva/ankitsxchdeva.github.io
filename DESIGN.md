@@ -93,6 +93,9 @@ components:
 
 # Design System: Ankit Sachdeva
 
+> Superseded by ~/Documents/design/DESIGN.md (The Quiet Workshop). This file is
+> kept as history; where anything conflicts, the spec wins.
+
 ## 1. Overview
 
 **Creative North Star: "The Quiet Workshop"**
