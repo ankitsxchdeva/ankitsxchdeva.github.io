@@ -3,3 +3,4 @@
 .gstack/
 .browser-sessions/
 .playwright-mcp/
+.playwright-cli/
