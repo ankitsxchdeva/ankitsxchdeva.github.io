@@ -238,6 +238,14 @@ body { animation: fadeIn var(--t-entrance) ease; }
 /* Decorative separators (the // and ·) wear the second ink */
 .sep { color: var(--accent); }
 
+/* Workbench line: build-time freshness facts (site rebuild, ka-mirror sync),
+   filled from workbench.json by main.js; stays hidden if the fetch fails. */
+.workbench-line {
+  margin: 1.75em 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
 /* The contact slashes start in the link purple and take the coral ink one
    slash at a time, left to right, once the card border finishes lighting up
    (~0.7s) */
@@ -509,6 +517,33 @@ a.project-thumb:hover {
 @media (prefers-reduced-motion: reduce) {
   .project-thumb { transition: none; }
 }
+
+/* Screenshot lightbox: quiet paper dim, same hairline frame as the thumb,
+   the one motion clock. [hidden] guard because display:grid would
+   otherwise override the attribute. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 2em;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  cursor: zoom-out;
+  animation: lightboxIn var(--t) ease both;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-img {
+  max-width: min(1280px, 94vw);
+  max-height: 90vh;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+@keyframes lightboxIn { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .lightbox { animation: none; }
+}
+a.project-thumb[data-zoom] { cursor: zoom-in; }
 
 /* ─── Cool tab (fade-in animation) ─────────────────────────────────────── */
 .cool-entry {

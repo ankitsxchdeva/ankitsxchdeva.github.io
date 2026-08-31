@@ -101,6 +101,7 @@
                     <a href="https://www.linkedin.com/in/ankitsxchdeva/" target="_blank" rel="noopener me">linkedin</a>
                     <span class="sr-only" role="status" id="copy-status"></span>
                   </p>
+                  <p class="workbench-line" id="workbench-line" hidden></p>
                   </div>
             </div>
           </div>
@@ -118,7 +119,7 @@
                   <p class="project-links">
                     <a href="https://ka-mirror.com/" target="_blank" rel="noopener">ka-mirror.com</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/ka-mirror" target="_blank" rel="noopener">github</a>
                   </p>
-                  <a class="project-thumb" href="https://ka-mirror.com/" target="_blank" rel="noopener">
+                  <a class="project-thumb" href="images/projects/ka-mirror-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/ka-mirror-view-dark@2x.webp" data-zoom-light="images/projects/ka-mirror-view-light@2x.webp">
                     <picture>
                       <source srcset="images/projects/ka-mirror-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
                       <source srcset="images/projects/ka-mirror-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
@@ -138,7 +139,7 @@
                   <p class="project-links">
                     <a href="https://ankitsachdeva.com/lede/" target="_blank" rel="noopener">live site</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/lede" target="_blank" rel="noopener">github</a>
                   </p>
-                  <a class="project-thumb" href="https://ankitsachdeva.com/lede/" target="_blank" rel="noopener">
+                  <a class="project-thumb" href="images/projects/lede-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/lede-view-dark@2x.webp" data-zoom-light="images/projects/lede-view-light@2x.webp">
                     <picture>
                       <source srcset="images/projects/lede-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
                       <source srcset="images/projects/lede-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
@@ -170,7 +171,7 @@
                   <p class="project-links">
                     <a href="https://ankitsachdeva.com/quantlab/" target="_blank" rel="noopener">live app</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/quantlab" target="_blank" rel="noopener">github</a>
                   </p>
-                  <a class="project-thumb" href="https://ankitsachdeva.com/quantlab/" target="_blank" rel="noopener">
+                  <a class="project-thumb" href="images/projects/quantlab-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/quantlab-view-dark@2x.webp" data-zoom-light="images/projects/quantlab-view-light@2x.webp">
                     <picture>
                       <source srcset="images/projects/quantlab-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
                       <source srcset="images/projects/quantlab-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
@@ -350,7 +351,10 @@
   </div>
   </main>
 
-  <script src="main.js?v=2"></script>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="enlarged screenshot" hidden>
+    <img class="lightbox-img" alt="">
+  </div>
+  <script src="main.js?v=3"></script>
 </body>
 
 </html>

@@ -1,5 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <!-- lowercase 'a' in signal indigo on lavender paper (see DESIGN.md) -->
-  <rect width="16" height="16" rx="3" fill="#f5f4fa"/>
-  <text x="8" y="12.5" text-anchor="middle" font-family="Lato, Verdana, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#355691">a</text>
+  <!-- lowercase 'a' in signal indigo on lavender paper (see DESIGN.md);
+       flips to wisteria-on-night-plum with the OS theme -->
+  <style>
+    .bg { fill: #f5f4fa; }
+    .glyph { fill: #355691; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1e1c22; }
+      .glyph { fill: #8b87c8; }
+    }
+  </style>
+  <rect class="bg" width="16" height="16" rx="3"/>
+  <text class="glyph" x="8" y="12.5" text-anchor="middle" font-family="Lato, Verdana, Helvetica, sans-serif" font-size="13" font-weight="700">a</text>
 </svg>
