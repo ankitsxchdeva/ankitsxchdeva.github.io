@@ -213,16 +213,9 @@ console.log(
   }
 
   function render(data) {
-    var facts = [
-      ['this site rebuilt ', data.site_built],
-      ['ka-mirror updated ', data.kamirror_updated]
-    ].map(function (f) {
-      var r = rel(f[1]);
-      return r ? f[0] + r : null;
-    }).filter(Boolean);
-    if (!facts.length) return;
-    line.innerHTML = 'workbench <span class="sep">&nbsp;·&nbsp;</span>' +
-      facts.join(' <span class="sep">&nbsp;·&nbsp;</span> ');
+    var r = rel(data.site_built);
+    if (!r) return;
+    line.textContent = 'rebuilt ' + r;
     line.removeAttribute('hidden');
   }
 
@@ -258,11 +251,16 @@ console.log(
     img.src = srcFor(current);
     box.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
+    // Duplicate entry so the back button/swipe closes the overlay instead of
+    // navigating out from under it (hash is unchanged, so the tab router
+    // never sees it)
+    history.pushState(null, '', location.href);
     media.addEventListener('change', onTheme);
     document.addEventListener('keydown', onKey);
   }
 
   function close() {
+    if (box.hasAttribute('hidden')) return;
     box.setAttribute('hidden', '');
     img.removeAttribute('src');
     current = null;
@@ -288,6 +286,10 @@ console.log(
   });
 
   box.addEventListener('click', function () { close(); });
+
+  // A tab switch (1/2/3 or a link) while zoomed closes the overlay first
+  window.addEventListener('popstate', function () { close(); });
+  window.addEventListener('hashchange', function () { close(); });
 })();
 
 // Resume prefetch

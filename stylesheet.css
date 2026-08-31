@@ -238,12 +238,13 @@ body { animation: fadeIn var(--t-entrance) ease; }
 /* Decorative separators (the // and ·) wear the second ink */
 .sep { color: var(--accent); }
 
-/* Workbench line: build-time freshness facts (site rebuild, ka-mirror sync),
-   filled from workbench.json by main.js; stays hidden if the fetch fails. */
+/* Workbench stamp: the site's own rebuild time, quiet in the card's corner.
+   Filled from workbench.json by main.js; stays hidden if the fetch fails. */
 .workbench-line {
-  margin: 1.75em 0 0;
+  margin: 0.75em 0 0;
   font-size: 11px;
   color: var(--muted);
+  text-align: right;
 }
 
 /* The contact slashes start in the link purple and take the coral ink one
@@ -528,6 +529,7 @@ a.project-thumb:hover {
   display: grid;
   place-items: center;
   padding: 2em;
+  background: var(--bg);
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   cursor: zoom-out;
   animation: lightboxIn var(--t) ease both;
@@ -544,6 +546,37 @@ a.project-thumb:hover {
   .lightbox { animation: none; }
 }
 a.project-thumb[data-zoom] { cursor: zoom-in; }
+
+/* Mock browser chrome: the mac trio taken down to workshop saturation, plus
+   a mono URL pill, so each shot reads as a window instead of page texture. */
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.28em 0.55em;
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 93%, var(--fg));
+  border-bottom: 1px solid var(--border);
+}
+.browser-dots { display: flex; gap: 0.32em; flex: none; }
+.browser-dot { width: 7px; height: 7px; border-radius: 50%; }
+.browser-dot:nth-of-type(1) { background: #c77975; }
+.browser-dot:nth-of-type(2) { background: #c2a66a; }
+.browser-dot:nth-of-type(3) { background: #62a76d; }
+.browser-url {
+  margin: 0 auto;
+  max-width: 60%;
+  padding: 0.08em 0.6em;
+  font-family: monospace;
+  font-size: 10px;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* ─── Cool tab (fade-in animation) ─────────────────────────────────────── */
 .cool-entry {
