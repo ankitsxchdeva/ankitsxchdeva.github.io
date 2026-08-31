@@ -529,21 +529,32 @@ a.project-thumb:hover {
   display: grid;
   place-items: center;
   padding: 2em;
+  /* solid tonal scrim one step off the page tone (bg shifted toward fg),
+     so the framed shot separates from the page in either theme */
   background: var(--bg);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  background: color-mix(in srgb, var(--bg) 90%, var(--fg));
   cursor: zoom-out;
-  animation: lightboxIn var(--t) ease both;
+  animation: scrimIn var(--t) ease both;
 }
 .lightbox[hidden] { display: none; }
-.lightbox-img {
+.lightbox-frame {
   max-width: min(1280px, 94vw);
-  max-height: 90vh;
   border: 1px solid var(--border);
   border-radius: 8px;
+  overflow: hidden;
+  animation: lightboxIn var(--t) ease both;
 }
-@keyframes lightboxIn { from { opacity: 0; } }
+.lightbox-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 84vh;
+  object-fit: contain;
+}
+@keyframes scrimIn { from { opacity: 0; } }
+@keyframes lightboxIn { from { opacity: 0; transform: scale(0.97); } }
 @media (prefers-reduced-motion: reduce) {
-  .lightbox { animation: none; }
+  .lightbox, .lightbox-frame { animation: none; }
 }
 a.project-thumb[data-zoom] { cursor: zoom-in; }
 

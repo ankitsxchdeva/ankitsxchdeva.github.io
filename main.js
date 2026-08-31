@@ -249,6 +249,8 @@ console.log(
     var thumbImg = trigger.querySelector('img');
     img.alt = thumbImg ? thumbImg.alt : '';
     img.src = srcFor(current);
+    var url = trigger.querySelector('.browser-url');
+    box.querySelector('.browser-url').textContent = url ? url.textContent : '';
     box.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
     // Duplicate entry so the back button/swipe closes the overlay instead of
