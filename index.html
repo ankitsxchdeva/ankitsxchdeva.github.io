@@ -131,7 +131,7 @@
                       <img src="images/projects/brew-sheet-view-light.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="brew-sheet: a printable hario switch recipe sheet next to the editor that generated it, with a timeline of pours and lever markers">
                     </picture>
                   </a>
-                  <p class="project-desc">turns a filter coffee recipe into a 100 x 150 mm sheet for a label printer. the sheet is one svg drawn in millimetre coordinates — type grows to fill the page, hario switch steps get lever markers, and it prints vector at exact size or exports a 300 dpi png.</p>
+                  <p class="project-desc">turns a filter coffee recipe into a 100 x 150 mm svg that prints at exact size on a label printer.</p>
                 </div>
               </div>
               <div class="project-entry project-featured">
@@ -155,7 +155,7 @@
                       <img src="images/projects/ka-mirror-view-light.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="ka-mirror: a searchable grid of artisan keycap makers, with logos and sculpt counts per maker">
                     </picture>
                   </a>
-                  <p class="project-desc">a static mirror of keycap archivist, the community archive of artisan keycaps. the catalog is pulled from the upstream database at build time and the site rebuilds once a day, so it stays current with no server and no scraper of its own.</p>
+                  <p class="project-desc">a static mirror of keycap archivist, the community archive of artisan keycaps. the catalog is pulled from the upstream database at build time and the site rebuilds once a day. no server, no scraper of its own.</p>
                 </div>
               </div>
               <div class="project-entry project-featured">
@@ -179,7 +179,7 @@
                       <img src="images/projects/lede-view-light.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="lede's today board: clock and search box on top, a summary of the day's themes, then stories grouped into software, hardware, and health columns">
                     </picture>
                   </a>
-                  <p class="project-desc">a self-hosted daily news digest: rss and atom feeds in, one calm page out. stories are deduped across sources, optional local-llm summaries are cached in sqlite, and the page rebuilds every 30 minutes inside a single docker container.</p>
+                  <p class="project-desc">a self-hosted daily news digest. it reads rss and atom feeds, dedupes stories across sources, and caches optional local-llm summaries in sqlite. the page rebuilds every 30 minutes inside a single docker container.</p>
                 </div>
               </div>
               <div class="project-entry">
@@ -215,7 +215,7 @@
                       <img src="images/projects/quantlab-view-light.jpg" width="1280" height="820" loading="lazy" decoding="async" alt="quantlab landing page: test the wildest trading idea you have, in plain english, above the strategy input box">
                     </picture>
                   </a>
-                  <p class="project-desc">describe a trading idea in plain english, get a real backtest in seconds. the llm compiles the idea into a typed strategy dsl (data, not code, so no eval), and a pure-typescript engine simulates every trade with slippage, a monte carlo bootstrap, and an out-of-sample split. results always face a buy-and-hold benchmark.</p>
+                  <p class="project-desc">takes a trading idea written in plain english and backtests it. the llm compiles the idea into a typed strategy dsl (data, not code, so no eval), and a pure-typescript engine simulates every trade with slippage, a monte carlo bootstrap, and an out-of-sample split. every result is scored against buy-and-hold.</p>
                 </div>
               </div>
               <div class="project-entry">
@@ -239,7 +239,7 @@
                   <p class="project-links">
                     <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">github</a>
                   </p>
-                  <p class="project-desc">a raspberry pi 5 running a dozen docker services: dashboards, discord bots, home automation, and the apis behind this site's live demos. caddy and tailscale guard the door, pushing to main deploys in five minutes, and weekly backups land on a separate machine.</p>
+                  <p class="project-desc">a raspberry pi 5 running a dozen docker services: dashboards, discord bots, home automation, and the apis behind this site's live demos. caddy and tailscale sit in front of it, a push to main deploys in about five minutes, and weekly backups go to a separate machine.</p>
                 </div>
               </div>
               <div class="project-entry">
