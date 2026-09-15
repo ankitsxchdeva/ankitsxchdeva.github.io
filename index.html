@@ -106,66 +106,40 @@
             </div>
           </div>
 
-          <!-- Projects tab -->
+          <!-- Projects tab: ordered by weight, not date. The lead project takes
+               the full measure; the rest sit three-up. -->
           <div id="tab-projects" class="tab-panel">
             <h2 class="sr-only" tabindex="-1">projects</h2>
-            <div class="projects-list">
-              <div class="project-entry project-featured">
-                <div class="project-date">Sep 14, 2026</div>
-                <div>
-                  <p class="project-title">
-                    <a href="https://ankitsachdeva.com/brew-sheet/" target="_blank" rel="noopener">brew-sheet</a>
-                  </p>
-                  <p class="project-links">
-                    <a href="https://ankitsachdeva.com/brew-sheet/" target="_blank" rel="noopener">live site</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/brew-sheet" target="_blank" rel="noopener">github</a>
-                  </p>
-                  <a class="project-thumb" href="images/projects/brew-sheet-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/brew-sheet-view-dark@2x.webp" data-zoom-light="images/projects/brew-sheet-view-light@2x.webp">
-                    <span class="browser-bar" aria-hidden="true">
-                      <span class="browser-dots"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
-                      <span class="browser-url">ankitsachdeva.com/brew-sheet</span>
-                    </span>
-                    <picture>
-                      <source srcset="images/projects/brew-sheet-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
-                      <source srcset="images/projects/brew-sheet-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
-                      <source srcset="images/projects/brew-sheet-view-light.webp" type="image/webp">
-                      <img src="images/projects/brew-sheet-view-light.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="brew-sheet: a printable hario switch recipe sheet next to the editor that generated it, with a timeline of pours and lever markers">
-                    </picture>
-                  </a>
-                  <p class="project-desc">turns a filter coffee recipe into a 100 x 150 mm svg that prints at exact size on a label printer.</p>
-                </div>
-              </div>
-              <div class="project-entry project-featured">
-                <div class="project-date">Jul 21, 2026</div>
-                <div>
-                  <p class="project-title">
-                    <a href="https://ka-mirror.com/" target="_blank" rel="noopener">ka-mirror</a>
-                  </p>
-                  <p class="project-links">
-                    <a href="https://ka-mirror.com/" target="_blank" rel="noopener">ka-mirror.com</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/ka-mirror" target="_blank" rel="noopener">github</a>
-                  </p>
-                  <a class="project-thumb" href="images/projects/ka-mirror-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/ka-mirror-view-dark@2x.webp" data-zoom-light="images/projects/ka-mirror-view-light@2x.webp">
-                    <span class="browser-bar" aria-hidden="true">
-                      <span class="browser-dots"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
-                      <span class="browser-url">ka-mirror.com</span>
-                    </span>
-                    <picture>
-                      <source srcset="images/projects/ka-mirror-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
-                      <source srcset="images/projects/ka-mirror-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
-                      <source srcset="images/projects/ka-mirror-view-light.webp" type="image/webp">
-                      <img src="images/projects/ka-mirror-view-light.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="ka-mirror: a searchable grid of artisan keycap makers, with logos and sculpt counts per maker">
-                    </picture>
-                  </a>
-                  <p class="project-desc">a static mirror of keycap archivist, the community archive of artisan keycaps. the catalog is pulled from the upstream database at build time and the site rebuilds once a day. no server, no scraper of its own.</p>
-                </div>
-              </div>
-              <div class="project-entry project-featured">
-                <div class="project-date">Jul 10, 2026</div>
-                <div>
+            <div class="projects">
+              <article class="project-hero">
+                <p class="project-title">
+                  <a href="https://ankitsachdeva.com/quantlab/" target="_blank" rel="noopener">quantlab</a>
+                </p>
+                <p class="project-links">
+                  <span class="project-date">Jun 18, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://ankitsachdeva.com/quantlab/" target="_blank" rel="noopener">live app</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/quantlab" target="_blank" rel="noopener">github</a>
+                </p>
+                <a class="project-thumb" href="images/projects/quantlab-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/quantlab-view-dark@2x.webp" data-zoom-light="images/projects/quantlab-view-light@2x.webp">
+                  <span class="browser-bar" aria-hidden="true">
+                    <span class="browser-dots"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+                    <span class="browser-url">ankitsachdeva.com/quantlab</span>
+                  </span>
+                  <picture>
+                    <source srcset="images/projects/quantlab-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+                    <source srcset="images/projects/quantlab-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
+                    <source srcset="images/projects/quantlab-view-light.webp" type="image/webp">
+                    <img src="images/projects/quantlab-view-light.jpg" width="1280" height="820" loading="lazy" decoding="async" alt="quantlab landing page: test the wildest trading idea you have, in plain english, above the strategy input box">
+                  </picture>
+                </a>
+                <p class="project-desc">takes a trading idea written in plain english and backtests it. the llm compiles the idea into a typed strategy dsl (data, not code, so no eval), and a pure-typescript engine simulates every trade with slippage, a monte carlo bootstrap, and an out-of-sample split. every result is scored against buy-and-hold.</p>
+              </article>
+
+              <div class="projects-grid">
+                <article class="project-card">
                   <p class="project-title">
                     <a href="https://ankitsachdeva.com/lede/" target="_blank" rel="noopener">lede</a>
                   </p>
                   <p class="project-links">
-                    <a href="https://ankitsachdeva.com/lede/" target="_blank" rel="noopener">live site</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/lede" target="_blank" rel="noopener">github</a>
+                    <span class="project-date">Jul 10, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://ankitsachdeva.com/lede/" target="_blank" rel="noopener">live site</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/lede" target="_blank" rel="noopener">github</a>
                   </p>
                   <a class="project-thumb" href="images/projects/lede-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/lede-view-dark@2x.webp" data-zoom-light="images/projects/lede-view-light@2x.webp">
                     <span class="browser-bar" aria-hidden="true">
@@ -180,79 +154,85 @@
                     </picture>
                   </a>
                   <p class="project-desc">a self-hosted daily news digest. it reads rss and atom feeds, dedupes stories across sources, and caches optional local-llm summaries in sqlite. the page rebuilds every 30 minutes inside a single docker container.</p>
-                </div>
-              </div>
-              <div class="project-entry">
-                <div class="project-date">Jun 26, 2026</div>
-                <div>
+                </article>
+                <article class="project-card">
                   <p class="project-title">
-                    <a href="https://www.npmjs.com/package/account-pool-mcp" target="_blank" rel="noopener">account-pool-mcp</a>
+                    <a href="https://ka-mirror.com/" target="_blank" rel="noopener">ka-mirror</a>
                   </p>
                   <p class="project-links">
-                    <a href="https://www.npmjs.com/package/account-pool-mcp" target="_blank" rel="noopener">npm</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/account-pool-mcp" target="_blank" rel="noopener">github</a>
+                    <span class="project-date">Jul 21, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://ka-mirror.com/" target="_blank" rel="noopener">ka-mirror.com</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/ka-mirror" target="_blank" rel="noopener">github</a>
                   </p>
-                  <p class="project-desc">an mcp server that leases test accounts to parallel agent sessions, so two sessions never end up logged into the same account. allocation happens in an atomic sqlite transaction, leases expire on a ttl, and crashed sessions get reclaimed on their own. published on npm.</p>
-                </div>
-              </div>
-              <div class="project-entry project-featured">
-                <div class="project-date">Jun 18, 2026</div>
-                <div>
-                  <p class="project-title">
-                    <a href="https://ankitsachdeva.com/quantlab/" target="_blank" rel="noopener">quantlab</a>
-                  </p>
-                  <p class="project-links">
-                    <a href="https://ankitsachdeva.com/quantlab/" target="_blank" rel="noopener">live app</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/quantlab" target="_blank" rel="noopener">github</a>
-                  </p>
-                  <a class="project-thumb" href="images/projects/quantlab-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/quantlab-view-dark@2x.webp" data-zoom-light="images/projects/quantlab-view-light@2x.webp">
+                  <a class="project-thumb" href="images/projects/ka-mirror-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/ka-mirror-view-dark@2x.webp" data-zoom-light="images/projects/ka-mirror-view-light@2x.webp">
                     <span class="browser-bar" aria-hidden="true">
                       <span class="browser-dots"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
-                      <span class="browser-url">ankitsachdeva.com/quantlab</span>
+                      <span class="browser-url">ka-mirror.com</span>
                     </span>
                     <picture>
-                      <source srcset="images/projects/quantlab-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
-                      <source srcset="images/projects/quantlab-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
-                      <source srcset="images/projects/quantlab-view-light.webp" type="image/webp">
-                      <img src="images/projects/quantlab-view-light.jpg" width="1280" height="820" loading="lazy" decoding="async" alt="quantlab landing page: test the wildest trading idea you have, in plain english, above the strategy input box">
+                      <source srcset="images/projects/ka-mirror-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+                      <source srcset="images/projects/ka-mirror-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
+                      <source srcset="images/projects/ka-mirror-view-light.webp" type="image/webp">
+                      <img src="images/projects/ka-mirror-view-light.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="ka-mirror: a searchable grid of artisan keycap makers, with logos and sculpt counts per maker">
                     </picture>
                   </a>
-                  <p class="project-desc">takes a trading idea written in plain english and backtests it. the llm compiles the idea into a typed strategy dsl (data, not code, so no eval), and a pure-typescript engine simulates every trade with slippage, a monte carlo bootstrap, and an out-of-sample split. every result is scored against buy-and-hold.</p>
-                </div>
-              </div>
-              <div class="project-entry">
-                <div class="project-date">Apr 17, 2026</div>
-                <div>
+                  <p class="project-desc">a static mirror of keycap archivist, the community archive of artisan keycaps. the catalog is pulled from the upstream database at build time and the site rebuilds once a day. no server, no scraper of its own.</p>
+                </article>
+                <article class="project-card">
                   <p class="project-title">
-                    <a href="https://github.com/ankitsxchdeva/LiftLens" target="_blank" rel="noopener">LiftLens</a>
+                    <a href="https://ankitsachdeva.com/brew/" target="_blank" rel="noopener">brew</a>
                   </p>
                   <p class="project-links">
-                    <a href="https://github.com/ankitsxchdeva/LiftLens" target="_blank" rel="noopener">github</a>
+                    <span class="project-date">Sep 14, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://ankitsachdeva.com/brew/" target="_blank" rel="noopener">live site</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/brew" target="_blank" rel="noopener">github</a>
                   </p>
-                  <p class="project-desc">a mac app that reads joint positions from a lifting video, checks your squat, bench, or deadlift against form benchmarks, flags issues like lumbar rounding at the bottom, and writes an llm coaching prompt from what it finds.</p>
-                </div>
-              </div>
-              <div class="project-entry">
-                <div class="project-date">Sep 2, 2025</div>
-                <div>
+                  <a class="project-thumb" href="images/projects/brew-sheet-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/brew-sheet-view-dark@2x.webp" data-zoom-light="images/projects/brew-sheet-view-light@2x.webp">
+                    <span class="browser-bar" aria-hidden="true">
+                      <span class="browser-dots"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+                      <span class="browser-url">ankitsachdeva.com/brew</span>
+                    </span>
+                    <picture>
+                      <source srcset="images/projects/brew-sheet-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+                      <source srcset="images/projects/brew-sheet-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
+                      <source srcset="images/projects/brew-sheet-view-light.webp" type="image/webp">
+                      <img src="images/projects/brew-sheet-view-light.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="brew: a printable hario switch recipe sheet next to the editor that generated it, with a timeline of pours and lever markers">
+                    </picture>
+                  </a>
+                  <p class="project-desc">turns a filter coffee recipe into a 100 x 150 mm svg that prints at exact size on a label printer.</p>
+                </article>
+                <article class="project-card">
                   <p class="project-title">
                     <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">home-server</a>
                   </p>
                   <p class="project-links">
-                    <a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">github</a>
+                    <span class="project-date">Sep 2, 2025</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/home-server" target="_blank" rel="noopener">github</a>
                   </p>
                   <p class="project-desc">a raspberry pi 5 running a dozen docker services: dashboards, discord bots, home automation, and the apis behind this site's live demos. caddy and tailscale sit in front of it, a push to main deploys in about five minutes, and weekly backups go to a separate machine.</p>
-                </div>
-              </div>
-              <div class="project-entry">
-                <div class="project-date">Apr 29, 2022</div>
-                <div>
+                </article>
+                <article class="project-card">
+                  <p class="project-title">
+                    <a href="https://www.npmjs.com/package/account-pool-mcp" target="_blank" rel="noopener">account-pool-mcp</a>
+                  </p>
+                  <p class="project-links">
+                    <span class="project-date">Jun 26, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://www.npmjs.com/package/account-pool-mcp" target="_blank" rel="noopener">npm</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/account-pool-mcp" target="_blank" rel="noopener">github</a>
+                  </p>
+                  <p class="project-desc">an mcp server that leases test accounts to parallel agent sessions, so two sessions never end up logged into the same account. allocation happens in an atomic sqlite transaction, leases expire on a ttl, and crashed sessions get reclaimed on their own. published on npm.</p>
+                </article>
+                <article class="project-card">
+                  <p class="project-title">
+                    <a href="https://github.com/ankitsxchdeva/lift-lens" target="_blank" rel="noopener">lift-lens</a>
+                  </p>
+                  <p class="project-links">
+                    <span class="project-date">Apr 17, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/lift-lens" target="_blank" rel="noopener">github</a>
+                  </p>
+                  <p class="project-desc">a mac app that reads joint positions from a lifting video, checks your squat, bench, or deadlift against form benchmarks, flags issues like lumbar rounding at the bottom, and writes an llm coaching prompt from what it finds.</p>
+                </article>
+                <article class="project-card">
                   <p class="project-title">
                     <a href="https://github.com/ankitsxchdeva/daal" target="_blank" rel="noopener">daal</a>
                   </p>
                   <p class="project-links">
-                    <a href="https://github.com/ankitsxchdeva/daal" target="_blank" rel="noopener">github</a>
+                    <span class="project-date">Apr 29, 2022</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/daal" target="_blank" rel="noopener">github</a>
                   </p>
                   <p class="project-desc">an open-source custom mechanical keyboard, built as a group-buy collab: cnc 6063 aluminum case, plateless o-ring mount, uncoated brass weight, and an rp2040 pcb running qmk/vial. case by hali, pcb by sleepdealer.</p>
-                </div>
+                </article>
               </div>
             </div>
           </div>
