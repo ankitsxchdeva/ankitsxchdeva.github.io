@@ -71,8 +71,8 @@
     <span class="kbd-legend-sep">·</span>
     <kbd class="kbd-legend-key">2</kbd> projects
     <span class="kbd-legend-sep">·</span>
-    <kbd class="kbd-legend-key">3</kbd> music
-    <span class="kbd-legend-sep">·</span>
+    <!-- <kbd class="kbd-legend-key">3</kbd> music
+    <span class="kbd-legend-sep">·</span> -->
     <kbd class="kbd-legend-key">?</kbd> help
   </aside>
   <main id="main">
@@ -82,8 +82,8 @@
           <nav class="tab-nav" aria-label="primary">
             <a href="#home" class="tab-link" data-tab="home" aria-keyshortcuts="1">hi <kbd class="tab-key">1</kbd></a>
             <a href="#projects" class="tab-link" data-tab="projects" aria-keyshortcuts="2">projects <kbd class="tab-key">2</kbd></a>
-            <a href="#music" class="tab-link" data-tab="music" aria-keyshortcuts="3">music <kbd class="tab-key">3</kbd></a>
-            <span class="tab-dead">blog <span class="tab-soon">(coming soon!)</span></span>
+            <!-- <a href="#music" class="tab-link" data-tab="music" aria-keyshortcuts="3">music <kbd class="tab-key">3</kbd></a> -->
+            <!-- <span class="tab-dead">blog <span class="tab-soon">(coming soon!)</span></span> -->
           </nav>
 
           <!-- Home tab -->
@@ -208,6 +208,15 @@
                 </article>
                 <article class="project-card">
                   <p class="project-title">
+                    <a href="https://github.com/ankitsxchdeva/visual-orchestra" target="_blank" rel="noopener">visual-orchestra</a>
+                  </p>
+                  <p class="project-links">
+                    <span class="project-date">Oct 4, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/visual-orchestra" target="_blank" rel="noopener">github</a>
+                  </p>
+                  <p class="project-desc">a live subagent board for pi. every running task agent at a glance: what it's doing right now, plus turns, tokens, and model. opens on demand mid-turn, while everything is still running.</p>
+                </article>
+                <article class="project-card">
+                  <p class="project-title">
                     <a href="https://www.npmjs.com/package/account-pool-mcp" target="_blank" rel="noopener">account-pool-mcp</a>
                   </p>
                   <p class="project-links">
@@ -237,7 +246,7 @@
             </div>
           </div>
 
-          <!-- Music tab -->
+          <!-- Music tab (parked for now — uncomment this whole block to restore)
           <div id="tab-music" class="tab-panel">
             <h2 class="sr-only" tabindex="-1">music</h2>
             <div class="music-wrap">
@@ -350,6 +359,7 @@
               </details>
             </div>
           </div>
+          -->
 
           <!-- Blog tab (parked on the parked-content branch until it ships) -->
           <div id="tab-blog" class="tab-panel">

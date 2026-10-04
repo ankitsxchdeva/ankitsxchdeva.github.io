@@ -211,9 +211,9 @@ console.log(
   if (panel.classList.contains('active')) arm();
 })();
 
-// Keyboard tab shortcuts (1–3) + legend toggle (?)
+// Keyboard tab shortcuts (1–2) + legend toggle (?)
 (function () {
-  var map = { '1': 'home', '2': 'projects', '3': 'music' };
+  var map = { '1': 'home', '2': 'projects' }; // '3': 'music' — parked with the music tab
   var legend = document.getElementById('kbd-legend');
 
   function showLegend() {
@@ -370,7 +370,7 @@ console.log(
 
   box.addEventListener('click', function () { close(); });
 
-  // A tab switch (1/2/3 or a link) while zoomed closes the overlay first
+  // A tab switch (1/2 or a link) while zoomed closes the overlay first
   window.addEventListener('popstate', function () { close(); });
   window.addEventListener('hashchange', function () { close(); });
 })();

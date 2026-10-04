@@ -657,7 +657,7 @@ a.project-thumb[data-zoom] { cursor: zoom-in; }
   padding: 1.5% 1.5%;
 }
 
-/* ─── Music tab ──────────────────────────────────────────────────────────── */
+/* ─── Music tab (parked for now — uncomment this whole block to restore) ────
 .music-wrap {
   max-width: 744px;
   padding: 0 1.5%;
@@ -686,8 +686,8 @@ summary.embed-header::before {
   transition: transform var(--t), color var(--t);
 }
 .playlist-fold[open] > summary.embed-header::before { transform: rotate(90deg); }
-/* Hover feedback lives on the caret (the control) and the count, so the whole
-   row reads as "expands" without implying the plain-text name is a link. */
+   Hover feedback lives on the caret (the control) and the count, so the whole
+   row reads as "expands" without implying the plain-text name is a link.
 summary.embed-header:hover::before,
 summary.embed-header:hover .embed-track-count { color: var(--fg); }
 .playlist-link {
@@ -718,6 +718,7 @@ summary.embed-header:hover .embed-track-count { color: var(--fg); }
 .track-name { font-size: 14px; font-weight: 700; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .track-artist { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .track-duration { font-size: 12px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
+*/
 
 /* ─── Blog tab (post body) ─────────────────────────────────────────────── */
 .blog-post {
