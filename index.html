@@ -130,7 +130,7 @@
                     <img src="images/projects/quantlab-view-light.jpg" width="1280" height="820" loading="lazy" decoding="async" alt="quantlab landing page: test the wildest trading idea you have, in plain english, above the strategy input box">
                   </picture>
                 </a>
-                <p class="project-desc">takes a trading idea written in plain english and backtests it. the llm compiles the idea into a typed strategy dsl (data, not code, so no eval), and a pure-typescript engine simulates every trade with slippage, a monte carlo bootstrap, and an out-of-sample split. every result is scored against buy-and-hold.</p>
+                <p class="project-desc">takes a trading idea written in plain english and backtests it. the llm compiles the idea into a typed strategy dsl, and a typescript engine simulates every trade with slippage, a monte carlo bootstrap, and an out-of-sample split.</p>
               </article>
 
               <div class="projects-grid">
@@ -153,7 +153,7 @@
                       <img src="images/projects/lede-view-light.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="lede's today board: clock and search box on top, a summary of the day's themes, then stories grouped into software, hardware, and health columns">
                     </picture>
                   </a>
-                  <p class="project-desc">a self-hosted daily news digest. it reads rss and atom feeds, dedupes stories across sources, and caches optional local-llm summaries in sqlite. the page rebuilds every 30 minutes inside a single docker container.</p>
+                  <p class="project-desc">a self-hosted daily news digest. it reads rss and atom feeds, dedupes stories across sources, and caches optional local-llm summaries in sqlite.</p>
                 </article>
                 <article class="project-card">
                   <p class="project-title">
@@ -174,7 +174,7 @@
                       <img src="images/projects/ka-mirror-view-light.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="ka-mirror: a searchable grid of artisan keycap makers, with logos and sculpt counts per maker">
                     </picture>
                   </a>
-                  <p class="project-desc">a static mirror of keycap archivist, the community archive of artisan keycaps. the catalog is pulled from the upstream database at build time and the site rebuilds once a day. no server, no scraper of its own.</p>
+                  <p class="project-desc">a static mirror of keycap archivist, the community archive of artisan keycaps. the catalog is pulled from the upstream database at build time.</p>
                 </article>
                 <article class="project-card">
                   <p class="project-title">
@@ -216,7 +216,28 @@
                       <img src="images/projects/home-server-view-light.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="home server dashboard at ankit.casa: weather and raspberry pi stats in the left rail, monitored services with green status checks in the middle, and the lede news summary on the right">
                     </picture>
                   </a>
-                  <p class="project-desc">two machines: a raspberry pi 5 running a dozen docker services (dashboards, discord bots, home automation, and the apis behind this site's live demos), and a mac studio serving a local model the rest of them can call. caddy and tailscale sit in front, a push to main deploys in about five minutes, and weekly backups go to a separate machine.</p>
+                  <p class="project-desc">a dozen docker services on a raspberry pi 5, with a mac studio beside it serving the local model they all call: one push to main redeploys the fleet in about five minutes, with caddy and tailscale in front and weekly backups to a separate machine.</p>
+                </article>
+                <article class="project-card">
+                  <p class="project-title">
+                    <a href="https://ankitsachdeva.com/menu/" target="_blank" rel="noopener">menu</a>
+                  </p>
+                  <p class="project-links">
+                    <span class="project-date">Oct 7, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://ankitsachdeva.com/menu/" target="_blank" rel="noopener">live site</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/menu" target="_blank" rel="noopener">github</a>
+                  </p>
+                  <a class="project-thumb" href="images/projects/menu-view-light@2x.webp" data-zoom data-zoom-dark="images/projects/menu-view-dark@2x.webp" data-zoom-light="images/projects/menu-view-light@2x.webp">
+                    <span class="browser-bar" aria-hidden="true">
+                      <span class="browser-dots"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+                      <span class="browser-url">ankitsachdeva.com/menu</span>
+                    </span>
+                    <picture>
+                      <source srcset="images/projects/menu-view-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+                      <source srcset="images/projects/menu-view-dark.jpg" type="image/jpeg" media="(prefers-color-scheme: dark)">
+                      <source srcset="images/projects/menu-view-light.webp" type="image/webp">
+                      <img src="images/projects/menu-view-light.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="guest menu coffee tab: current pour-over beans up top, then americano, cortado, and latte drawn as cup cross-sections, with syrups, cold foam, and tea below">
+                    </picture>
+                  </a>
+                  <p class="project-desc">a static site with no backend and no api key: a google sheet is the entire database, and one checkbox unticked from a phone cascades through every drink that uses it.</p>
                 </article>
                 <article class="project-card">
                   <p class="project-title">
@@ -234,7 +255,7 @@
                   <p class="project-links">
                     <span class="project-date">Jun 26, 2026</span><span class="sep">&nbsp;·&nbsp;</span><a href="https://www.npmjs.com/package/account-pool-mcp" target="_blank" rel="noopener">npm</a><span class="sep">&nbsp;·&nbsp;</span><a href="https://github.com/ankitsxchdeva/account-pool-mcp" target="_blank" rel="noopener">github</a>
                   </p>
-                  <p class="project-desc">an mcp server that leases test accounts to parallel agent sessions, so two sessions never end up logged into the same account. allocation happens in an atomic sqlite transaction, leases expire on a ttl, and crashed sessions get reclaimed on their own. published on npm.</p>
+                  <p class="project-desc">an mcp server for automating e2e tests: it leases test accounts to parallel agent sessions, so two sessions never end up logged into the same account. allocation happens in an atomic sqlite transaction, leases expire on a ttl, and crashed sessions get reclaimed on their own. published on npm.</p>
                 </article>
                 <article class="project-card">
                   <p class="project-title">
