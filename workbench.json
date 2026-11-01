@@ -6,7 +6,7 @@
       "description": "self-hosted services running on my home box",
       "name": "home-server",
       "url": "https://github.com/ankitsxchdeva/home-server",
-      "committed": "2026-11-01T04:46:56Z"
+      "committed": "2026-11-01T05:23:28Z"
     },
     {
       "description": "A self-hosted daily news digest: feeds in, one calm page out. Optional local-LLM summaries, one container.",
