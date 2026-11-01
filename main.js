@@ -212,7 +212,43 @@ console.log(
     return Math.round(h / 24) + 'd ago';
   }
 
+  // Recent work rows: repo name (to its live site, else the repo), its
+  // description, and how long ago I last committed to it.
+  var work = document.getElementById('recent-work');
+  var workList = document.getElementById('recent-work-list');
+
+  function renderWork(repos) {
+    if (!work || !Array.isArray(repos) || !repos.length) return;
+    workList.textContent = '';
+    repos.forEach(function (repo) {
+      var li = document.createElement('li');
+      li.className = 'work-row';
+      var body = document.createElement('div');
+      var title = document.createElement('p');
+      title.className = 'project-title';
+      var a = document.createElement('a');
+      a.href = repo.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = repo.name;
+      title.appendChild(a);
+      var desc = document.createElement('p');
+      desc.className = 'project-desc';
+      desc.textContent = repo.description;
+      body.appendChild(title);
+      body.appendChild(desc);
+      var when = document.createElement('span');
+      when.className = 'work-when';
+      when.textContent = rel(repo.committed) || '';
+      li.appendChild(body);
+      li.appendChild(when);
+      workList.appendChild(li);
+    });
+    work.removeAttribute('hidden');
+  }
+
   function render(data) {
+    renderWork(data.recent_work);
     var r = rel(data.site_built);
     if (!r) return;
     line.textContent = 'rebuilt ' + r;
