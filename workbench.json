@@ -3,16 +3,16 @@
   "kamirror_updated": "2026-11-09T12:57:34Z",
   "recent_work": [
     {
+      "description": "self-hosted services running on my home box",
+      "name": "home-server",
+      "url": "https://github.com/ankitsxchdeva/home-server",
+      "committed": "2026-11-11T23:28:52Z"
+    },
+    {
       "description": "CUPS print server in Docker, built from the latest OpenPrinting release — drop-in replacement for anujdatar/cups with auto-updates via GHCR",
       "name": "cups-docker",
       "url": "https://github.com/ankitsxchdeva/cups-docker",
       "committed": "2026-11-09T16:15:29Z"
-    },
-    {
-      "description": "self-hosted services running on my home box",
-      "name": "home-server",
-      "url": "https://github.com/ankitsxchdeva/home-server",
-      "committed": "2026-11-01T05:23:28Z"
     },
     {
       "description": "A self-hosted daily news digest: feeds in, one calm page out. Optional local-LLM summaries, one container.",
