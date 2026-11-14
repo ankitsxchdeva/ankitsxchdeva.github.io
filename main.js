@@ -326,25 +326,20 @@ console.log(
 })();
 
 // Intro choreography plays once: pin every end state via a class so switching
-// tabs (display:none resets CSS animations) never replays the sequence. The
-// stamp lands when the last slash finishes — or immediately if the visitor
-// leaves the home tab mid-intro (the animations cancel), so early bouncers
+// tabs (display:none resets CSS animations) never replays the sweep. The stamp
+// lands when the card's border sweep finishes, or immediately if the visitor
+// leaves the home tab mid-intro (the animation cancels), so early bouncers
 // come back to the finished state rather than a replay.
 (function () {
-  var slashes = document.querySelectorAll('.contact-line .sep span');
-  var last = slashes[slashes.length - 1];
-  if (!last) return;
+  if (!document.querySelector('.home-card')) return;
   function stamp() {
     document.documentElement.classList.add('intro-done');
-    document.removeEventListener('animationend', onEnd);
-    document.removeEventListener('animationcancel', onCancel);
+    document.removeEventListener('animationend', onAnim);
+    document.removeEventListener('animationcancel', onAnim);
   }
-  function onEnd(e) {
-    if (e.animationName === 'sep-ink' && e.target === last) stamp();
+  function onAnim(e) {
+    if (e.animationName === 'card-sweep') stamp();
   }
-  function onCancel(e) {
-    if (e.animationName === 'card-sweep' || e.animationName === 'sep-ink') stamp();
-  }
-  document.addEventListener('animationend', onEnd);
-  document.addEventListener('animationcancel', onCancel);
+  document.addEventListener('animationend', onAnim);
+  document.addEventListener('animationcancel', onAnim);
 })();

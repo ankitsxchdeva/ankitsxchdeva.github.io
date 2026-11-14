@@ -223,16 +223,32 @@ body { animation: fadeIn var(--t-entrance) ease; }
   margin: 0;
 }
 
-/* Bump contact-line link tap targets to clear WCAG 2.5.8 AA (24×24) */
-.contact-line a {
+/* Quiet anchor for the one conversion action: breathing room only, no CTA
+   button (explicit non-goal), color still carries the links. github sits on
+   its own line, then "contact me:" with the email and its copy hint stacked
+   under it. */
+.contact-block {
+  margin-top: 1.5em;
+}
+.contact-row {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.contact-row + .contact-row { margin-top: 0.15em; }
+/* Bump contact link tap targets to clear WCAG 2.5.8 AA (24×24) */
+.contact-row a {
   display: inline-block;
   padding: 0.2em 0;
 }
-
-/* Quiet anchor for the one conversion action: breathing room only, no CTA
-   button (explicit non-goal), color still carries the links. */
-.contact-line {
-  margin-top: 1.75em;
+.contact-label { color: var(--muted); }
+/* The email and its "copy" hint stack as one unit, left-aligned to the
+   email, so the hint reads as the link's subtext */
+.email-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  vertical-align: baseline;
 }
 
 /* Decorative separators (the // and ·) wear the second ink */
@@ -282,34 +298,21 @@ body { animation: fadeIn var(--t-entrance) ease; }
 /* The contact slashes start in the link purple and take the coral ink one
    slash at a time, left to right, once the card border finishes lighting up
    (~0.7s) */
-.contact-line .sep span {
-  color: var(--link);
-  animation: sep-ink 0.22s ease-out forwards;
-}
-.contact-line .sep:nth-of-type(1) span:nth-child(1) { animation-delay: 0.75s; }
-.contact-line .sep:nth-of-type(1) span:nth-child(2) { animation-delay: 0.83s; }
-@keyframes sep-ink {
-  to { color: var(--accent); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .contact-line .sep span {
-    animation: none;
-    color: var(--accent);
-  }
-}
-
 /* Once the intro has played through, pin every finished state so switching
    tabs (display:none resets CSS animations) never replays the choreography */
 .intro-done .home-card { animation: none; --card-sweep: 360deg; }
-.intro-done .contact-line .sep span { animation: none; color: var(--accent); }
 
 /* The email "copy" affordance is a real button (the link stays a mailto);
-   styled to the same muted hint tier */
+   styled to the same muted hint tier, sitting under the email as subtext.
+   min-height keeps the tap target at 24px. */
 .copy-btn {
   background: none;
   border: 0;
-  padding: 0.2em 0.15em;
-  margin-left: 0.15em;
+  padding: 0 0 0.2em;
+  margin: -0.35em 0 0;
+  min-height: 24px;
+  line-height: 1;
+  text-align: left;
   font-family: inherit;
   font-size: 11px;
   color: var(--muted);
@@ -439,8 +442,6 @@ body { animation: fadeIn var(--t-entrance) ease; }
 @media (max-width: 600px) {
   .kbd-legend { display: none !important; }
   .tab-key { display: none; }
-  /* "copy" is the desktop clipboard affordance; mobile taps the native mailto */
-  .copy-btn { display: none; }
 }
 
 /* ─── Tab panels ─────────────────────────────────────────────────────────── */
