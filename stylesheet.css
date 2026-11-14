@@ -295,9 +295,6 @@ body { animation: fadeIn var(--t-entrance) ease; }
   text-align: right;
 }
 
-/* The contact slashes start in the link purple and take the coral ink one
-   slash at a time, left to right, once the card border finishes lighting up
-   (~0.7s) */
 /* Once the intro has played through, pin every finished state so switching
    tabs (display:none resets CSS animations) never replays the choreography */
 .intro-done .home-card { animation: none; --card-sweep: 360deg; }
