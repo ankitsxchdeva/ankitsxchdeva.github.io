@@ -238,15 +238,6 @@ body { animation: fadeIn var(--t-entrance) ease; }
 /* Decorative separators (the // and ·) wear the second ink */
 .sep { color: var(--accent); }
 
-/* Workbench stamp: the site's own rebuild time, quiet in the card's corner.
-   Filled from workbench.json by main.js; stays hidden if the fetch fails. */
-.workbench-line {
-  margin: 0.75em 0 0;
-  font-size: 11px;
-  color: var(--muted);
-  text-align: right;
-}
-
 /* Recent work: a second, quieter box under the intro. Plain grey hairline
    (the coral sweep stays the intro's alone); repos sit in hairline rows with
    the last-commit time pushed right on the label tier. */
