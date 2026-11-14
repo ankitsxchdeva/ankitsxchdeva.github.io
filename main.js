@@ -330,18 +330,6 @@ console.log(
   window.addEventListener('hashchange', function () { close(); });
 })();
 
-// Resume prefetch
-(function () {
-  var link = document.querySelector('a[href*="ankitsachdeva.com/resume"]');
-  if (!link) return;
-  link.addEventListener('mouseenter', function () {
-    var l = document.createElement('link');
-    l.rel = 'prefetch';
-    l.href = 'https://ankitsachdeva.com/resume/Ankit_Sachdeva_Resume.pdf';
-    document.head.appendChild(l);
-  }, { once: true });
-})();
-
 // Intro choreography plays once: pin every end state via a class so switching
 // tabs (display:none resets CSS animations) never replays the sequence. The
 // stamp lands when the last slash finishes — or immediately if the visitor

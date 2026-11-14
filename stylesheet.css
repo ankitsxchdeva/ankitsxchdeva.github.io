@@ -297,10 +297,6 @@ body { animation: fadeIn var(--t-entrance) ease; }
 }
 .contact-line .sep:nth-of-type(1) span:nth-child(1) { animation-delay: 0.75s; }
 .contact-line .sep:nth-of-type(1) span:nth-child(2) { animation-delay: 0.83s; }
-.contact-line .sep:nth-of-type(2) span:nth-child(1) { animation-delay: 0.91s; }
-.contact-line .sep:nth-of-type(2) span:nth-child(2) { animation-delay: 0.99s; }
-.contact-line .sep:nth-of-type(3) span:nth-child(1) { animation-delay: 1.07s; }
-.contact-line .sep:nth-of-type(3) span:nth-child(2) { animation-delay: 1.15s; }
 @keyframes sep-ink {
   to { color: var(--accent); }
 }
@@ -315,17 +311,6 @@ body { animation: fadeIn var(--t-entrance) ease; }
    tabs (display:none resets CSS animations) never replays the choreography */
 .intro-done .home-card { animation: none; --card-sweep: 360deg; }
 .intro-done .contact-line .sep span { animation: none; color: var(--accent); }
-
-/* Muted-meta-tier hint after a link (e.g. "resume pdf") */
-.link-hint {
-  font-size: 11px;
-  color: var(--muted);
-  margin-left: 0.15em;
-}
-a:hover .link-hint,
-a:focus .link-hint {
-  color: inherit;
-}
 
 /* The email "copy" affordance is a real button (the link stays a mailto);
    styled to the same muted hint tier */
