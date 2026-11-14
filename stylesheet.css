@@ -224,9 +224,8 @@ body { animation: fadeIn var(--t-entrance) ease; }
 }
 
 /* Quiet anchor for the one conversion action: breathing room only, no CTA
-   button (explicit non-goal), color still carries the links. github sits on
-   its own line, then "contact me:" with the email and its copy hint stacked
-   under it. */
+   button (explicit non-goal), color still carries the link. One line:
+   "contact me:", the email, and its copy hint to the right. */
 .contact-block {
   margin-top: 1.5em;
 }
@@ -235,21 +234,12 @@ body { animation: fadeIn var(--t-entrance) ease; }
   font-size: 15px;
   line-height: 1.65;
 }
-.contact-row + .contact-row { margin-top: 0.15em; }
 /* Bump contact link tap targets to clear WCAG 2.5.8 AA (24×24) */
 .contact-row a {
   display: inline-block;
   padding: 0.2em 0;
 }
 .contact-label { color: var(--muted); }
-/* The email and its "copy" hint stack as one unit, left-aligned to the
-   email, so the hint reads as the link's subtext */
-.email-stack {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  vertical-align: baseline;
-}
 
 /* Decorative separators (the // and ·) wear the second ink */
 .sep { color: var(--accent); }
@@ -300,16 +290,14 @@ body { animation: fadeIn var(--t-entrance) ease; }
 .intro-done .home-card { animation: none; --card-sweep: 360deg; }
 
 /* The email "copy" affordance is a real button (the link stays a mailto);
-   styled to the same muted hint tier, sitting under the email as subtext.
-   min-height keeps the tap target at 24px. */
+   styled to the same muted hint tier, just right of the email. min-height
+   keeps the tap target at 24px. */
 .copy-btn {
   background: none;
   border: 0;
-  padding: 0 0 0.2em;
-  margin: -0.35em 0 0;
+  padding: 0 0.15em;
+  margin-left: 0.3em;
   min-height: 24px;
-  line-height: 1;
-  text-align: left;
   font-family: inherit;
   font-size: 11px;
   color: var(--muted);
