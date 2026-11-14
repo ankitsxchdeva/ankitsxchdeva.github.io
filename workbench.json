@@ -6,7 +6,7 @@
       "description": "self-hosted services running on my home box",
       "name": "home-server",
       "url": "https://github.com/ankitsxchdeva/home-server",
-      "committed": "2026-11-14T03:21:35Z"
+      "committed": "2026-11-14T20:04:44Z"
     },
     {
       "description": "CUPS print server in Docker, built from the latest OpenPrinting release — drop-in replacement for anujdatar/cups with auto-updates via GHCR",
