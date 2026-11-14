@@ -1,12 +1,12 @@
 {
-  "site_built": "2026-10-31T23:46:57-05:00",
+  "site_built": "2026-11-13T21:31:36-06:00",
   "kamirror_updated": "2026-11-09T12:57:34Z",
   "recent_work": [
     {
       "description": "self-hosted services running on my home box",
       "name": "home-server",
       "url": "https://github.com/ankitsxchdeva/home-server",
-      "committed": "2026-11-11T23:28:52Z"
+      "committed": "2026-11-14T03:21:35Z"
     },
     {
       "description": "CUPS print server in Docker, built from the latest OpenPrinting release — drop-in replacement for anujdatar/cups with auto-updates via GHCR",
