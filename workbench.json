@@ -3,6 +3,12 @@
   "kamirror_updated": "2026-11-16T12:49:58Z",
   "recent_work": [
     {
+      "description": "self-hosted services running on my home box",
+      "name": "home-server",
+      "url": "https://github.com/ankitsxchdeva/home-server",
+      "committed": "2026-11-20T05:16:20Z"
+    },
+    {
       "description": "Homebrew tap",
       "name": "homebrew-tap",
       "url": "https://github.com/ankitsxchdeva/homebrew-tap",
@@ -13,12 +19,6 @@
       "name": "TempBar",
       "url": "https://github.com/ankitsxchdeva/TempBar",
       "committed": "2026-11-19T15:16:27Z"
-    },
-    {
-      "description": "new tab landing page",
-      "name": "nt",
-      "url": "https://github.com/ankitsxchdeva/nt",
-      "committed": "2026-11-16T00:10:17Z"
     }
   ]
 }
